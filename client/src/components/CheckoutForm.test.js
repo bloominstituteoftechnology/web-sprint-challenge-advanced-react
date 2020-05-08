@@ -13,7 +13,9 @@ test("form header renders", () => {
 });
 
 test("form shows success message on submit with form details", () => {
-  const { getByLabelText, getByText, findAllByText } = render(<CheckoutForm />);
+  const { getByLabelText, getByText, findAllByText, getByTestId } = render(
+    <CheckoutForm />
+  );
 
   fireEvent.change(getByLabelText(/first name/i), {
     target: { value: "Cody" }
@@ -39,4 +41,6 @@ test("form shows success message on submit with form details", () => {
   fireEvent.click(checkoutButton);
 
   findAllByText(/Cody/i);
+
+  expect(getByTestId("successMessage")).toBeInTheDocument();
 });
