@@ -16,7 +16,7 @@ const initialValue = {
 
 const CheckoutForm = (props) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [handleChanges, values] = useForm(initialValue)
+  const [handleChanges, clearForm, values] = useForm(initialValue)
 
   //leaving the submit handler in per Dustin's instruction
   const handleSubmit = (e) => {
@@ -68,6 +68,11 @@ const CheckoutForm = (props) => {
           data-testid='checkoutButton'
         >Checkout</button>
       </form>
+      <form>
+      <button
+        onClick={clearForm}
+        >Clear Form</button>
+        </form>
 
       {showSuccessMessage && (
         <div className="success-message" data-testid="successMessage">

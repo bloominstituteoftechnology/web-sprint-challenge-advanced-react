@@ -12,8 +12,15 @@ const useForm = (initialValue) => {
           [event.target.name]: event.target.value 
      });
   };
+  
+  const clearForm = e => {
+    if (e) e.preventDefault();
+    setValues(initialValue);
+  };
 
-  return [handleChange,  values]
+
+
+  return [handleChange, clearForm, values]
 };
 
 export default useForm;
