@@ -17,6 +17,7 @@ const initialValue = {
 const CheckoutForm = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useForm(false);
   const [values, setValues] = useForm(initialValue);
+  // const [allValues, setAllValues] = useForm(initialValue, false);
 
   const handleChanges = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -33,27 +34,42 @@ const CheckoutForm = () => {
         <h2>Checkout Form</h2>
         <label>
           First Name:
-          <input name="firstName" value={values.firstName} onChange={handleChanges} />
+          <input
+            name="firstName"
+            value={values.firstName}
+            onChange={handleChanges}
+            data-testid="firstName"
+          />
         </label>
         <label>
           Last Name:
-          <input name="lastName" value={values.lastName} onChange={handleChanges} />
+          <input
+            name="lastName"
+            value={values.lastName}
+            onChange={handleChanges}
+            data-testid="lastName"
+          />
         </label>
         <label>
           Address:
-          <input name="address" value={values.address} onChange={handleChanges} />
+          <input
+            name="address"
+            value={values.address}
+            onChange={handleChanges}
+            data-testid="address"
+          />
         </label>
         <label>
           City:
-          <input name="city" value={values.city} onChange={handleChanges} />
+          <input name="city" value={values.city} onChange={handleChanges} data-testid="city" />
         </label>
         <label>
           State:
-          <input name="state" value={values.state} onChange={handleChanges} />
+          <input name="state" value={values.state} onChange={handleChanges} data-testid="state" />
         </label>
         <label>
           Zip:
-          <input name="zip" value={values.zip} onChange={handleChanges} />
+          <input name="zip" value={values.zip} onChange={handleChanges} data-testid="zip" />
         </label>
         <button>Checkout</button>
       </form>

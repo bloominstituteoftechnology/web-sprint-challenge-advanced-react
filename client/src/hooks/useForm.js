@@ -6,4 +6,7 @@ export const useForm = (values, successBool) => {
   const [formValues, setFormValues] = useState(values);
 
   return [showSuccess, setShowSuccess], [formValues, setFormValues];
+
+  //   const [allValues, setAllValues] = useState([values, successBool]);
+  //   return [allValues, setAllValues];
 };
