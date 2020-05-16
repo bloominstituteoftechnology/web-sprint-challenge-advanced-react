@@ -29,14 +29,19 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+A stateful class component (depending on the version of React you are running) requires the developer to extend the React.Component class, call the constructor method inside of that component, call super inside of the constructor method, and finally create a this.state object inside of your class component. In newer versions of React, you can just create a state object inside of your component after creating, as all of that constructor/super logic is tied in with that keyword.
 
 2. Describe the different phases of the component lifecycle.
+The first phase of the lifecycle is mounting the component, the second phase of the lifecycle the component goes through various updates, then the final phase of the lifecycle is unmounting, when the program is finished with component and does any clean up that may be required. 
 
 3. Demonstrate an understanding of class component lifecycle methods.
+There are three component lifecycle methods that are used most of the time (componentDidMount, componentDidUpdate, componentWillUnmount). These are used to perform various actions during the lifecycle of the React component. For example, using the componentDidMount method will run any code you have written inside that method only when the component mounts. The componentDidUpdate method is called when there are any changes to state made in the component. The componentWillUnmount method is used to perform any cleanup in the program after the component unmounts.
 
 4. Define stateful logic.
+Stateful logic is logic that is built into a component that is directly tied to the state of the component, either by controlling what the component does or manipulating any state or data that the component is controlling.
 
 5. Describe how to test a React component with React Testing Library.
+To test a component with the React Testing Library, you look to arrange how to test your component, describing what you are testing for, as well as calling the component using the virtual DOM, you act by calling the specific element using one of the built in methods in the library, and then you run another built-in method in the library to ensure that expected output is what the test is returning.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
