@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, findByTestId } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
 
 // Write up the two tests here and make sure they are testing what the title shows
@@ -37,6 +37,6 @@ test("form shows success message on submit with form details", async () => {
   expect(zip.value).toBe("57106");
 
   submitBtn.click();
-  const message = await getByTestId("successMessage");
+  const message = getByTestId("successMessage");
   await expect(message.textContent).toContain("57106");
 });
