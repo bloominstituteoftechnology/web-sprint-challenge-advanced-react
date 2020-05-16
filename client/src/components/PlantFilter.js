@@ -14,7 +14,7 @@ const PlantFilter = ({ inputValue, plants }) => {
         name="filter"
         placeholder="Filter By"
         value={inputValue}
-        onChange={filter(inputValue)}
+        // onChange={filter(inputValue)}
       />
     </label>
   );
