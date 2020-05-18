@@ -30,13 +30,25 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+Declare class component by extending the React.Component parent class. Build constructor function to set state and call super() to access parent class with "this", then call render.
+
 2. Describe the different phases of the component lifecycle.
+
+Mounting phase, which is when coponent is built and elements are added to DOM.  componentDidMount() method is called after the component is rendered.
+Updating phase is when a component is updated.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+componentDiDMount the component is mounted and ready to receive data from external APIs axios or fetch.
+componentWillUnmount the component will be removed from the DOM.
+
 4. Define stateful logic.
 
+Is conditional logic that changes the componenets state.
+
 5. Describe how to test a React component with React Testing Library.
+
+Test that component renders without errors in test function, then test functionality of the component by selecting specific parts of the componenet. fireEvent.change is used to enter dummy data to test the component.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -54,10 +66,10 @@ _Please follow the setup instructions closely so that you can get everything up 
 
 **Basic set up**
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [ x ] Create a forked copy of this project
+- [ x ] Add your team lead as collaborator on Github
+- [ x ] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [ x ] Create a new branch: git checkout -b `<firstName-lastName>`.
 
 **Starting the server**
 
