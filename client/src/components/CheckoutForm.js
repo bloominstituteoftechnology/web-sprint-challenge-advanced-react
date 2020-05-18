@@ -90,4 +90,4 @@ const Form = () => {
   );
 };
 
-export default CheckoutForm;
+export default Form;
