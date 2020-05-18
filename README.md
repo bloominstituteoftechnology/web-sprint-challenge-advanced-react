@@ -51,7 +51,7 @@ _This project uses a local server for the data fetching. You will need three sep
 3. _and one to run your tests_
 
 _Please follow the setup instructions closely so that you can get everything up and running smoothly_
-
+ 
 **Basic set up**
 
 - [ ] Create a forked copy of this project
