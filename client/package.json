@@ -7,12 +7,14 @@
     "@testing-library/react": "^10.0.3",
     "@testing-library/user-event": "^10.1.0",
     "axios": "^0.19.2",
+    "dependencies": "0.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^5.6.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "updates": "^10.2.11"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import useForm from ".hooks/useForm"
+import { useForm } from "../hooks/useForm";
+
 
 const initialValue = {
   firstName: "",
@@ -9,23 +10,18 @@ const initialValue = {
   state: "",
   zip: "",
 };
-
 // This form should be handled by a "useForm" custom hook
 // Build out the logic needed for a form custom hook (see the useForm.js file)
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
-const Form = () => {
-
-
-  const handleChanges = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+const CheckoutForm = (props) => {
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [values, handleChanges] = useForm(initialValue);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setShowSuccessMessage(true);
   };
-
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -66,7 +62,7 @@ const Form = () => {
           Zip:
           <input name="zip" value={values.zip} onChange={handleChanges} />
         </label>
-        <button>Checkout</button>
+        <button data-testid="checkoutButton" >Checkout</button>
       </form>
 
       {showSuccessMessage && (
@@ -90,4 +86,6 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default CheckoutForm;
+
+
