@@ -7,3 +7,11 @@ import CheckoutForm from "./CheckoutForm";
 test("form header renders", () => {});
 
 test("form shows success message on submit with form details", () => {});
+
+test("renders the app header", () => {
+  const { getByText } = render(<App />);
+
+  const header = getByText(/react plants/i);
+
+  expect(header).toBeInTheDocument();
+});
