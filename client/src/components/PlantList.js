@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 
 export default class PlantList extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       plants: [],
     };
@@ -13,7 +13,7 @@ export default class PlantList extends Component {
       .get("http://localhost:3333/plants")
       .then((response) => {
         this.setState({
-          user: response.data,
+          plants: response.data.plantsData,
         });
       })
 
