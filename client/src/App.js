@@ -5,11 +5,22 @@ import PlantList from "./components/PlantList";
 import ShoppingCart from "./components/ShoppingCart";
 import CheckoutForm from "./components/CheckoutForm";
 
+// Stretch````````
+import {useDarkMode} from './hooks/useDarkMode'
+
 import "./App.css";
 
 function App() {
   // array of plants that have been added to the cart
   const [cart, setCart] = useState([]);
+// Stretch````````````````
+const [darkMode, setDarkMode] = useDarkMode(false)
+
+const changeBackground = e => {
+  e.preventDefault();
+  setDarkMode(!darkMode);
+}
+// `````````````````````````````````````````
 
   // add a plant to the cart
   const addToCart = (plant) => {
@@ -23,8 +34,11 @@ function App() {
 
   return (
     <div>
+ 
       <Router>
         <nav className="container">
+                        {/* Stretch`````````` */}
+                        <button onClick={changeBackground}> Mode </button>
           <h1>
             React Plants <span role="img">🌿</span>
           </h1>
@@ -44,6 +58,7 @@ function App() {
             </li>
           </ul>
         </nav>
+      
         <Route
           exact
           path="/"

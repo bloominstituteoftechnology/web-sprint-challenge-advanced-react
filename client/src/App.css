@@ -251,3 +251,22 @@ pre {
   color: #0e101c;
   border-bottom: 2px solid !important;
 }
+
+
+/* Adding darkMode for stretch `````````````````*/
+
+.dark-mode {
+  background-color: #949fb3;
+}
+
+.dark-mode p{
+  color:black;
+}
+
+.dark-mode h1{
+  color:black;
+}
+
+.dark-mode form{
+  background-color: #949fb3;
+}
