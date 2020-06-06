@@ -29,14 +29,48 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+    Traditionally, classes are a way to hold state. State is a one of two ways components work with data, and dynamically manipulate that data. Props is the other way components work with and pass data around. The difference is props are immutable while state is dyanamic. A component can initialize its state and update it whenever necessary. The state of the parent component usually ends up being props of the child component. When the state is passed out of the current scope, we refer to it as a prop. 
+
+    Stateful class components are built with the constructor method that is built into the React.Component subclass.
+
+    React constructors are only used for two purposes:
+
+    -Initializing local state by assigning an object to this.state.
+    -Binding event handler methods to an instance.
+
+    Initial state is assigned in the constructor, if state needs updated, state can be change by calling setState() in any other class method beisdes the constructor.
 
 2. Describe the different phases of the component lifecycle.
+    Basically all of the React Component's lifecycle methods can be split into four phases: initialization,
+    mounting, updating, and unmounting.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+  During initialization, is where we define defaults and intial values ofr this.props and this.state by implementing getDefaultProps() and getInitialState(). 
+
+  Next is Mounting. Which is the process that occurs when a component is being inserted into the DOM. This phase has two methods: componentWillMount() and componentDidMount(). componentWillMount() is the first to be called. It is invoked once and immediately before the intial rendering occurs.
+
+  componentDidMount() is the second method to be invoked in this phase, once, and immediately after React inserts the components into the DOM. 
+
+  Next is updating, where live methods that allow us to execute code relative to when a component's state or props get updated. The most frequently invoked methods in this part of the life cycle are componentWillUpdate(), render(), and componentDidUpdate.
+
+  The last part of the life cycle is Unmounting, which contains only one method componentWillUnmount() which is called right before the component is unmounted from the DOM. 
+
 4. Define stateful logic.
+  State logic is any logic contained in functions that invovles the management or manipulation of state within a component.
+
 
 5. Describe how to test a React component with React Testing Library.
+  A React component can be tested in serveral ways, with several different librarys and frameworks. The tool you choose to test with will likely depend on the level of testing you'd like to do.  Integration testing
+  In this level, several units of software are tested as a group to ensure they work together correctly.
+
+  End-to-end testing
+  End-to-end (E2E) testing is where the whole application is tested, simulating real user scenarios closely. Because these tests are slow and expensive, there should be a thick “cushion” of unit tests in a codebase.
+
+  Unit Testing
+  We test the smaller units of software (often functions or methods) in isolation. There are usually many unit tests in a codebase, and because these tests are meant to be run often, they need to run fast. We will talk about this eventually, but not much today.
+
+  The model we typically use to set up our tests is: Arrange, Act, Assert. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
