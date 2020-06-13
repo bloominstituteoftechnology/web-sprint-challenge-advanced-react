@@ -4,9 +4,9 @@ export const useForm = (initialValues, cb) => {
   const [values, setValues] = useState({});
 
   const handleChanges = (e) => {
-    console.log(initialValues);
-    console.log(e.target.name);
-    console.log(e.target.value);
+    // console.log(initialValues);
+    // console.log(e.target.name);
+    // console.log(e.target.value);
     setValues({
       ...values,
       [e.target.name]: e.target.value,
