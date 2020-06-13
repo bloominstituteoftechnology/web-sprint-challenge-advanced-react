@@ -31,12 +31,33 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 1. Explain how to build stateful class components.
 
 2. Describe the different phases of the component lifecycle.
+The three React lifestyle phases are 1) Birth/Mounting, 2) Growth/Updating, and 3) Death/Unmounting.
+
+          The Birth/Mounting Phase
+          This is the phase when the component is being built out from the ground up. A few things are happening here: Whatever initial data you want access to will be defined on the constructor of this phase
+
+          Your render method is invoked.
+          componentDidMount gets called as well.
+          Growth/Updating Phase
+          In the Growth/Updating phase you’re updating compnent data.
+
+          setState can be used to change the component’s state data, forcing a call to render.
+          shouldComponentUpdate is a method one could use here to stop a component from calling render if necessary.
+          Death/Un-mounting Phase
+          Again, self-explanatory, but the unmounting phase includes removing the component from the screen.
+
+          Component is removed from the screen.
+          componentWillUnmount is called and can be used for any clean up you may need to do.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
 4. Define stateful logic.
+Stateful logic is logic that is built into a component. It can be a function that handles a click event or maybe a function that sets toggle state, or even a function that formats data before it gets displayed. Usually, this kind of logic deals with state in the component. Thus the moniker “stateful logic.”
 
 5. Describe how to test a React component with React Testing Library.
+The framework we use for testing is: arrange, act, assert. These are three steps that we can take to build good tests. First, we “arrange” our test by setting up our code such that it can be tested. Then, we “act” - calling a method or function that returns a result of interest to our test. Finally, with that return we “assert” if our expected return matched the actual return.
+
+Very often arrange and act will happen in the same line of code, for illustration here we’ve separated these sections, but don’t be scared if you see them together.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
