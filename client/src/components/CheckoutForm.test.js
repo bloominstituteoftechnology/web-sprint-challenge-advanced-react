@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
 import App from "../App";
 
@@ -12,6 +12,11 @@ test("form header renders", () => {
 });
 
 test("form shows success message on submit with form details", () => {
-  const { getByTestId } = render(<CheckoutForm />);
-  const success = getByTestId(/successMessage/i);
+  const { findByTestId } = render(
+    <CheckoutForm />
+  );
+
+  const successMessage = findByTestId(/successmessage/i);
+
+  expect(successMessage).toBeTruthy;
 });
