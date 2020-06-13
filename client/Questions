@@ -1,0 +1,23 @@
+1. Explain how to build stateful class components. 
+
+is dependent on it's state object and can change it's own state. The component re-renders based on changes to it's state, and may pass down properties of it's state to child components as properties on a props object.                        
+
+2. Describe the different phases of the component lifecycle.  
+
+componentWillMount() - is called before component mounts on the render                                                                                        
+componentDidMount() - is called after the component gets mounted API calls are made here      
+ComponentDidUpdate() -  is called just after the re-rendering of the component after  component gets updated 
+componentWillUnmount() -  is called before the unmounting of the component takes place.
+
+3. Demonstrate an understanding of class component lifecycle methods. ^^^^^^
+
+4. Define stateful logic. 
+
+A stateful component is dependent on it's state object and can change it's own state. The component re-renders based on changes to it's state, and may pass down properties of it's state to child components as properties on a props object. 
+
+
+5. Describe how to test a React component with React Testing Library.            
+
+Arrange – setup the testing objects and prepare the prerequisites for your test. 
+Act – perform the actual work of the test. 
+Assert – verify the result.
