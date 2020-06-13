@@ -16,5 +16,13 @@ test("form header renders", () => {
 
 test("form shows success message on submit with form details", () => {
     const { getByTestId } = render(<CheckoutForm />);
-    getByTestId(/successmessage/i);
+    const element = getByTestId(/successmessage/i);
+    const elementButton = getByTestId(/buttonId/i);
+
+    const leftClick = {button: 0}
+    fireEvent.click(getByTestId(/buttonid/i), leftClick);
+    expect(element).toBeInTheDOM();
+
+
+
 });

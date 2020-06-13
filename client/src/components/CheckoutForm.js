@@ -40,6 +40,7 @@ const CheckoutForm = (props) => {
           First Name:
           <input
             name="firstName"
+            data-testid="firstId"
             value={values.firstName}
             onChange={handleChanges}
           />
@@ -48,6 +49,7 @@ const CheckoutForm = (props) => {
           Last Name:
           <input
             name="lastName"
+            data-testid="lastId"
             value={values.lastName}
             onChange={handleChanges}
           />
@@ -56,23 +58,36 @@ const CheckoutForm = (props) => {
           Address:
           <input
             name="address"
+            data-testid="addressId"
             value={values.address}
             onChange={handleChanges}
           />
         </label>
         <label>
           City:
-          <input name="city" value={values.city} onChange={handleChanges} />
+          <input 
+            name="city"
+            data-testid="citytId" 
+            value={values.city} 
+            onChange={handleChanges} />
         </label>
         <label>
           State:
-          <input name="state" value={values.state} onChange={handleChanges} />
+          <input 
+            name="state" 
+            data-testid="stateId"
+            value={values.state} 
+            onChange={handleChanges} />
         </label>
         <label>
           Zip:
-          <input name="zip" value={values.zip} onChange={handleChanges} />
+          <input 
+            name="zip" 
+            data-testid="zipId"
+            value={values.zip} 
+            onChange={handleChanges} />
         </label>
-        <button>Checkout</button>
+        <button data-testid="buttonId">Checkout</button>
       </form>
 
       {showSuccessMessage && (
