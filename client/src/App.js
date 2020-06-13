@@ -5,11 +5,14 @@ import PlantList from "./components/PlantList";
 import ShoppingCart from "./components/ShoppingCart";
 import CheckoutForm from "./components/CheckoutForm";
 
+import { useTheme } from "./hooks/useTheme"
+
 import "./App.css";
 
 function App() {
   // array of plants that have been added to the cart
   const [cart, setCart] = useState([]);
+  const [theme, setTheme] = useTheme(false)
 
   // add a plant to the cart
   const addToCart = (plant) => {
@@ -21,6 +24,12 @@ function App() {
     setCart(cart.filter((p) => p.id !== plant.id));
   };
 
+  // handle theme changes
+  const handleTheme = (e) => {
+    e.preventDefault()
+    setTheme(!theme)
+  }
+
   return (
     <div>
       <Router>
@@ -29,6 +38,9 @@ function App() {
             React Plants <span role="img">🌿</span>
           </h1>
           <ul className="steps">
+            <li>
+              <a onClick={handleTheme}>Change Theme</a>
+            </li>
             <li>
               <NavLink exact to="/">
                 Plants

@@ -251,3 +251,32 @@ pre {
   color: #0e101c;
   border-bottom: 2px solid !important;
 }
+
+.theme {
+  background-color: white;
+}
+
+.theme p, .theme h1, .theme h2, .theme label{
+  color:black;
+}
+
+
+.theme form {
+  background-color: white;
+} 
+
+.theme label {
+  color: black;
+}
+
+.theme input {
+  border: 1px solid black;
+}
+
+
+.filter-container {
+  width: 30%;
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
