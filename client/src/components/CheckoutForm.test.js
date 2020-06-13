@@ -6,11 +6,17 @@ import CheckoutForm from "./CheckoutForm";
 
 test("form header renders", () => {
     //Arrange
-    const { getByText } = render(<CheckoutForm />)
+    const { getByText } = render(<CheckoutForm />);
     //Act
-    getByText(/react plants/i)
+    getByText(/checkout form/i);
     //Assert
 });
     
 
-test("form shows success message on submit with form details", () => {});
+test("form shows success message on submit with form details", () => {
+    const { getByTestId } = render(<CheckoutForm />);
+    fireEvent.change(getByTestId(/successmessage/i), {
+
+    })
+    
+});
