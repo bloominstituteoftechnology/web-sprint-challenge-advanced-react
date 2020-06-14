@@ -30,13 +30,34 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+The stateful components are keeping track of changing data, while stateless components print out what is given to them via props, or they always render the same thing
+
 2. Describe the different phases of the component lifecycle.
 
+React lifestyle phases are 
+1) Birth/Mounting: the component is being built from the ground up. 
+2) Growth/Updating,: here we are updating component data ,  and
+3) Death/Unmounting: Removing the component from the screen
+
+
 3. Demonstrate an understanding of class component lifecycle methods.
+Mounting Phase
+componentDidMount()
+
+Updating:
+componentDidUpdate()
+
+Unmounting
+componentWillUnmount()
 
 4. Define stateful logic.
+Stateful logic in any code  is stateful logicif it is using states except that is using hooks;Hooks is like a perk that we are adding to the component.
+
 
 5. Describe how to test a React component with React Testing Library.
+
+The React Testing Library is a very light-weight solution for testing React components. It provides light utility functions on top of react-dom and react-dom/test-utils, in a way that encourages better testing practices. Its primary guiding principle is:
+The more your tests resemble the way your software is used, the more confidence they can give you.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
