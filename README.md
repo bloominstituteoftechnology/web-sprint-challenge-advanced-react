@@ -30,9 +30,15 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+Extend component and create constructor/super that passes in props. From here you will be able to utilize this state.
+
 2. Describe the different phases of the component lifecycle.
 
+Mounting, Updating, and unmounting.
+
 3. Demonstrate an understanding of class component lifecycle methods.
+
+ Mounting is the initial access to the component. Updating is updating the new state. Unmounting is removing the component.
 
 4. Define stateful logic.
 
