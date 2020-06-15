@@ -30,11 +30,47 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+1. for creating class components; just define a class that extends Component and has a render function. One should pass a constructor method and super since it  refers to the parent class constructor
+
 2. Describe the different phases of the component lifecycle.
+
+2. Mounting: Mounting means putting elements into the DOM.
+   Updating: A component is updated whenever there is a change in the component's state or props.
+   Unmounting: Unmounting is when a component is removed from the DOM.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+3.       Mounting Methods:
+
+-constructor() : The first method called, and it is the  place to set up the initial state and other initial values.
+
+-getDerivedStateFromProps() : This method is called right before rendering the elements in the DOM. is the natural place to set the state object based on the initial props.
+
+-render(): This method is required , and is the method that actual outputs HTML to the DOM.
+
+-componentDidMount(): this method is called after the component is rendered.
+This is where you run statements that requires that the component is already placed in the DOM.
+
+        Updating Methods:
+
+-getDerivedStateFromProps(): This is the first method that is called when a component gets updated, This is still the natural place to set the state object based on the initial props.
+
+-shouldComponentUpdate(): This method you can return a Boolean value that specifies whether React should continue with the rendering or not.
+The default value is true.
+
+-render(): This method is of course called when a component gets updated, it has to re-render the HTML to the DOM, with the new changes.
+
+-getSnapshotBeforeUpdate(): This method you have access to the props and state before the update, meaning that even after the update, you can check what the values were before the update.
+
+-componentDidUpdate(): This method is called after the component is updated in the DOM.
+
+         Unmounting Methods:
+
+-componentWillUnmount(): This  method is called when the component is about to be removed from the DOM.
+
 4. Define stateful logic.
+
+Stateful logic is any code that uses state, is the behaviour created with the use of one or more hooks
 
 5. Describe how to test a React component with React Testing Library.
 
