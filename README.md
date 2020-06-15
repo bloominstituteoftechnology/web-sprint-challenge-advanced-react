@@ -42,7 +42,11 @@ Mounting, Updating, and unmounting.
 
 4. Define stateful logic.
 
+Stateful logic is determining the current state of a component. State means the current state/value of a component. The logic determines what that value is.
+
 5. Describe how to test a React component with React Testing Library.
+
+Use the react testing library to write specific commands to test certain fields and components in your app. You perform an action on that component and test the output. Determine whether it is desired or not.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
