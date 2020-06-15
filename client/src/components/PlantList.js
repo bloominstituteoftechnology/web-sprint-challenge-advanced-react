@@ -27,24 +27,6 @@ export default class PlantList extends Component {
     this.setState({ ...this.state, user: e.target.value });
   };
 
-  // getUser = (e) => {
-  //   e.preventDefault();
-  //   axios
-
-  //     .get(`https://api.github.com/users/${this.state.user}`)
-
-  //     .then((res) => {
-  //       this.setState({ ...this.state, plants: res.data });
-  //       // console.log(res);
-  //     })
-  //     .catch((err) => console.log(err));
-
-  // console.log("dk->" + this.state);
-  // };
-  // when the component mounts:
-  //   - fetch data from the server endpoint - http://localhost:3333/plants
-  //   - set the returned plants plantsay to this.state.plants
-
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
   render() {
     return (
