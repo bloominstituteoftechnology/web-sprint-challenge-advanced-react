@@ -29,14 +29,20 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+create a contructor function and set state
 
 2. Describe the different phases of the component lifecycle.
+componet did mount is when its first created
+comonet did update is when the componet updates due to state change
+compentet will didmount is when the component "dies"
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
 4. Define stateful logic.
+any code that changes with state
 
-5. Describe how to test a React component with React Testing Library.
+5. Describe how to test a React component with React Testing Library
+make sure the output is what you ecxpect it to be
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -53,7 +59,7 @@ _This project uses a local server for the data fetching. You will need three sep
 _Please follow the setup instructions closely so that you can get everything up and running smoothly_
 
 **Basic set up**
-
+cd
 - [ ] Create a forked copy of this project
 - [ ] Add your team lead as collaborator on Github
 - [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
@@ -61,10 +67,7 @@ _Please follow the setup instructions closely so that you can get everything up 
 
 **Starting the server**
 
-- [ ] Run `npm install` to download dependencies for the server.
-- [ ] Run the server using `npm start`.
-- [ ] Open a new browser tab and navigate to `http://localhost:3333/plants` - if you see a JSON object with plants data, then you know the server is running 👍
-
+- [ ]git add .
 **Starting the React app**
 
 - [ ] In a separate terminal cd into the `client` folder and run `npm install` to download dependencies.
