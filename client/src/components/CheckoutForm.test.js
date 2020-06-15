@@ -12,4 +12,8 @@ test("form header renders", () => {
   getByText(/Plant-list/i);
 });
 
-test("form shows success message on submit with form details", () => {});
+test("form shows success message on submit with form details", () => {
+  const { getByTestId } = render(<CheckoutForm />);
+
+  getByTestId(/successmessage/i);
+});
