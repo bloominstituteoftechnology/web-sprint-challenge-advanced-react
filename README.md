@@ -30,13 +30,41 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+	create the class component then create state = {yourState} then instead of using the return() for your component return you use the render function.
+
 2. Describe the different phases of the component lifecycle.
+
+	first phase is initialization: where the component is called and props are given. Usually done in the constructor of the component.
+
+	second phase is the mounting; [componentWillMount() | componentDidMount()] this is the phase of the lifecycle where the initilization is completed and the component is mounted on the DOM and rendered on the webpage.
+		--> if componentDidMount() function is called React will run the code inside this function once the component is rendered for the first time.
+		--> if componentWillMount() is called React will run the code inside the function right before the render() function is called.
+
+	third phase is the updation phase. This happens whenever the DOM needs to be updated by using the one of these functions:
+		---> componentWillRecieveProps() function is invoked before a mounted component gets its props reassigned. 
+		---> setState function() used to update the state of the component.
+		---> shouldComponentUpdate() this is executed before rendering a component that has already been mounted when props or state are being changed. 
+		---> componentWillUpdate() is invoked before the component is rerendered. 
+		---> componentDidUpdate() is invoked once after the component is rerendered.
+
+	the final phase is the Unmounting phase and has only one function:
+		--->componentWillUnmount() is rendered before the component has completed its lifecycle and is removed.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+	opps, see above haha.
+
 4. Define stateful logic.
 
+	stateful logic is any code that is using state -- in the case of custom hooks it is a way to use the state to create reusable logic throughout your code.
+
 5. Describe how to test a React component with React Testing Library.
+
+	arrange --> grab the thing you want to test
+
+	act --> do something to the thing you want to test -- if a form: insert text | press button -- if a function -- invoke the function with the data you arranged
+
+	assert --> test that you are seeing the item and or that its expect() value is correct
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 

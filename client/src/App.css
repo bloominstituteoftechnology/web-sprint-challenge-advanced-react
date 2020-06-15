@@ -1,8 +1,8 @@
 body {
-  background: #0e101c;
+  background: #5f6270;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
 }
 
 .container {
@@ -124,10 +124,11 @@ p {
   margin-top: 32px;
   padding: 24px;
   background-color: #cf0;
+  color:black;
 }
 
 form {
-  background: #0e101c;
+  /*background: #0e101c;*/
   max-width: 400px;
   margin: 0 auto;
 }
@@ -250,4 +251,41 @@ pre {
 .active {
   color: #0e101c;
   border-bottom: 2px solid !important;
+}
+
+.dark-mode {
+  color: #fff;
+  background-color: #212224;
+
+}
+
+
+.dark-mode__toggle {
+  background: papayawhip;
+  border-radius: 50px;
+  border: 1px solid black;
+  height: 20px;
+  position: relative;
+  width: 40px;
+  margin: auto 10px auto auto ;
+}
+
+.dark-mode__toggle-on{
+  background-color: #ec5990;
+}
+
+.toggle {
+  background: #ccff00;
+  border-radius: 50px;
+  height: 18px;
+  left: 0;
+  position: absolute;
+  transition: 0.2s;
+  width: 20px;
+  border: .5px solid black;
+}
+
+.toggled {
+  left: 18px;
+
 }
