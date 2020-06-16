@@ -2,6 +2,9 @@ import React, { Component } from "react";
 
 import axios from "axios";
 
+export const showTitle = (plant) => {
+  return plant.name;
+};
 export default class PlantList extends Component {
   // add state with a property called "plants" -
   //  initialize as an empty plantsay
