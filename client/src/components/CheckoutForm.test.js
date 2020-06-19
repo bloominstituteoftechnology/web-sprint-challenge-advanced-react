@@ -11,4 +11,10 @@ test("form header renders", () => {
   getByText(/Checkout form/i);
 });
 
-test("form shows success message on submit with form details", () => {});
+test("form shows success message on submit with form details", () => {
+  const { getByTestId } = render(<CheckoutForm />);
+
+  const button = getByTestId(/button/i);
+  fireEvent.click(button);
+  getByTestId(/successmessage/i);
+});
