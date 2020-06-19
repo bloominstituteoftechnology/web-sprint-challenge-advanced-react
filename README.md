@@ -41,13 +41,13 @@ React lifestyle phases are
 
 
 3. Demonstrate an understanding of class component lifecycle methods.
-Mounting Phase
+Mounting Phase: render method is invoked and componentDidMount gets called as well
 componentDidMount()
 
-Updating:
+Updating: In this phase we are updating compnent data.
 componentDidUpdate()
 
-Unmounting
+Unmounting / Demounting Phase: this phase includes removing the component from the screen
 componentWillUnmount()
 
 4. Define stateful logic.

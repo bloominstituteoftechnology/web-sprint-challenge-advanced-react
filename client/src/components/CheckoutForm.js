@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-
+import React from "react";
+import Useform from "../hooks/useForm";
+//import {useForm} from
 const initialValue = {
   firstName: "",
   lastName: "",
@@ -14,7 +15,7 @@ const initialValue = {
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
 const CheckoutForm = (props) => {
-  const [values, handleChanges, handleSubmit, showSuccessMessage] = useState(
+  const [values, handleChanges, handleSubmit, showSuccessMessage] = Useform(
     initialValue
   );
 
@@ -58,7 +59,7 @@ const CheckoutForm = (props) => {
           Zip:
           <input name="zip" value={values.zip} onChange={handleChanges} />
         </label>
-        <button>Checkout</button>
+        <button data-testid="button">Checkout</button>
       </form>
 
       {showSuccessMessage && (

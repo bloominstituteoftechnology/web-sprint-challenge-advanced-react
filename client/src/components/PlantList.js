@@ -2,8 +2,9 @@ import React, { Component } from "react";
 
 import axios from "axios";
 
-export const showTitle = (plant) => {
-  return plant.name;
+export const showTitle = (plants) => {
+  console.warn(plants.name);
+  return plants.name;
 };
 export default class PlantList extends Component {
   // add state with a property called "plants" -
@@ -38,7 +39,9 @@ export default class PlantList extends Component {
           <div className="plant-card" key={plant.id}>
             <img className="plant-image" src={plant.img} alt={plant.name} />
             <div className="plant-details">
-              <h2 className="plant-name">{plant.name}</h2>
+              <h2 className="plant-name" data-testid="h2">
+                {plant.name}
+              </h2>
               <p className="plant-scientific-name">{plant.scientificName}</p>
               <p>{plant.description}</p>
               <div className="plant-bottom-row">
