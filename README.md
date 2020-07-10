@@ -29,14 +29,51 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+  class Name extends Component {
+    constructor() {
+      super()
+      this.state = {
+        something: []
+      }
+    }
+    render() {
+      <something something={this.state.something} />
+    }
+  }
 
 2. Describe the different phases of the component lifecycle.
+  1)`Mounting`(birth)- component is rendered and `componentDidMount` is called
+  2)`Updating`(growth)- this is when changes inside the component take place and we can force the component to rerender by calling a method like `shouldComponentUpdate`
+  3)`Unmounting`(death) this is when component is not being used and removed from screen so we clean up with calling `componentWillUnmount`
 
 3. Demonstrate an understanding of class component lifecycle methods.
-
+  class Name extends React.Component {
+    constructor(props) {
+      super(props);
+      this.something = something();
+    }
+    componentDidMount(...) {
+      //make sure that the it is being rendered
+      //to figure out the changes that need to take place
+    }
+    componentDidUpdate(...) {
+      // now perform those changes
+    }
+    componentWillUnmount(...){
+      // to clean up after
+    }
+    render() { // remember to render a fresh one for each use here
+      return (
+        //return something here 
+      );
+    }
+  }
 4. Define stateful logic.
+  As the name suggests stateful logic is usually used to handle states before a component is displayed. They are built non visual so that they can be used repeatedly throughout applications. 
 
 5. Describe how to test a React component with React Testing Library.
+  React Testing Library and the dependencies it needs are added automatically if we created our app with CRA. If not `RTL` and `Jest` need to be installed. Testing is done in files ending with `.test.js` `.spec.js` and the command to run and watch tests by default is `npm test`. In our test file we will start by importing React, and render, screen, fireEvent, etc as per need from RTL and we will also import the component that we want to test.
+  We will then start by `test('message of the test', (callback) => {test steps will go here})`. For the test steps we will use a combination of methods provided by RTL and Jest to capture, trigger, assert.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
