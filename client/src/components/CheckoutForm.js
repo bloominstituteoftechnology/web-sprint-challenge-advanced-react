@@ -8,6 +8,7 @@ import useForm from '../hooks/useForm'
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
 const CheckoutForm = (props) => {
+
   const [handleChanges, handleSubmit , values, showSuccessMessage] = useForm();
 
   return (
@@ -50,7 +51,7 @@ const CheckoutForm = (props) => {
           Zip:
           <input name="zip" value={values.zip} onChange={handleChanges} />
         </label>
-        <button>Checkout</button>
+        <button data-testid='submit'>Checkout</button>
       </form>
 
       {showSuccessMessage && (
