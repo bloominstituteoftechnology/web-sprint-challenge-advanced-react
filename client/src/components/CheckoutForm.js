@@ -31,6 +31,8 @@ const CheckoutForm = (props) => {
           First Name:
           <input
             name="firstName"
+            placeholder="firstName"
+            type='text'
             value={values.firstName}
             onChange={handleChanges}
           />
@@ -39,6 +41,8 @@ const CheckoutForm = (props) => {
           Last Name:
           <input
             name="lastName"
+            placeholder="lastName"
+            type='text'
             value={values.lastName}
             onChange={handleChanges}
           />
@@ -47,23 +51,25 @@ const CheckoutForm = (props) => {
           Address:
           <input
             name="address"
+            placeholder="address"
+            type='text'
             value={values.address}
             onChange={handleChanges}
           />
         </label>
         <label>
           City:
-          <input name="city" value={values.city} onChange={handleChanges} />
+          <input name="city" placeholder="city" type='text' value={values.city} onChange={handleChanges} />
         </label>
         <label>
           State:
-          <input name="state" value={values.state} onChange={handleChanges} />
+          <input name="state" placeholder="state" type='text' value={values.state} onChange={handleChanges} />
         </label>
         <label>
           Zip:
-          <input name="zip" value={values.zip} onChange={handleChanges} />
+          <input name="zip" placeholder="zip" type='text' value={values.zip} onChange={handleChanges} />
         </label>
-        <button>Checkout</button>
+        <button type='controlled'>Checkout</button>
       </form>
 
       {showSuccessMessage && (
