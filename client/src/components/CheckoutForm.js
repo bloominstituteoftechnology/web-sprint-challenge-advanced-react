@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useForm } from '../hooks/useForm'
 
 const initialValue = {
   firstName: "",
@@ -15,11 +16,7 @@ const initialValue = {
 
 const CheckoutForm = (props) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [values, setValues] = useState(initialValue);
-
-  const handleChanges = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+  const [plantValues, handleChanges] = useForm(initialValue);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,41 +27,56 @@ const CheckoutForm = (props) => {
     <>
       <form onSubmit={handleSubmit}>
         <h2>Checkout Form</h2>
-        <label>
+        <label htmlFor='firstName'>
           First Name:
           <input
+            id='firstName'
             name="firstName"
-            value={values.firstName}
+            value={plantValues.firstName}
             onChange={handleChanges}
           />
         </label>
-        <label>
+        <label htmlFor='lastName'>
           Last Name:
           <input
+            id='lastName'
             name="lastName"
-            value={values.lastName}
+            value={plantValues.lastName}
             onChange={handleChanges}
           />
         </label>
-        <label>
+        <label htmlFor='address'>
           Address:
           <input
+            id='address'
             name="address"
-            value={values.address}
+            value={plantValues.address}
             onChange={handleChanges}
           />
         </label>
-        <label>
+        <label htmlFor='city'>
           City:
-          <input name="city" value={values.city} onChange={handleChanges} />
+          <input
+            id='city' 
+          name="city" 
+          value={plantValues.city} 
+          onChange={handleChanges} />
         </label>
-        <label>
+        <label htmlFor='state'>
           State:
-          <input name="state" value={values.state} onChange={handleChanges} />
+          <input
+            id='state' 
+          name="state" 
+          value={plantValues.state} 
+          onChange={handleChanges} />
         </label>
-        <label>
+        <label htmlFor='zip'>
           Zip:
-          <input name="zip" value={values.zip} onChange={handleChanges} />
+          <input
+            id='zip'
+          name="zip" 
+          value={plantValues.zip} 
+          onChange={handleChanges} />
         </label>
         <button>Checkout</button>
       </form>
@@ -72,17 +84,17 @@ const CheckoutForm = (props) => {
       {showSuccessMessage && (
         <div className="success-message" data-testid="successMessage">
           <p>
-            You have ordered some plants! Woo-hoo! <span role="img">🎉</span>
+            You have ordered some plants! Woo-hoo! <span role="img" aria-label='Party'>🎉</span>
           </p>
           <p>Your new green friends will be shipped to:</p>
           <br />
           <br />
           <p>
-            {values.firstName} {values.lastName}
+            {plantValues.firstName} {plantValues.lastName}
           </p>
-          <p>{values.address}</p>
+          <p>{plantValues.address}</p>
           <p>
-            {values.city}, {values.state} {values.zip}
+            {plantValues.city}, {plantValues.state} {plantValues.zip}
           </p>
         </div>
       )}
