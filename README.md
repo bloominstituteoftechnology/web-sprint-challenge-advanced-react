@@ -28,15 +28,54 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. Explain how to build stateful class components.
+1- Explain how to build stateful class components.
 
-2. Describe the different phases of the component lifecycle.
+	So you have stateful and stateless components, the difference is that one has state and the other doesn't. Stateful components are keeping track of changing data, while stateless componenets print out what is given to them through via props or they will always render
 
-3. Demonstrate an understanding of class component lifecycle methods.
+2- Describe the different phases of the component lifecycle.
 
-4. Define stateful logic.
+	mounting - is the birth of the app. occurs wehn the component is first added to the 		Dom initialization and setup
 
-5. Describe how to test a React component with React Testing Library.
+	render - occurs when the component renders for the 1st time and when it re-renders 		due to changes in props and state. (Render phase doesn't change what you see o		n the page)
+
+	commit -takes the ouput from render and updates the DOM to match
+
+	Unmount -happens when the component is being REMOVED from the DOM
+
+
+
+3- Demonstrate an understanding of class component lifecycle methods.
+
+	Each component has several "lifecycle methods" that you can override to run code at 	particular times to process. 
+	
+	mounting - these methods are called in the following order when an instance of a 		   component is being created and inserted into the DOM
+		* constructor()
+		* render()
+		* componentDidMount()
+
+	updating - an update can be caused by changes to props or state. These methods are 		   called in the following order when a component is rendered
+		* render()
+		* componentDidMount()
+
+	unmounting - this method is called when a component is being removed from the DOM
+		* componentWillUnmount()
+
+	error handling - these methods are called when there is an error during rendering, 		                 in a lifecycle method, or in the constructor of any child                          component.
+		* componentDidCatch()
+
+
+4- Define stateful logic.
+
+	stateful logic is any code that uses state, but in case of hooks you would define it 		as a behaviour created with the use of one or more hooks. 
+
+
+
+5- Describe how to test a React component with React Testing Library.
+
+	Unit testing is a level of software testing where individual units/components of a 	software are tested. In the React world this means testing an individual React 	Component or pure functions
+
+
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
