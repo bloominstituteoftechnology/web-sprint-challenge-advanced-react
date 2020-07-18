@@ -30,13 +30,31 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+You need to create a class using class Name extends React.Componenet.  You can then use the constructor with this.state or just use state ={}
+
 2. Describe the different phases of the component lifecycle.
+
+Describe the different phases of the component lifecycle.
+Mounting - this is where it calls on your constructor/renders/componentdidmount
+Updating - this is called when there is a prop/state change for a re-render
+Unmounting - when the component is removed from the dom
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+render - responsible for display
+componentDidMount- called after mount and good for async calls/server
+componentDidUpdate - can be used to update data with comparison to current props....can cause a loop if not used with conditional
+
+
 4. Define stateful logic.
 
+The use of state in code to make decisions for display/props
+
 5. Describe how to test a React component with React Testing Library.
+
+Arrange - set it your code to be testing by grabbing dom elements
+Act - call a method or function on dom element 
+Assert - view returned results of the function call
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
