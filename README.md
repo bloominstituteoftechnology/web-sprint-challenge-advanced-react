@@ -30,13 +30,31 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+first you need to specify the component as a class: 'class Nav',
+secondly, you link it to the parent: 'class Nav extends React.Component'
+Third, you access the props using the constructor() and super()
+Fourth, you set it to state inside the constructor(), and render() the needed return.
+Finally you export your component: 'export default Nav;'
+
 2. Describe the different phases of the component lifecycle.
+
+#1: Mounting or rendering the data
+#2: Updating or changing the state of the data
+#3: Unmounting or taking the data out of the DOM
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+#1: constructor= gives us access to props from the parent and allows us to set initial states of the data
+#2: render= allows react to check the DOM vs virtual DOM for changes in state and renders any changes made
+#3: componentDidMount= can be used as if it were the useEffect hook for api requests and setting arrays to state, renders last in the Mounting phase
+
 4. Define stateful logic.
 
+Stateful logic is any logic built into a component that works behind the scenes that usually uses state to format data before it is displayed.
+
 5. Describe how to test a React component with React Testing Library.
+
+Using the triple A method: arrange, act, and assert, we locate the element to be tested(arrang),then code in an event as the test(act), finally we (assert) or state what we expect the element to do.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
