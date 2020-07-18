@@ -45,7 +45,8 @@ function App() {
               </NavLink>
             </li>
           </ul>
-          <button onClick={setLightMode}>Light</button>
+         
+          <button style={{ marginBottom: "2.25%"}} onClick={setLightMode}>Light</button>
         </nav>
         <Route
           exact
