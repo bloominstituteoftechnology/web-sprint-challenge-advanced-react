@@ -23,9 +23,12 @@ export default class PlantList extends Component {
     axios.get('http://localhost:3333/plants')
     .then(res => {
       console.log(res.data)
-      this.setState({players: res.data})
-      console.log('current state: ',this.state.players) // making sure that setState logs
+      this.setState({plants: res.data.plantsData})
+      console.log('current state: ',this.state.plants) // making sure that setState logs
       console.log('lifecycle event -- componentDidMount')  //lifecycle -- componentDidMount
+    })
+    .catch(err => {
+      console.log(err)
     })
   }
 
