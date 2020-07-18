@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 
 export default class PlantList extends Component {
   constructor() {
@@ -22,7 +21,7 @@ export default class PlantList extends Component {
   render() {
     return (
       <main className="plant-list">
-        {/* {this.state?.plants?.map((plant) => (
+        {this.state?.plants.plantsData?.map((plant) => (
           <div className="plant-card" key={plant.id}>
             <img className="plant-image" src={plant.img} alt={plant.name} />
             <div className="plant-details">
@@ -42,7 +41,7 @@ export default class PlantList extends Component {
               </button>
             </div>
           </div>
-        ))} */}
+        ))}
       </main>
     );
   }
