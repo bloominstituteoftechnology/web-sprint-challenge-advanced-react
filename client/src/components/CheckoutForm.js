@@ -22,13 +22,24 @@ const CheckoutForm = (props) => {
   //   setValues({ ...values, [e.target.name]: e.target.value });
   // };
 
-  const [showSuccessMessage, setShowSuccessMessage, handleChange] = useForm(false);
-  const [values, handleChanges] = useForm(initialValue);
-  
+  const [showSuccessMessage, setShowSuccessMessage] = useForm(false);
+  const[firstName,setF,handleFname] = useForm()
+  const[lastName,setL,handlelastname] = useForm()
+  const[address,setA,handleaddress] = useForm()
+  const[city,setC,handlecity] = useForm()
+  const[state,setS,handlestate] = useForm()
+  const[zip,setZ,handlezip] = useForm()
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setShowSuccessMessage(true);
+    setL('')
+    setF('')
+    setA('')
+    setC('')
+    setS('')
+    setZ('')
+
   };
 
   return (
@@ -39,42 +50,42 @@ const CheckoutForm = (props) => {
           First Name:
           <input
             name="firstName"
-            value={values.firstName}
-            onChange={handleChanges}
+            value={firstName}
+            onChange={e => handleFname(e.target.value)}
           />
         </label>
         <label>
           Last Name:
           <input
             name="lastName"
-            value={values.lastName}
-            onChange={handleChanges}
+            value={lastName}
+            onChange={e => handlelastname(e.target.value)}
           />
         </label>
         <label>
           Address:
           <input
             name="address"
-            value={values.address}
-            onChange={handleChanges}
+            value={address}
+            onChange={e => handleaddress(e.target.value)}
           />
         </label>
         <label>
           City:
-          <input name="city" value={values.city} onChange={handleChanges} />
+          <input name="city" value={city} onChange={e => handlecity(e.target.value)} />
         </label>
         <label>
           State:
-          <input name="state" value={values.state} onChange={handleChanges} />
+          <input name="state" value={state} onChange={e => handlestate(e.target.value)} />
         </label>
         <label>
           Zip:
-          <input name="zip" value={values.zip} onChange={handleChanges} />
+          <input name="zip" value={zip} onChange={e => handlezip(e.target.value)} />
         </label>
         <button>Checkout</button>
-      </form>
+      </form> 
 
-      {showSuccessMessage && (
+      {/* {showSuccessMessage && (
         <div className="success-message" data-testid="successMessage">
           <p>
             You have ordered some plants! Woo-hoo! <span role="img">🎉</span>
@@ -90,7 +101,7 @@ const CheckoutForm = (props) => {
             {values.city}, {values.state} {values.zip}
           </p>
         </div>
-      )}
+      )} */}
     </>
   );
 };
