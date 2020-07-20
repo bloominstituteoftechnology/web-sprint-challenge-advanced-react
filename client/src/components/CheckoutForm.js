@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useForm } from '../hooks/useForm'
 
 const initialValue = {
   firstName: "",
@@ -23,6 +24,7 @@ const CheckoutForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    localStorage.setItem("saveValues", JSON.stringify(values))
     setShowSuccessMessage(true);
   };
 
