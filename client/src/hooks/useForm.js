@@ -2,10 +2,25 @@
 import {useState} from 'react'
 
 
-export const useForm = initialValue => {
-    const [value, setValue] = useState(initialValue);
-    const handleChanges = updatedValue => {
-      setValue(updatedValue);
+export const useForm = (initialValue) => {
+    const [value, setValue] = useState(initialValue)
+          console.log(value)
+    const handleChanges = e => {
+        
+      setValue({
+          ...value,
+          [e.target.name]: e.target.value
+      });
     };
-    return [value, setValue, handleChanges];
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setValue({
+            ...value,
+        showSuccessMessage:true    
+        })
+        ;
+
+      };
+    return [value,handleSubmit, handleChanges];
   };
