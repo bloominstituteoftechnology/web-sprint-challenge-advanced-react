@@ -14,7 +14,7 @@ const Nav = () => {
         <div className='navbar' >
     
             <h1 className='nav-title' >
-                Men's Soccer Players - World Ranking
+                Click me to switch 
             </h1>
             <button onClick={toggle} >toggle</button>
         </div>
