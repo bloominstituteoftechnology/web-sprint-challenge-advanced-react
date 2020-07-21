@@ -30,13 +30,25 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+  - You must have a class, a constructor, and a render. For state, you put a this.state object (this.state = {}) inside of your constructor. You can then pass state down via props and change state with this.setState().
+
 2. Describe the different phases of the component lifecycle.
+
+  - The render phase is first, when our constructor runs, determines if it should update, and renders.
+  - Next, is the pre-commit phase, which just happens before any updates are made.
+  - Then, we have the commit phase, where whatever changes we want to make are made. This includes     unmounting.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+  - constructor runs, then render is initially run, next the component mounts (componentDidMount(){}). Anytime there is a change, the component will recognize that, render the changes, and report them (componentDidUpdate(){}). When the component is no longer needed, it will unmount (componentWillUnmount(){}). 
+
 4. Define stateful logic.
 
+  - any kind of logic dealing with state (handleSubmit, handleChanges, etc.). 
+
 5. Describe how to test a React component with React Testing Library.
+
+  - we have to target whatever we are looking for -- this can be by id, text, etc. If we have a button, we can fire that, if we have a function we want to test, we can do that as well. This is all done in a .test.js file.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
