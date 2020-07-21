@@ -3,16 +3,29 @@ import { useEffect } from 'react';
 import { useLocalStorage} from '../hooks/useLocalStorage';
 
 
-const useForm = (props) => {
-    const [showSuccessMessage, setShowSuccessMessage] = useLocalStorage(initialValue);
-    
+export const useForm = (key, initialValue, callback) => {
+	const [values, setValues] = useLocalStorage(key, {
+		...initialValue,
+	});
 
-    useEffect(() => {
-        if (showSuccessMessage  === true) {
-            document.querySelector('body').classList.add('success-message')
-        }
-        else {
-            document.querySelector('body').classList.remove('success-message')
-        }
-    }, [])
-}
+	const handleChanges = (e) => {
+		setValues({
+			...values,
+			[e.target.name]: e.target.value,
+		});
+	};
+
+	// const clearForm = (e) => {
+	// 	e.preventDefault();
+	// 	setValues({
+	// 		...initialValue,
+	// 	});
+	// };
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		callback();
+	};
+
+	return [values, handleChanges, handleSubmit];
+};
