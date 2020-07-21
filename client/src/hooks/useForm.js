@@ -1,8 +1,18 @@
 // write your custom hook here to control your checkout form
 import { useState } from "react";
 
-export const useForm = (initialValue, boolean) => {
-  const [showSuccessMessage, setShowSuccessMessage] = useState(boolean);
+// should this be in CheckoutForm? works same, but should it be more easily visible?
+const initialValue = {
+  firstName: "",
+  lastName: "",
+  address: "",
+  city: "",
+  state: "",
+  zip: "",
+};
+
+export const useForm = () => {
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [values, setValues] = useState(initialValue);
 
   const handleChanges = (e) => {

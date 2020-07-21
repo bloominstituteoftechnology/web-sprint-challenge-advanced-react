@@ -11,15 +11,9 @@ test("form header renders", () => {
 
 test("form shows success message on submit with form details", () => {
   const { getByText, getByLabelText, getByTestId } = render(<CheckoutForm />);
-  const inputSetup = (label) => {
-    const input = getByLabelText(label)
-    return {
-      input,
-    }
-  }
 
   const handleInput = (label, inputValue) => {
-    const { input } = inputSetup(label)
+    const input = getByLabelText(label)
     fireEvent.change(input, {target: {value: inputValue}})
   };
 
