@@ -251,3 +251,36 @@ pre {
   color: #0e101c;
   border-bottom: 2px solid !important;
 }
+
+.dark-mode__toggle {
+  background: papayawhip;
+  border-radius: 50px;
+  border: 1px solid black;
+  height: 20px;
+  position: relative;
+  width: 40px;
+}
+
+.toggle {
+  background: #f68819;
+  border-radius: 50px;
+  height: 18px;
+  left: 0;
+  position: absolute;
+  transition: 0.2s;
+  width: 20px;
+}
+
+.toggled {
+  left: 18px;
+}
+
+.dark-mode {
+  color: #fff;
+  background-color: #9ad6fb;
+
+  .navbar {
+    background-color: #1F2022;
+    border: none;
+  }
+}
