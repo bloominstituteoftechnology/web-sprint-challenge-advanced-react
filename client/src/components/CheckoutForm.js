@@ -44,7 +44,7 @@ const CheckoutForm = () => {
   // 
 
   return (
-    <div className= "theForm">
+    <div className="theForm">
       <form onSubmit={handleSubmit}>
         <h2>Checkout Form</h2>
         <label>
