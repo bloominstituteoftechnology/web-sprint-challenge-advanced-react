@@ -6,7 +6,7 @@ import CheckoutForm from "./CheckoutForm";
 // Write up the two tests here and make sure they are testing what the title shows
 
 test("form header renders", () => {
-    const { getByText, debug } = render(<CheckoutForm />);
+    const { getByText } = render(<CheckoutForm />);
     const h2 = getByText(/checkout form/i);
     expect(h2).toBeInTheDocument();
 });
