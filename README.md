@@ -30,13 +30,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+Stateful class component will nest all of the components and hold state at this level. While inputs from users will usually come through nested components and api requests through the top level component, it is in the top level component that will render all the data held in state from the components and api request.
+
 2. Describe the different phases of the component lifecycle.
+
+The mounting phase is when you set your initial data to state, the updating phase is when you update the component's state with new data and the unmounting phase is when the component has finished and is taken off the screen.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+An example of a component lifecycle can be shown through our PlantList where we initialize the component with state, update the state with an api request, render the information and then eventually the unmounting when the updated state is rendered.
+
 4. Define stateful logic.
 
+Stateful logic is when you have a custom hook that can serve a specific purpose and be reused without holding state to the different instances in which the hook is used.
+
 5. Describe how to test a React component with React Testing Library.
+
+You test a react component by rendering the data through the react testing library in which you have several methods to test functionality or if an element is present by using methods to either find specific elements or input data and seeing if that data has rendered. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
