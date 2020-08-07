@@ -9,8 +9,7 @@ test("form header renders", () => {
     const { getByText, debug } = render(<CheckoutForm />);
     const h2 = getByText(/checkout form/i);
     expect(h2).toBeInTheDocument();
-    // debug();
-  });
+});
 
 test("form shows success message on submit with form details", async () => {
     const { getByLabelText, getByText, getByTestId, debug } = render(<CheckoutForm />);
