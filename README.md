@@ -29,15 +29,15 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
-
+Stateless components doesn’t has a state object. The stateless component is written as a function.
 2. Describe the different phases of the component lifecycle.
-
+Mounting, Updating, and Unmounting. Mounting means putting elements into the DOM. Updating means changing the element. Unmounting means that component is removed from the DOM.
 3. Demonstrate an understanding of class component lifecycle methods.
-
+The three React lifestyle phases are 1) Birth/Mounting, 2) Growth/Updating, and 3) Death/Unmounting.
 4. Define stateful logic.
-
+Stateful logic is any code that uses state.
 5. Describe how to test a React component with React Testing Library.
-
+We need install it, find what we need to test and test it.
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
 ## Instructions
