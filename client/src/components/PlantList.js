@@ -1,11 +1,55 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+
+const allPlants=[]
+
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
 
+  constructor() {
+    super();
+    this.state = {
+      plants:[]
+    };
+  }
+
   // when the component mounts:
   //   - fetch data from the server endpoint - http://localhost:3333/plants
+
+componentDidMount() {
+
+  allPlants.map(u=>{
+
+  axios.get(`http://localhost:3333/plants`)
+  .then(res => {
+      
+    var plant={
+      
+      name:res.plantsData.name,
+      id:res.plantsData.id,
+      scientificName:res.plantsData.scientificName,
+      difficulty:res.plantsData.difficulty,
+      sizes:res.plantsData.sizes,
+      watering:res.plantsData.watering,
+      description:res.plantsData.description,
+      price:res.plantsData.price,
+      img:res.plantsData.img,
+    }
+   
+
+    this.setState({
+    plants: [...this.state.plants, u.plant]
+    })
+    
+  })
+  .catch(err => {console.log(err)})
+})
+console.log('111', this.state.plants)
+}
+
+
+
   //   - set the returned plants array to this.state.plants
 
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
