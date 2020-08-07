@@ -34,7 +34,13 @@ Stateful components, be it function or class, are created by giving the componen
 
 2. Describe the different phases of the component lifecycle.
 
+Mounting Updating Unmounting
+
+Mounting is the birth of the component, it's initial instance. In this phase rendering of some JSX will happen, data will be requested, and only after this first stage is over does that data come back. It's arrival causes the component to shift into the updating life stage, where we can do specific actions to track user interaction and submissions. When the component is no longer required it will unmount, entering the unmounting stage where we can clean up after our component. 
+
 3. Demonstrate an understanding of class component lifecycle methods.
+
+Certain events occur at certain times for a component - time is needed to convert the JSX, create and instance of the component, fetch an API, and render content to the screen. We can take advantage of these windows to do tasks that relate to the state and functionality of the component. 
 
 4. Define stateful logic.
 
@@ -117,8 +123,8 @@ _Note: You built a useForm hook in the guided project this week. You will probab
 
 #### Testing the Checkout Form
 
-- [ ] Build out the tests listed in `CheckoutForm.test.js`. You will need to make sure they are testing what the test title implies they are testing
-- [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working
+- [x] Build out the tests listed in `CheckoutForm.test.js`. You will need to make sure they are testing what the test title implies they are testing
+- [x] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working
 
 <hr/>
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.

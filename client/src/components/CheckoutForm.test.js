@@ -2,6 +2,7 @@ import React from "react";
 import { render, getByLabelText, fireEvent, queryAllByLabelText, getByTestId } from "@testing-library/react";
 import userEvent from '@testing-library/user-event';
 import CheckoutForm from "./CheckoutForm";
+import ShoppingCart from "./ShoppingCart"; 
 
 // Write up the two tests here and make sure they are testing what the title shows
 
@@ -48,4 +49,29 @@ test("form shows success message on submit with form details", async() => {
     // click the button 
     await userEvent.click(checkoutBtn); 
     expect(await getByTestId("successMessage"));
+});
+
+const plants = [
+    {id: 1,
+    name: 'Peperomia Rosso',
+    price: 21,
+    img: 'data.plantsData[0].img'
+    },
+    {id: 2,
+    name: 'Snake Plant', 
+    price: 18,
+    img: 'data.plantsData[0].img'
+    }, 
+    {id: 3,
+    name: 'ZZ Plant', 
+    price: 18,
+    img: 'data.plantsData[0].img'
+    }]; 
+
+test("Shopping cart shows selected plants", async() => {
+    const { getByTestId } = render(<ShoppingCart cart={plants} />);
+    
+    // get plant deets 
+   const plant = getByTestId('plant-name');
+   expect(plant).toBeInTheDocument();
 });

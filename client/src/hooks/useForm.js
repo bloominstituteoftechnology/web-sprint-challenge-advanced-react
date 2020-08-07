@@ -7,10 +7,10 @@ export const useForm = (initialValue) => {
 
     // handle changes 
     const handleChanges = e => {
-        const { name, value } = e.target.value; 
+        const { name, value } = e.target; 
         setValues({
             ...formValues, 
-            [e.target.name]: e.target.value
+            [name]: value
         });
     };
 
