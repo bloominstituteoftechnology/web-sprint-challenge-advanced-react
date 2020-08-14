@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import  useForm from "../hooks/useForm";
 
 const initialValue = {
   firstName: "",
@@ -13,18 +14,32 @@ const initialValue = {
 // Build out the logic needed for a form custom hook (see the useForm.js file)
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
-const CheckoutForm = (props) => {
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [values, setValues] = useState(initialValue);
+const CheckoutForm = () => {
+  // const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  // const [values, setValues] = useState(initialValue);
 
-  const handleChanges = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+  // const handleChanges = (e) => {
+  //   setValues({ ...values, [e.target.name]: e.target.value });
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setShowSuccessMessage(true);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setShowSuccessMessage(true);
+  // };
+
+  //add showSuccessMessage to use form
+  //omg import useForm from the folder not from react
+  //set everything to a const and set it to use form
+  //are props needed in this? what happends if i take it out?
+  // why is it submitting but no data showing up????
+  
+
+ const [values, handleChanges, handleSubmit, showSuccessMessage ] = useForm(initialValue);
+
+//  const handleSubmit = (event) => {
+//   event.preventDefault()
+//   setShowSuccessMessage(true)
+// }
 
   return (
     <>
