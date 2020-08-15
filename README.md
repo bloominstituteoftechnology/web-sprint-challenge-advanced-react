@@ -30,11 +30,20 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+Stateful logic is logic built into a component. It can be a function that handles a click event, that sets toggle state, or even formats data before it is displayed.
+
 2. Describe the different phases of the component lifecycle.
 
-3. Demonstrate an understanding of class component lifecycle methods.
+1. Birthing/Mounting Phase - when the component is built out. In this phase initial data is defined, render method is invoked, and componentDidMount is called.
+1. Growth/Updating Phase - where you are updating component data. This is where you will set state and can use shoudlComponentUpdate
+
+1. Demonstrate an understanding of class component lifecycle methods.
+
+Lifecycle methods give us control over how our components work. We use them by extending the react.component parent class.
 
 4. Define stateful logic.
+
+Stateful logic is logic built into a component. It can be a function that handles a click event, that sets toggle state, or even formats data before it is displayed.
 
 5. Describe how to test a React component with React Testing Library.
 
