@@ -30,21 +30,27 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
-statefull class components must possess a render method to contain the return, state which resides inside a constructor method that also possesses a super
+Statefull class components must possess a render method to contain the return, this.state which resides inside a constructor method that also possesses a super and the class must extend the React.Component base class.
 
 2. Describe the different phases of the component lifecycle.
 
-birth aka componentDidMount
+birth aka componentDidMount invokes a render and provides access to initial data from the constructor 
 
-growth aka componentDidUpdate
+growth aka componentDidUpdate can update state with setState which causes another render call
 
-death aka componentWillUnmount
+death aka componentWillUnmount removes component from the screen
 
 3. Demonstrate an understanding of class component lifecycle methods.
+ 
+First a component mounts then renders and 
 
 4. Define stateful logic.
 
+Stateful logic is the logic that is built into a component like events & functions that format data.
+
 5. Describe how to test a React component with React Testing Library.
+
+You test a component with the 3 A's. Arrange (sets up code), Act(we call a method or function which results in data  that pertains to our test) and Assert(checks to see if the expected outcome matches the actual outcome). 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
