@@ -14,7 +14,7 @@ const initialValue = {
 // Build out the logic needed for a form custom hook (see the useForm.js file)
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
-const CheckoutForm = () => {
+const CheckoutForm = (props) => {
   // const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   // const [values, setValues] = useState(initialValue);
 
@@ -81,12 +81,12 @@ const CheckoutForm = () => {
           Zip:
           <input name="zip" value={values.zip} onChange={handleChanges} />
         </label>
-        <button>Checkout</button>
+        <button >Checkout</button>
       </form>
-
+      <div className="success-message" data-testid="successMessage">
       {showSuccessMessage && (
-        <div className="success-message" data-testid="successMessage">
-          <p>
+        <div>
+          <p >
             You have ordered some plants! Woo-hoo! <span role="img">🎉</span>
           </p>
           <p>Your new green friends will be shipped to:</p>
@@ -99,8 +99,9 @@ const CheckoutForm = () => {
           <p>
             {values.city}, {values.state} {values.zip}
           </p>
-        </div>
+          </div>
       )}
+      </div>
     </>
   );
 };
