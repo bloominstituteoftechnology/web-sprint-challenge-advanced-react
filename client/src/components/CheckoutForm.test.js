@@ -16,9 +16,9 @@ expect(header).toBeInTheDocument();
 test("form shows success message on submit with form details", async() => {
 
 
-    // //arrange
+//arrange
 let {getByLabelText,getByTestId,getByRole}=render(<CheckoutForm/>);
-
+//act
 fireEvent.change(getByLabelText(/first name/i),{
     target:{value:'terry'}
 })
@@ -41,11 +41,7 @@ fireEvent.click(getByRole('button')
 )
 
 alert=await getByTestId('successMessage')
-
+//assert
 expect(alert).toHaveTextContent(/You have ordered some plants! Woo-hoo! 🎉Your new green friends will be shipped to:terry edwards8336tally, fl 55555/i)
-//act
-// let message=getByTestId(/successMessage/i);
-// console.log(message.textContent)
-// //assert
-// fireEvent.submit(getByTestId('successMessage'))
+
 });
