@@ -41,6 +41,9 @@ const CheckoutForm = (props) => {
 //   setShowSuccessMessage(true)
 // }
 
+//changing DIV Order to test better
+
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -83,6 +86,7 @@ const CheckoutForm = (props) => {
         </label>
         <button >Checkout</button>
       </form>
+
       <div className="success-message" data-testid="successMessage">
       {showSuccessMessage && (
         <div>

@@ -29,8 +29,21 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+  constructor() {
+    console.log("Constructor");
+    super();
+    this.state = {
+      plants: []
+    }
+  }
+
+  You are just creating your own useState.
+  This was useState where you set State with the empty plants array and get the data with an axios get request.
 
 2. Describe the different phases of the component lifecycle.
+  Mounting - puts element into the DOM
+Updating - Component updates whenever theres a change to the state or props
+Unmounting - component gets removed from DOM
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
