@@ -20,8 +20,10 @@ const CheckoutForm = (props) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <h2>Checkout Form</h2>
+      <form onSubmit={handleSubmit} data-testid='form'>
+        <h2 data-testid='title' id='test'>
+          Checkout Form
+        </h2>
         <label>
           First Name:
           <input
@@ -58,7 +60,7 @@ const CheckoutForm = (props) => {
           Zip:
           <input name='zip' value={values.zip} onChange={handleChanges} />
         </label>
-        <button>Checkout</button>
+        <button data-testid='checkoutButton'>Checkout</button>
       </form>
 
       {showSuccessMessage && (
@@ -69,10 +71,10 @@ const CheckoutForm = (props) => {
           <p>Your new green friends will be shipped to:</p>
           <br />
           <br />
-          <p>
+          <p data-testid='firstName'>
             {values.firstName} {values.lastName}
           </p>
-          <p>{values.address}</p>
+          <p data-testid='address'>{values.address}</p>
           <p>
             {values.city}, {values.state} {values.zip}
           </p>
