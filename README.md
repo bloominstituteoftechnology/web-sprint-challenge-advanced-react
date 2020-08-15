@@ -41,19 +41,19 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 2. Describe the different phases of the component lifecycle.
 
-
+      Mounting is where the data on the page is being displayed on to the scree, updatig phase is when the web page is getting changed it updates what is viewed, and unmounting is the death or end of what is viewed what is on the web page is stopped.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
-
+      componenentDidMount() could be used to pull data from an API. I would simply put the axios call into the paranthese. 
 
 4. Define stateful logic.
 
-
+      The ability for the data to be stored and used in the app by using hooks.
 
 5. Describe how to test a React component with React Testing Library.
 
-
+      
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
