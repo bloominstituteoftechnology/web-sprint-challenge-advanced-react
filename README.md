@@ -30,7 +30,15 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+statefull class components must possess a render method to contain the return, state which resides inside a constructor method that also possesses a super
+
 2. Describe the different phases of the component lifecycle.
+
+birth aka componentDidMount
+
+growth aka componentDidUpdate
+
+death aka componentWillUnmount
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
