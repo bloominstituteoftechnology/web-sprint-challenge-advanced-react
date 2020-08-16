@@ -28,15 +28,19 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. Explain how to build stateful class components.
+1. Explain how to build stateful class components. A stateful component is dependent on it's state object and can change it's own state. The component re-renders based on changes to it's state, and may pass down properties of it's state to child components as properties on a props object.
 
-2. Describe the different phases of the component lifecycle.
+2. Describe the different phases of the component lifecycle. The three phases are: Mounting, Updating, and Unmounting. Each component in React has a lifecycle which you can monitor and manipulate during its three main phases. Mounting means putting elements into the DOM. The next phase in the lifecycle is when a component is updated. A component is updated whenever there is a change in the component's state or props. The next phase in the lifecycle is when a component is removed from the DOM, or unmounting as React likes to call it.React has only one built-in method that gets called when a component is .
 
-3. Demonstrate an understanding of class component lifecycle methods.
+3. Demonstrate an understanding of class component lifecycle methods. These methods are called in the following order when an instance of a component is being created and inserted into the DOM:
+constructor()
+static getDerivedStateFromProps()
+render()
+componentDidMount()
 
-4. Define stateful logic.
+4. Define stateful logic. Stateful logic is any code that uses state, but in the case of hooks I would define it as a behaviour created with the use of one or more hooks. It's like a perk that you're adding to a component.
 
-5. Describe how to test a React component with React Testing Library.
+5. Describe how to test a React component with React Testing Library. This is used as the base element for the queries as well as what is printed ... Pass a React Component as the wrapper option to have it rendered.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
