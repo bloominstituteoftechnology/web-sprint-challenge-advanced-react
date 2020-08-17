@@ -6,10 +6,12 @@ import ShoppingCart from "./components/ShoppingCart";
 import CheckoutForm from "./components/CheckoutForm";
 
 import "./App.css";
+import FilterForm from "./components/FilterForm";
 
 function App() {
   // array of plants that have been added to the cart
   const [cart, setCart] = useState([]);
+  const [search, setSearch] = useState("");
 
   // add a plant to the cart
   const addToCart = (plant) => {
@@ -21,6 +23,8 @@ function App() {
     setCart(cart.filter((p) => p.id !== plant.id));
   };
 
+  console.log(search);
+
   return (
     <div>
       <Router>
@@ -28,6 +32,9 @@ function App() {
           <h1>
             React Plants <span role="img">🌿</span>
           </h1>
+          <div>
+            <FilterForm setSearch={setSearch} />
+          </div>
           <ul className="steps">
             <li>
               <NavLink exact to="/">
@@ -47,7 +54,7 @@ function App() {
         <Route
           exact
           path="/"
-          render={() => <PlantList addToCart={addToCart} />}
+          render={() => <PlantList addToCart={addToCart} search={search} />}
         />
         <Route
           path="/cart"
