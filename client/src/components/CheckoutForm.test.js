@@ -1,6 +1,7 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
+import { Simulate } from "react-dom/test-utils";
 
 // Write up the two tests here and make sure they are testing what the title shows
 
@@ -11,13 +12,11 @@ test("form header renders", () => {
 });
 
 test("form shows success message on submit with form details", () => {
-  const { getByTestId } = render(<CheckoutForm />);
+  const { getByText, getByTestId } = render(<CheckoutForm />);
 
-  fireEvent.click(getByText("You have ordered some plants! Woo-hoo!"));
+  const submitButton = getByText("Checkout");
 
-  expect(
-    getByTestId("successMessage").toHaveTextContent(
-      "You have ordered some plants! Woo-hoo!"
-    )
-  );
+  Simulate.submit(submitButton);
+
+  getByTestId(/successMessage/i);
 });
