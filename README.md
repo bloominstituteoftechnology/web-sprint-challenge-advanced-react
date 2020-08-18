@@ -53,7 +53,12 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 5. Describe how to test a React component with React Testing Library.
 
-      
+      You first do test('explain what you are doing'){
+            
+            arrange - our test by setting up our code such that it can be tested. 
+            act - calling a method or function that returns a result of interest to our test
+            assert - return matched the actual return
+      }
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
