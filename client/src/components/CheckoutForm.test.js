@@ -1,9 +1,23 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
 
 // Write up the two tests here and make sure they are testing what the title shows
 
-test("form header renders", () => {});
+test("form header renders", () => {
+  const { getByText } = render(<CheckoutForm />);
 
-test("form shows success message on submit with form details", () => {});
+  getByText(/Checkout Form/i);
+});
+
+test("form shows success message on submit with form details", () => {
+  const { getByTestId } = render(<CheckoutForm />);
+
+  fireEvent.click(getByText("You have ordered some plants! Woo-hoo!"));
+
+  expect(
+    getByTestId("successMessage").toHaveTextContent(
+      "You have ordered some plants! Woo-hoo!"
+    )
+  );
+});
