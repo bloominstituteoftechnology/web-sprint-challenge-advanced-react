@@ -1,5 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
+import '@testing-library/jest-dom'
 import CheckoutForm from "./CheckoutForm";
 
 // Write up the two tests here and make sure they are testing what the title shows
@@ -14,4 +15,9 @@ test("form shows success message on submit with form details", () => {
   render(<CheckoutForm />)
   const submit = screen.queryByRole('button')
   fireEvent.click(submit)
+
+  expect(screen.queryByTestId('successMessage')).toBeVisible()
+
+
+
 });
