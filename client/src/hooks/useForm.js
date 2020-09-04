@@ -1,7 +1,7 @@
 // write your custom hook here to control your checkout form
 import { useState } from 'react'
 
-export const useForm = (initialValue) => {
+const useForm = (initialValue) => {
 
     const [values, setValues] = useState(initialValue);
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -23,3 +23,5 @@ export const useForm = (initialValue) => {
     return [values, showSuccessMessage, handleChanges, handleSubmit];
 
 };
+
+export default useForm
