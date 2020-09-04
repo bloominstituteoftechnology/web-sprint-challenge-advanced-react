@@ -15,10 +15,12 @@ export default class PlantList extends Component {
     this.state = {
       plants: []
     }
+    this.plantFilter = this.plantFilter.bind(this)
   }
 
   componentDidMount() {
-    axios.get("http://localhost:3333/plants")
+    axios
+      .get("http://localhost:3333/plants")
       .then(res => {
         this.setState({
           plants: res.data.plantsData,
@@ -28,11 +30,22 @@ export default class PlantList extends Component {
   }
 
 
+  plantFilter(event) {
+    const plantData = this.state.plants;
+
+    const searchResult = plantData.filter(plants => plants.name.toLowerCase().match(event.target.value || null))
+
+    console.log(searchResult)
+  }
 
   render() {
     return (
 
       <main className="plant-list">
+        <div className="plant-list-input">
+          <label htmlFor="search">Search Plants</label>
+          <input type="text" name="search" id="search" onChange={this.plantFilter} />
+        </div>
         {this.state.plants.map((plant) => (
           <div className="plant-card" key={plant.id}>
             <img className="plant-image" src={plant.img} alt={plant.name} />
