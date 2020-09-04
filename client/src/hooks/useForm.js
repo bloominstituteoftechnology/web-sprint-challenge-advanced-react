@@ -1,10 +1,10 @@
 // write your custom hook here to control your checkout form
 import { useState } from 'react'
 
-export const useForm = (intValues, intMessage) => {
+export const useForm = (initialValue) => {
 
-    const [values, setValues] = useState(intValues);
-    const [message, setMessage] = useState(intMessage);
+    const [values, setValues] = useState(initialValue);
+    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
 
     // Handel Changes and Subit Events Below : 
@@ -17,9 +17,9 @@ export const useForm = (intValues, intMessage) => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        setMessage(true);
+        setShowSuccessMessage(true);
     }
 
-    return [values, message, handleChanges, handleSubmit];
+    return [values, showSuccessMessage, handleChanges, handleSubmit];
 
 };
