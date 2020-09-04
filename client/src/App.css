@@ -1,5 +1,4 @@
 body {
-  background: #0e101c;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -16,7 +15,7 @@ body {
 
 h1 {
   font-weight: 100;
-  color: white;
+
   text-align: center;
   font-size: 2rem;
 }
@@ -27,7 +26,7 @@ h1 {
   right: -8px;
   border-radius: 50%;
   background-color: #ec5990;
-  color: #fff;
+
   display: inline-block;
   padding-left: 6px;
   padding-right: 6px;
@@ -56,7 +55,7 @@ h1 {
 
 .plant-details {
   padding: 0 32px 0 16px;
-  color: #fff;
+
   font-weight: 200;
   display: flex;
   flex-flow: column nowrap;
@@ -111,7 +110,6 @@ p {
 }
 
 .checkout-section {
-  color: #fff;
   padding: 32px 0;
   display: flex;
   flex-flow: column nowrap;
@@ -127,7 +125,6 @@ p {
 }
 
 form {
-  background: #0e101c;
   max-width: 400px;
   margin: 0 auto;
 }
@@ -137,7 +134,7 @@ input {
   box-sizing: border-box;
   width: 100%;
   border-radius: 4px;
-  border: 1px solid white;
+  border: 1px solid black;
   padding: 10px 15px;
   margin-bottom: 10px;
   font-size: 14px;
@@ -149,7 +146,7 @@ label {
   display: block;
   margin-bottom: 13px;
   margin-top: 20px;
-  color: white;
+
   font-size: 14px;
   font-weight: 200;
 }
@@ -203,7 +200,6 @@ hr {
 }
 
 h2 {
-  color: white;
   font-weight: 200;
 }
 
@@ -217,12 +213,10 @@ button {
 }
 
 pre {
-  color: white;
   white-space: pre;
 }
 
 .steps {
-  color: white;
   display: flex;
   list-style: none;
   margin: 0;
@@ -239,6 +233,7 @@ pre {
 .steps li {
   background: #cf0;
   padding: 3px 15px;
+  border-radius: 20%;
   margin-right: 15px;
   position: relative;
 }
@@ -250,4 +245,33 @@ pre {
 .active {
   color: #0e101c;
   border-bottom: 2px solid !important;
+}
+
+.dark-mode__toggle {
+  background: papayawhip;
+  border-radius: 50px;
+  border: 1px solid black;
+  height: 20px;
+  position: relative;
+  width: 40px;
+  margin-top: 2px;
+}
+
+.toggle {
+  background: #f68819;
+  border-radius: 50px;
+  height: 18px;
+  left: 0;
+  position: absolute;
+  transition: 0.2s;
+  width: 20px;
+}
+
+.toggled {
+  left: 18px;
+}
+
+.dark-mode {
+  color: #fff;
+  background-color: #0e101c;
 }
