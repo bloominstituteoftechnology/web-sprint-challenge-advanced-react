@@ -18,12 +18,12 @@ test("form shows success message on submit with form details", () => {
 
     //Check to see if the Below has rendered
 
-    const firstNameInput = getByLabelText(/first name/i);
-    const lastNameInput = getByLabelText(/last name/i);
-    const addressInput = getByLabelText(/address/i);
-    const cityInput = getByLabelText(/city/i);
-    const stateInput = getByLabelText(/state/i);
-    const zipInput = getByLabelText(/zip/i);
+    const firstNameInput = screen.getByLableText(/first name/i);
+    const lastNameInput = screen.getByLableText(/last name/i);
+    const addressInput = screen.getByLableText(/address/i);
+    const cityInput = screen.getByLableText(/city/i);
+    const stateInput = screen.getByLableText(/state/i);
+    const zipInput = screen.getByLableText(/zip/i);
 
     //Checkinig Submit Button 
     const submitButton = getByText('Checkout');
