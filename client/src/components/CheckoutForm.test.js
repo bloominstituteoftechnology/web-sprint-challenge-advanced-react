@@ -17,7 +17,4 @@ test("form shows success message on submit with form details", () => {
   fireEvent.click(submit)
 
   expect(screen.queryByTestId('successMessage')).toBeVisible()
-
-
-
 });
