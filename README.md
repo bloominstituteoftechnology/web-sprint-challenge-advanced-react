@@ -30,13 +30,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+Stateful class components work by nesting components in the app and they all hold state of relevant data to it's specific component and renders it.
+
 2. Describe the different phases of the component lifecycle.
+
+During the mounting phase, you first set your initial data to state, the updating phase then processes new data to update the initial state, and finally the unmounting phase is when the component has finished rendering all the data and is taken off the screen.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+When you render a list from an api, you first start with an empty array as initial data, you then update that array and populate it with data from the api and render it, and lastly you unmount the component after it has finished rendering all the things to that specific list it was rendering.
+
 4. Define stateful logic.
 
+The useForm custom hook is an example of reusing a piece of logic that holds state without having to hold state of the data in the instances it was used in.
+
 5. Describe how to test a React component with React Testing Library.
+
+You set up tests through the testing library to render components and then you have several methods to check and see if the functionality works correctly by using things like async functions to input data and see if that data renders. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
