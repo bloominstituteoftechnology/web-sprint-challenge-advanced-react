@@ -15,12 +15,12 @@ const useForm = (initialValue) => {
         });
     }
 
-    const handleSubmit = event => {
-        event.preventDefault();
+    const handleSubmit = e => {
+        e.preventDefault();
         setShowSuccessMessage(true);
-    }
+    };
 
-    return [values, showSuccessMessage, handleChanges, handleSubmit];
+    return [values, handleChanges, handleSubmit, showSuccessMessage];
 
 };
 

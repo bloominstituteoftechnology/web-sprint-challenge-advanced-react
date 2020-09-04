@@ -10,6 +10,7 @@ const initialValue = {
   state: "",
   zip: "",
 };
+// const initalMessage = false; This was tyring to set the intialMessage for showSuccess to be faulse unless it handeled the submission suscessfully 
 
 // This form should be handled by a "useForm" custom hook
 // Build out the logic needed for a form custom hook (see the useForm.js file)
