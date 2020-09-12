@@ -20,16 +20,16 @@ const CheckoutForm = (props) => {
 
   const handleChanges = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
-  };
+  };*/
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setShowSuccessMessage(true);
-  };*/
+  };
 
   // adding useForm
 
-  const [values, handleChanges, handleSubmit] = useForm(initialValue);
+  const [values, handleChanges] = useForm(initialValue);
 
   return (
     <>
