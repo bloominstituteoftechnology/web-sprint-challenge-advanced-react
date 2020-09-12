@@ -22,6 +22,7 @@ const CheckoutForm = (props) => {
             name="firstName"
             value={values.firstName}
             onChange={handleChanges}
+            data-testid="textInput"
           />
         </label>
         <label>
