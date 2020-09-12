@@ -30,13 +30,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+To build a stateful class component you need to used constructor, super(), and render. Within that you would define state with this.state and declare how you want to handle changed and side effects.
+
 2. Describe the different phases of the component lifecycle.
+
+The phases of the component lifecycle are mount, update, and unmount. In the mount stage that is the initial state of the app, what you start with. In the update phase is where any changes to the app will occur. The final stage is unmount which is the end of the functionality to the app.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+the react lifecycle has several methods that can be used, the first is constructor, followed by render, componentDidMount, componentDidUpdate, and componentWillUnmount. The constructor sets the initial state of the component, render will return some data to the dome so the userw can see it such as a form, componentDidMount gets invoked after the first render, componentWillUpdate lets you hadle configuration changes and prepares for the next render and lastly componentWillUnMount is rarely used it is used for any clean up before the component is removed from the DOM
+
 4. Define stateful logic.
 
+Stateful logic is logic that runs behind the scenes of the app. It is most often built into the app to handle changing states withing the component.
+
 5. Describe how to test a React component with React Testing Library.
+
+You would first import the dependencies and files you need for the tests. Then you would determine exactly what needs to be tested and what the expected results would be. After that you would write the tests, you can use describe or test to declare that a test is occurring, then you would define what elements there will be in the test and what expected outcomes are to be. The, hopefully, final step would be to run the test, if it passes you are done, if it fails you need to figure out if it is a problem with the code or the test and correct it.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -54,22 +64,22 @@ _Please follow the setup instructions closely so that you can get everything up 
 
 **Basic set up**
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Create a forked copy of this project
+- [x] Add your team lead as collaborator on Github
+- [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
 
 **Starting the server**
 
-- [ ] Run `npm install` to download dependencies for the server.
-- [ ] Run the server using `npm start`.
-- [ ] Open a new browser tab and navigate to `http://localhost:3333/plants` - if you see a JSON object with plants data, then you know the server is running 👍
+- [x] Run `npm install` to download dependencies for the server.
+- [x] Run the server using `npm start`.
+- [x] Open a new browser tab and navigate to `http://localhost:3333/plants` - if you see a JSON object with plants data, then you know the server is running 👍
 
 **Starting the React app**
 
-- [ ] In a separate terminal cd into the `client` folder and run `npm install` to download dependencies.
-- [ ] Still inside the `client` folder run `npm run start` to run the client application.
-- [ ] Your browser should open up the project as normal
+- [x] In a separate terminal cd into the `client` folder and run `npm install` to download dependencies.
+- [x] Still inside the `client` folder run `npm run start` to run the client application.
+- [x] Your browser should open up the project as normal
 
 **Starting your test runner**
 
@@ -78,8 +88,8 @@ _Please follow the setup instructions closely so that you can get everything up 
 
 **Commit and Push OFTEN!**
 
-- [ ] Implement the project on this Branch, **committing progress & changes often.**
-- [ ] Push commits: `git push origin <firstName-lastName>`.
+- [x] Implement the project on this Branch, **committing progress & changes often.**
+- [x] Push commits: `git push origin <firstName-lastName>`.
 
 ### Task 2: Project Requirements
 
@@ -89,13 +99,13 @@ Your finished project must include all of the following requirements:
 
 Display a list of the plants from the server. This should be done in the class component `PlantList`.
 
-- [ ] In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants`
-- [ ] Set the data to a state property called `this.state.plants`
-- [ ] The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart
+- [x] In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants`
+- [x] Set the data to a state property called `this.state.plants`
+- [x] The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart
 
 #### Shopping Cart
 
-Nothing needs to be done here. You _will_ have to navigate to the cart page in your app so you can go to the checkout form for the next step.
+Nothing needs to be done here. You _will_ have to navigate to the cart page in your app so you ncan go to the checkout form for the next step.
 
 #### Checkout Form
 
