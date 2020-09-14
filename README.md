@@ -30,11 +30,18 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
-2. Describe the different phases of the component lifecycle.
+Stateful class components are nested components in the app that hold data.
 
+2. Describe the different phases of the component lifecycle.
+React lifestyle phases are 1) Birth/Mounting, 2) Growth/Updating, and 3) Death/Unmounting
 3. Demonstrate an understanding of class component lifecycle methods.
 
+1. birth/mounting is the beginning phase of building the component. Typically in this phase data is being accessed. The render method,and componentDidMount is invoked
+2.In the growth/updating phase setState can change data
+3.Death/unmounting phase is when componentWillUmount is called to clean up components that are removed from the app
 4. Define stateful logic.
+
+logic that us built into a component. Typically you can add things like a handleSubmit, or a handleChange function.
 
 5. Describe how to test a React component with React Testing Library.
 
