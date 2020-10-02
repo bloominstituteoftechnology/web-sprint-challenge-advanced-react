@@ -17,12 +17,14 @@ export default class PlantList extends Component {
   //   - set the returned plants array to this.state.plants
 
   fetchPlants = () => {
-    fetch(`http://localhost:3333/plants`)
-   .then((res) => res.json())
-   .then((data) => {
+    axios.get(`http://localhost:3333/plants`)
+   
+    .then((res) => {
+     console.log(res);
      this.setState({
-      plants: data.message
+      plants: res.data.plantsData
      });
+     
    })
    .catch((err) => console.log("error: ", err));
 }
