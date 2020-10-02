@@ -25,8 +25,10 @@ export default class PlantList extends Component {
   };
 
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
-  render() {
+  render(props) {
+    //props
     return (
+      // <main className={props.darkMode ? "dark-mode-plant-list" : "plant-list"}>
       <main className="plant-list">
         {this.state?.plants?.map((plant) => (
           <div className="plant-card" key={plant.id}>

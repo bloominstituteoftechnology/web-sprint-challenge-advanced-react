@@ -251,3 +251,48 @@ pre {
   color: #0e101c;
   border-bottom: 2px solid !important;
 }
+
+.toggle {
+  background: #a9f619;
+  border-radius: 50px;
+  height: 18px;
+  left: 0;
+  position: absolute;
+  transition: 0.2s;
+  width: 20px;
+  margin-left: 70%;
+  margin-top: 5%;
+}
+
+.toggled {
+  left: 18px;
+}
+
+.dark-mode-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border-bottom: 1px solid #cf0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #313843;
+  background-color: #fff;
+}
+
+.dark-mode-container h1 {
+  font-weight: 100;
+  color: #313843;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.darkMode-plant-list {
+  padding-top: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  color: #313843;
+  background-color: #fff;
+}
