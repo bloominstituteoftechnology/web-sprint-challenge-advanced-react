@@ -61,15 +61,15 @@ _Please follow the setup instructions closely so that you can get everything up 
 
 **Starting the server**
 
-- [ ] Run `npm install` to download dependencies for the server.
-- [ ] Run the server using `npm start`.
-- [ ] Open a new browser tab and navigate to `http://localhost:3333/plants` - if you see a JSON object with plants data, then you know the server is running 👍
+- [X] Run `npm install` to download dependencies for the server.
+- [X] Run the server using `npm start`.
+- [X] Open a new browser tab and navigate to `http://localhost:3333/plants` - if you see a JSON object with plants data, then you know the server is running 👍
 
 **Starting the React app**
 
-- [ ] In a separate terminal cd into the `client` folder and run `npm install` to download dependencies.
-- [ ] Still inside the `client` folder run `npm run start` to run the client application.
-- [ ] Your browser should open up the project as normal
+- [X] In a separate terminal cd into the `client` folder and run `npm install` to download dependencies.
+- [X] Still inside the `client` folder run `npm run start` to run the client application.
+- [X] Your browser should open up the project as normal
 
 **Starting your test runner**
 
