@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export const useForm = (props) => {
+export const useForm = (initialValue) => {
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
     const [values, setValues] = useState(initialValue);
 
