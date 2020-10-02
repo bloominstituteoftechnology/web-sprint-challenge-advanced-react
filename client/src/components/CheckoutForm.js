@@ -29,7 +29,7 @@ const CheckoutForm = () => {
 
 const [showSuccessMessage, values, handleSubmit, handleChanges] = useForm(
   'CheckoutForm',
-  initialValue,
+  initialValue
 );
 
   return (
