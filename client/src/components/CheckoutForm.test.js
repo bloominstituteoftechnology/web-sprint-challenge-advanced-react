@@ -14,8 +14,9 @@ test("form header renders", () => {
 });
 
 test("form shows success message on submit with form details", () => {
+  //arrange
   render(<CheckoutForm />);
-  //
+  //act
   const firstName = screen.getByLabelText(/First Name:/i);
   const lastName = screen.getByLabelText(/Last Name:/i);
   const address = screen.getByLabelText(/Address:/i);
@@ -23,9 +24,11 @@ test("form shows success message on submit with form details", () => {
   const state = screen.getByLabelText(/State:/i);
   const zip = screen.getByLabelText(/Zip:/i);
 
+  //assert
   fireEvent.change(firstName, { target: { value: "Christoper" } });
   fireEvent.change(lastName, { target: { value: "Stankiewicz" } });
   fireEvent.change(address, { target: { value: "324 W 3rd St" } });
+  fireEvent.change(city, { target: { value: "Nescopeck" } });
   fireEvent.change(state, { target: { value: "PA" } });
   fireEvent.change(zip, { target: { value: "18635" } });
 
