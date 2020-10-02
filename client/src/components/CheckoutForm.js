@@ -30,60 +30,98 @@ const CheckoutForm = (props) => {
     <>
       <form onSubmit={handleSubmit}>
         <h2>Checkout Form</h2>
+
         <label>
           First Name:
           <input
             name="firstName"
+            data-testid="firstName"
             value={values.firstName}
             onChange={handleChanges}
           />
         </label>
+
+
         <label>
           Last Name:
           <input
             name="lastName"
+            data-testid="lastName"
             value={values.lastName}
             onChange={handleChanges}
           />
         </label>
+
+
         <label>
           Address:
           <input
             name="address"
+            data-testid="address"
             value={values.address}
             onChange={handleChanges}
           />
         </label>
+
+
+
         <label>
           City:
-          <input name="city" value={values.city} onChange={handleChanges} />
+          <input 
+          name="city" 
+          data-testid="city"
+          value={values.city} 
+          onChange={handleChanges} />
         </label>
+
+
         <label>
           State:
-          <input name="state" value={values.state} onChange={handleChanges} />
+          <input 
+          name="state" 
+          data-testid="state"
+          value={values.state} 
+          onChange={handleChanges} />
         </label>
+
+
         <label>
           Zip:
-          <input name="zip" value={values.zip} onChange={handleChanges} />
+          <input 
+          name="zip" 
+          data-testid="zip"
+          value={values.zip} 
+          onChange={handleChanges} />
         </label>
-        <button>Checkout</button>
+
+         
+        <button data-testid='button'>Checkout</button>
+
+
       </form>
 
       {showSuccessMessage && (
         <div className="success-message" data-testid="successMessage">
+
           <p>
             You have ordered some plants! Woo-hoo! <span role="img">🎉</span>
           </p>
+          
           <p>Your new green friends will be shipped to:</p>
+
           <br />
           <br />
+
           <p>
             {values.firstName} {values.lastName}
           </p>
+
           <p>{values.address}</p>
+
           <p>
             {values.city}, {values.state} {values.zip}
           </p>
+          
         </div>
       )}
     </>
