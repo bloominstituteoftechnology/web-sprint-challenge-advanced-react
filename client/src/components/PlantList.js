@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
@@ -34,8 +33,8 @@ export default class PlantList extends Component {
               <p>{plant.description}</p>
               <div className="plant-bottom-row">
                 <p>${plant.price}</p>
-                <p>☀️ {plant.light}</p>
-                <p>💦 {plant.watering}x/month</p>
+                <p>{plant.light}</p>
+                <p> {plant.watering}x/month</p>
               </div>
               <button
                 className="plant-button"
