@@ -9,14 +9,9 @@ const useForm = (initialValue) => {
         setValues({...values, [e.target.name] : e.target.value});
     }
 
-    const clearForm = e => {
-        setValues(initialValue);
-    }
-
     const handleSubmit = e => {
         e.preventDefault();
         setShowSuccessMessage(true);
-        clearForm();
     };
 
     return [values, handleChanges, handleSubmit, showSuccessMessage]

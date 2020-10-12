@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import useForm from '../hooks/useForm';
 
 const initialValue = {
@@ -17,7 +17,7 @@ const initialValue = {
 const CheckoutForm = (props) => {
   // const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [values, handleChanges, handleSubmit, showSuccessMessage] = useForm(initialValue);
-
+  console.log(values)
 
   return (
     <>
