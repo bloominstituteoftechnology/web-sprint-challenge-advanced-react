@@ -6,6 +6,9 @@ import CheckoutForm from "./CheckoutForm";
 
 test("form header renders", () => {
 render(<CheckoutForm />)
+// screen.getByText(/Checkout Form/);
+
+// expect(header).toHaveTextContent("Checkout Form");
 
 });
 
