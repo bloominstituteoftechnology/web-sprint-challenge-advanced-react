@@ -10,7 +10,7 @@ export default function ShoppingCart(props) {
         <div className="plant-card" key={plant.id}>
           <img className="plant-image" src={plant.img} alt={plant.name} />
           <div className="plant-details">
-            <h2 className="plant-name">{plant.name}</h2>
+            <h2 className="plant-name" data-testid="plantName">{plant.name}</h2>
             <p>${plant.price}</p>
             <button
               className="plant-button"
