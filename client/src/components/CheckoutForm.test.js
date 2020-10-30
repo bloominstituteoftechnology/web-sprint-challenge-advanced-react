@@ -10,7 +10,7 @@ test("header renders", () => {
         expect(Header).toBeInTheDocument;
   });
 
-test("form shows success message on submit with form details", () => {
+test("end to end test for checkout form", () => {
 
     render(<CheckoutForm />)
 
