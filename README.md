@@ -30,15 +30,51 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
-
+Stateful components are built using state functions like useState or useLocalStorage with an initial state and a future state in an array and starting with the initial state value. An example of this this is const plants = [orderPlants, setOrderPlants] = useState(initialValue)
 
 2. Describe the different phases of the component lifecycle.
 
+Mount - In this phase all components are mounted and initial state is seen on the website.
+
+Update - In this phase the user changes elements in the page such as adding text to text boxes, clicking buttons etc... The app consistently updates all changes in state and props.
+
+Unmount - When a component is removed from the DOM such as clearing a form or deleting an element.
+
 3. Demonstrate an understanding of class component lifecycle methods.
+Mount:
+Constructor() - This is called before anything else on initiation and where initial state or values are set up for the component.
+
+getDerivedStateFromProps() - This is called right before rendering the element(s) in the DOM. This is where a state object can be set based on initial props. It uses state as an argument and returns an object with changes to state.
+
+render() - Creates output to the HTML or DOM
+
+componentDidMount() - This method is called after rendering is complete and statements can be added here that require the components to be rendered.
+
+Updating:
+getDerivedStateFromProps() - This method performs initial changes to the state of props so it is also an update method.
+
+shouldComponentUpdate() - This method returns a boolean value that tells React to continue rendering or not. Example of this is if your password is wrong, render should not take you to the next page, instead it should throw an error message and stop.
+
+render() - This method renders new state when called.
+
+getSnapshotBeforeUpdate() - This method takes a snapshot of the state and props before the change is updated so the user can see the before values after the update.
+
+componentDidUpdate() - This method is called after the component is updated.
+
+Unmounting:
+componentWillUnmount() - This method is called just before the component is removed from the DOM.
 
 4. Define stateful logic.
 
+Stateful logic is code that uses state, and in the case of hooks, it is behaviour created with the use of one or more hooks.
+
 5. Describe how to test a React component with React Testing Library.
+
+React Testing Library allows you to:
+Arrange - Ensure that the component will render.
+
+Act - obtain access to different fields and elements that can be manipulated such as buttons and test them.
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
