@@ -9,15 +9,16 @@ test("form header renders", () => {
 });
 
 test("form shows success message on submit with form details", async () => {
+    
     render(<CheckoutForm />);
-
-    const firstName = await screen.getByLabelText(/first name:/i);
+    
+    const firstNameInput = await screen.getByLabelText(/first name:/i);
     const lastName =  await screen.getByLabelText(/last name:/i);
     const streetAdrs = await screen.getByLabelText(/address:/i);
     const city =  await screen.getByLabelText(/city:/i);
     const state = await screen.getByLabelText(/state:/i);
     const zipCode =await  screen.getByLabelText(/zip:/i);
-    const submitBtn = await screen.getByRole('button', {name:/CheckoutForm/i})
+    const submitBtn = await screen.getByRole('button', {name:/checkout/i})
 
 
     fireEvent.change(firstName, { target: { value: 'Ramsha' }});
@@ -26,9 +27,11 @@ test("form shows success message on submit with form details", async () => {
     fireEvent.change(city, { target: { value: 'Manhattan' }});
     fireEvent.change(state, { target: { value: 'New York' }});
     fireEvent.change(zipCode, { target: { value: '10026' }});
-
     fireEvent.click(submitBtn);
 
-    expect(screen.getByText(/Your new green friends will be shipped to:/i)).toBeInTheDocument();
+    const success = screen.getByTestId(/success message/i);
+    expect(success).toBeInTheDocument;
+     
+    expect( await screen.getByText(/Your new green friends will be shipped to:/i)).toBeInTheDocument();
 
 });
