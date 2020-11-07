@@ -6,6 +6,7 @@ export default class PlantList extends Component {
     super(props);
     this.state = {
         plants: [],
+        search: '',
     };
 }
   componentWillMount(){
@@ -13,12 +14,21 @@ export default class PlantList extends Component {
       this.setState({plants: response.data.plantsData})
       console.log(response.data.plantsData);
     })
-    
   }
+  handleSearchChange = (e) =>{
+    this.setState({search: e.target.value})
+  }
+  // componentDidUpdate(prevProps, prevState){
+  //   if(prevState.search !== this.state.search){
+  //     this.handleSearchChange(e);
+  //   }
+  // }
   render() {
     return (
       <main className="plant-list">
-        {this.state?.plants?.map((plant) => (
+        <input value = {this.state.search} onChange = {this.handleSearchChange} type='text' placeholder = 'search . . .'></input>
+        {console.log(this.state.plants)}
+        {this.state?.plants?.filter(a => a.name.toLowerCase().includes(this.state.search.toLowerCase())).map((plant) => (
           <div className="plant-card" key={plant.id}>
             <img className="plant-image" src={plant.img} alt={plant.name} />
             <div className="plant-details">

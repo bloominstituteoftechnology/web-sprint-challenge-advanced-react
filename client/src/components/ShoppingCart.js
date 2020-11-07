@@ -6,6 +6,7 @@ export default function ShoppingCart(props) {
   const total = props.cart.reduce((sum, d) => sum + d.price, 0);
   return (
     <div className="cart">
+      
       {props.cart.map((plant) => (
         <div className="plant-card" key={plant.id}>
           <img className="plant-image" src={plant.img} alt={plant.name} />
