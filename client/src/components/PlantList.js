@@ -1,7 +1,27 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from "axios";
 
-export default class PlantList extends Component {
+export default class PlantList extends React.Component {
+  constructor(){
+  super()
+    this.state = {
+      plants: []
+    }
+  }
+
+    componentDidMount() {
+      axios.get("http://localhost:3333/plants")
+      .then((res) => {
+        this.setState({
+          plants: res.data.plantsData
+        })
+      })
+      .catch((err) => console.error("Unable to show plants: ", err))
+      console.log("http://localhost:3333/plants")
+    }
+
+
+
   // add state with a property called "plants" - initialize as an empty array
 
   // when the component mounts:
