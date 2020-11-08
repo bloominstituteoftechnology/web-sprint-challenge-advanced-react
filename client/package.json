@@ -35,7 +35,6 @@
     ]
   },
   "devDependencies": {
-    "@sheerun/mutationobserver-shim": "^0.3.3",
-    "msw": "^0.21.3"
+    "@sheerun/mutationobserver-shim": "^0.3.3"
   }
 }
