@@ -25,7 +25,7 @@ const  CheckoutForm = (props) => {
   //   e.preventDefault();
   //   setShowSuccessMessage(true);
   // };
-  const [showSuccessMessage,values,handleChanges,handleSubmit]
+  const [showSuccessMessage,values,valuesStorage,handleChanges,handleSubmit]
     = useForm("whoOrdered",initialValue)
 
   return (
@@ -86,7 +86,18 @@ const  CheckoutForm = (props) => {
           <p>
             {values.city}, {values.state} {values.zip}
           </p>
+          <p>
+            And this is from the Local Storage for future Logout Login Guest Customer Buys
+          </p>
+          <p>
+            {valuesStorage.firstName} {valuesStorage.lastName}
+          </p>
+          <p>{valuesStorage.address}</p>
+          <p>
+            {valuesStorage.city}, {valuesStorage.state} {valuesStorage.zip}
+          </p>
         </div>
+        
       )}
     </>
   );
