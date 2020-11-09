@@ -29,6 +29,7 @@ test('form shows success message on submit with form details', async()  => {
 
     const button = screen.getByRole("button", { name: /Checkout/i });
     fireEvent.click(button);
+// Asynced names
    
     const aFirst = await screen.findAllByText(/First/i)
     const aLast = await screen.findAllByText(/last name/i)
