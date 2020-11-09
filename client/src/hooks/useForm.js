@@ -7,8 +7,8 @@ export function useForm(initialValues) {
   const [values, setValues] = useState(initialValues);
 
   const handleChanges = (e) => {
-    // console.log("handleChanges running");
-    console.log(e.target.name, e.target.value);
+    console.log("handleChanges running");
+    // console.log(e.target.name, e.target.value);
     setValues({ ...values, [e.target.name]: e.target.value });
   }
 
@@ -16,7 +16,6 @@ export function useForm(initialValues) {
     e.preventDefault();
     setShowSuccessMessage(true);
   }
-
   return [values, showSuccessMessage, handleChanges, handleSubmit];
 };
 // export default useForm;

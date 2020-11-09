@@ -9,7 +9,7 @@ export default class PlantList extends Component {
     this.state = {
       searchVal: '',
       plants: [],
-      results: [],
+      response: [],
     };
   }
 
@@ -21,28 +21,25 @@ export default class PlantList extends Component {
       .get("http://localhost:3333/plants")
       .then((res) => {
         console.log(res)
-        //   - set the returned plants array to this.state.plants
+        // returned plants array to this.state.plants
         this.setState({
           plants: res.data.plantsData,
-          results: res.data.plantsData,
+          response: res.data.plantsData,
         });
       })
       .catch((error) => console.log(error))
   }
 
   // when the component updates: this will be performed
-  // search using name sciname or desc
+  // search using name
   // it will be like key:value  from values by e.target.name(creates key) and  e.target.value(creates vlaue) 
   componentDidUpdate(pastVal, pastState) {
     if (this.state.searchVal !== pastState.searchVal)
       this.setState({
         ...this.state,
-        results: this.state.plants.filter(
+        response: this.state.plants.filter(
           (plant) =>
-            plant.name.toLowerCase().includes(this.state.searchVal) ||
-            plant.scientificName.toLowerCase().includes(this.state.search) ||
-            plant.description.toLowerCase().includes(this.state.search) ||
-            plant.difficulty.toLowerCase().includes(this.state.search)
+            plant.name.toLowerCase().includes(this.state.searchVal)
         ),
       });
   }
