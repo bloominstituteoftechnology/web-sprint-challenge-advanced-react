@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { response } from "express";
+
 
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
   constructor() {
     super()
     this.state = {
+      searchVal: '',
       plants: [],
       results: [],
-      searchVal: ''
-    }
+    };
   }
 
 
@@ -20,7 +20,7 @@ export default class PlantList extends Component {
     axios
       .get("http://localhost:3333/plants")
       .then((res) => {
-        // console.log(res)
+        console.log(res)
         //   - set the returned plants array to this.state.plants
         this.setState({
           plants: res.data.plantsData,
@@ -31,24 +31,27 @@ export default class PlantList extends Component {
   }
 
   // when the component updates: this will be performed
-  // search using name scianme or desc
+  // search using name sciname or desc
+  // it will be like key:value  from values by e.target.name(creates key) and  e.target.value(creates vlaue) 
   componentDidUpdate(pastVal, pastState) {
-    this.setState({
-      ...this.state,
-      results: this.state.plants.filter(
-        (plant) =>
-          plant.name.toLowerCase().includes(this.state.searchVal) ||
-          plant.scientificName.toLowerCase().includes(this.state.searchVal) ||
-          plant.description.toLowerCase().includes(this.state.searchVal)
-      ),
-    })
+    if (this.state.searchVal !== pastState.searchVal)
+      this.setState({
+        ...this.state,
+        results: this.state.plants.filter(
+          (plant) =>
+            plant.name.toLowerCase().includes(this.state.searchVal) ||
+            plant.scientificName.toLowerCase().includes(this.state.search) ||
+            plant.description.toLowerCase().includes(this.state.search) ||
+            plant.difficulty.toLowerCase().includes(this.state.search)
+        ),
+      });
   }
 
   // getting value and seeting it to state from searchVal
   handleSearch = (e) => {
     this.setState({
       ...this.state, searchVal: e.target.value,
-    })
+    });
   }
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
   render() {
