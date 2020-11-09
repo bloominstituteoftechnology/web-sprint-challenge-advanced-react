@@ -28,15 +28,30 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. Explain how to build stateful class components.
+1 Explain how to build stateful class components.
 
-2. Describe the different phases of the component lifecycle.
+The class component must be an export default which is extending React.component written as follows and using at least the constructor(props) (where state is initalized), componentDidMount, componentDidUpdate, and render(){ return(any jsx within brackets) } 
 
-3. Demonstrate an understanding of class component lifecycle methods.
+As an expert reminder, always remeber to hand props down threw the constructor and refer to props state within the constructor while initalizing or else it may not work as intended while prop drilling for the constructors state. 
 
-4. Define stateful logic.
+2 Describe the different phases of the component lifecycle.
 
-5. Describe how to test a React component with React Testing Library.
+The main phases are as follows within order 
+  1 Mounting 
+  2 Updating
+  3 Unmounting
+
+3 Demonstrate an understanding of class component lifecycle methods.
+
+  1 The component will first call the constructor which will get the dirived state from the class component
+  2 The component renders
+  3 componentDidMount is ran where it is mounted. Any network request where data is loaded will be good to set here with state. However it will trigger an additional render and it is guraenteed the user will not see the inital state because of this trigger. 
+  4 Now comes the update phase where componentDidUpdate is ran. This is where we can get our prevProps, prevState, and Snapshot parameters from. This great because it can be used similar to a useEffect hook so be aware of infinite loops here. 
+  5 Once the component is updated the componentWillUnmount is called in the unmount phase. This is where all cleanup is done. If any null pointers need to be trashed or deleted this is done here and is great for memory cleanup. 
+
+4 Define stateful logic.
+
+5 Describe how to test a React component with React Testing Library.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
