@@ -1,4 +1,3 @@
-
 import React from "react";
 import { render } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
@@ -8,3 +7,5 @@ import CheckoutForm from "./CheckoutForm";
 test("form header renders", () => {});
 
 test("form shows success message on submit with form details", () => {});
+
+console.log("test")
