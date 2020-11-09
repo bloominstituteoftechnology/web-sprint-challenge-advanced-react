@@ -1,6 +1,6 @@
 import React from 'react'
 import { fireEvent, render, screen } from "@testing-library/react";
-import shoppingCart from './ShoppingCart'
+import ShoppingCart from './ShoppingCart'
 
 const testPlantsData = [
   {
@@ -61,35 +61,18 @@ const testPlantsData = [
     description: "Don't let the 'peace' part fool you—she's here to grab your attention by the horns with her lush leaves, pearly white blooms, and air filtering prowess. She might need more attention than others, but like they say, nothing good comes easy.",
     price: 26
   },
-  {
-    name: "Staghorn Fern",
-    id: 67148,
-    scientificName: "Platycerium bifurcatum",
-    difficulty: "medium",
-    light: "indirect",
-    img: "https://cdn.shopify.com/s/files/1/2781/9558/products/FERN_STAGHORN-11_800x.png?v=1587427931",
-    sizes: [
-      "small"
-    ],
-    watering: 2,
-    description: "Originally from South Africa, Jade loves sun-drenched beaches, the occasional surf, and sandy soils. Too much water too often doesn't sit well with her, so maybe offer her a beer? (Please don't give your plants beer).",
-    price: 15
-  }
 ];
 
 test('Shopping Cart Renders', () => {
-  render(<shoppingCart cart={[]} />)
+  render(<ShoppingCart cart={[]} />)
 });
 
 test('plants Rendereds', () => {
-  render(<shoppingCart cart={testPlantsData} />)
-})
+  render(<ShoppingCart cart={testPlantsData} />)
 
-expect(screen.getByText(/Staghorn Fern/i)).toBeInTheDocument();
-expect(screen.getByText(/Peace Lily/i)).toBeInTheDocument();
-expect(screen.getByText(/Rabbit Foot Fern/i)).toBeInTheDocument();
-expect(screen.getByText(/Jade Plant/i)).toBeInTheDocument();
-expect(screen.getByText(/ZZ Plant/i)).toBeInTheDocument();
-expect(screen.getByText(/indirect/i)).toBeInTheDocument();
-expect(screen.getByText(/low/i)).toBeInTheDocument();
-expect(screen.queryByText(/kitfo/i)).not.toBeInTheDocument();
+  expect(screen.getByText(/ZZ Plant/i)).toBeInTheDocument();
+  expect(screen.getByText(/Jade Plant/i)).toBeInTheDocument();
+  expect(screen.getByText(/Rabbit Foot Fern/i)).toBeInTheDocument();
+  expect(screen.getByText(/Peace Lily/i)).toBeInTheDocument();
+  expect(screen.queryByText(/steak/i)).not.toBeInTheDocument();
+})

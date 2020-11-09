@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
 
 // Write up the two tests here and make sure they are testing what the title shows
@@ -28,8 +28,6 @@ test("success message on submit", async () => {
   fireEvent.change(screen.getByLabelText(/zip/i), {
     target: { value: '20200' },
   });
-  test("form shows success message on submit with form details", () => { });
-
 
   // submiting the form
 
@@ -47,7 +45,7 @@ test("success message on submit", async () => {
   const zip = await screen.findByText(/20200/i)
 
   //  failing to show test works
-  expect(firstname).toHaveTextContent(/fail/i)
+  expect(firstname).toHaveTextContent(/Robel/i)
   expect(lastname).toHaveTextContent(/Mengistu/i)
   expect(address).toHaveTextContent(/1234 S Parker rd/i)
   expect(city).toHaveTextContent(/Denver/i)
