@@ -9,15 +9,15 @@ test("renders App without crashing", () => {
 
 test('render App without errors', () =>{
   render(<App />);
-  const header = screen.getByText(/React Plants/i);
-  console.log(header);
+  const headerTitle = screen.getByText(/React Plants/i);
+//   console.log(headerTitle);
 
 
   // Add in npm test to start test
-  expect(header).toBeInTheDocument();
-  expect(header).toBeTruthy();
-  expect(header).toHaveTextContent(/React Plants/i);
-  expect(header).not.toHaveTextContent(/Fee fi fo fump/i);
-  expect(header).not.toBeFalsy(); 
+  expect(headerTitle).toBeInTheDocument();
+  expect(headerTitle).toBeTruthy();
+  expect(headerTitle).toHaveTextContent(/React Plants/i);
+  expect(headerTitle).not.toHaveTextContent(/Fee fi fo fump/i);
+  expect(headerTitle).not.toBeFalsy(); 
 
 })
