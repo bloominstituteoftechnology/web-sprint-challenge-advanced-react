@@ -1,17 +1,28 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { json } from "body-parser";
+
 
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
   constructor(){
     super();
     this.state={
-     plants: plants = []
+     plants: []
     }
   }
   // when the component mounts:
   //   - fetch data from the server endpoint - http://localhost:3333/plants
   //   - set the returned plants array to this.state.plants
+  componentDidMount(){
+    fetch("http://localhost:3333/plants")
+    .then(res => res.json())
+    .then((json) => {
+    this.setState({plants: [this.state.plants]})
+  })
+  .catch(err => console.log(err))
+  }
+  
 
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
   render() {
