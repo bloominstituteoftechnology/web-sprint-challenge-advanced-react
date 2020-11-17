@@ -1,12 +1,29 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { useState, Component } from "react"
+import axios from "axios"
 
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
+  constructor() {
+    super()
+    this.state = {
+      plants: [],
+    }
+  }
 
   // when the component mounts:
   //   - fetch data from the server endpoint - http://localhost:3333/plants
   //   - set the returned plants array to this.state.plants
+  componentDidMount() {
+    fetch("http://localhost:3333/plants")
+      .then((res) => res.json())
+      .then((json) => {
+        console.log("result App with just json", json)
+        console.log("result App with plants plantsData", json.plantsData)
+
+        this.setState({ plants: json.plantsData })
+        console.log("this is plants data", this.state.plants)
+      })
+  }
 
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
   render() {
@@ -24,16 +41,13 @@ export default class PlantList extends Component {
                 <p>☀️ {plant.light}</p>
                 <p>💦 {plant.watering}x/month</p>
               </div>
-              <button
-                className="plant-button"
-                onClick={() => this.props.addToCart(plant)}
-              >
+              <button className="plant-button" onClick={() => this.props.addToCart(plant)}>
                 Add to cart
               </button>
             </div>
           </div>
         ))}
       </main>
-    );
+    )
   }
 }
