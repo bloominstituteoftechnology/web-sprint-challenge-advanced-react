@@ -1,4 +1,5 @@
 // write your custom hook here to control your checkout forms
+//all stateful logic
 import React, { useState } from "react";
 //local storage hook
 const useLocalStorage = (key, initialValue) => {
