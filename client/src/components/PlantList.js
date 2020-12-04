@@ -23,7 +23,7 @@ export default class PlantList extends Component {
         console.log('Axios request completed')
       })
       .catch(err => {
-        console.log('Oh no, there is an error in the with the Axios request!', err)
+        console.log('Oh no, there is an error with the Axios request!', err)
       })
   }
 
