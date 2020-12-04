@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import fetchPlantData from './FetchPlantsData';
 
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
@@ -12,7 +12,13 @@ export default class PlantList extends Component {
   //   - set the returned plants array to this.state.plants
 
   componentDidMount() {
-    console.log("Plant component mounted.")
+    // console.log("Plant component mounted.")
+    fetchPlantData()
+      .then((res) => {
+        this.setState({
+          plants: res
+        });
+      });
   }
 
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
