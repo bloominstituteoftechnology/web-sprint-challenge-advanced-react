@@ -1,4 +1,4 @@
-// write your custom hook here to control your checkout form
+// write your custom hook here to control your checkout forms
 import React, { useState } from "react";
 //local storage hook
 const useLocalStorage = (key, initialValue) => {
@@ -9,12 +9,12 @@ const useLocalStorage = (key, initialValue) => {
       localStorage.setItem(key, JSON.stringify(initialValue));
     }
     return initialValue;
-  });
+  });  
   const setValue = (value) => {
     setStoredValue(value);
     localStorage.setItem(key, JSON.stringify(value));
   };
-  return [storedValue, setValue];
+  return [storedValue, setValue];  
 };
 const useForm = (initialValue) => {
   const [values, setValues] = useLocalStorage("form", initialValue);
