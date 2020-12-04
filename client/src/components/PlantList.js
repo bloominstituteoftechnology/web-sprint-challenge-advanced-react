@@ -17,12 +17,12 @@ export default class PlantList extends Component {
 
   componentDidMount() {
     axios
-      .get('https://localhost:3333/plants')
-      .then(res => {
+      .get('http://localhost:3333/plants')
+      .then((res) => {
         this.setState({plants: res.data.plantsData})
         console.log('Axios request completed')
       })
-      .catch(err => {
+      .catch((err) => {
         console.log('Oh no, there is an error with the Axios request!', err)
       })
   }
