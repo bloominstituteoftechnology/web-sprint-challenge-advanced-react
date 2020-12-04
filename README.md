@@ -79,7 +79,7 @@ Go [here](./CodeGrade-webhook.md) to setup the CodeGrade webhook before you begi
 **Starting your test runner**
 
 - [x] In the final terminal window, make sure you are in the `client` folder still
-- [] Start the test runner with `npm test` (I recommend doing this only when you're testing - any change in your app will make the tests run, and that could eat up your computer power)
+- [x] Start the test runner with `npm test` (I recommend doing this only when you're testing - any change in your app will make the tests run, and that could eat up your computer power)
 
 **Commit and Push OFTEN!**
 
