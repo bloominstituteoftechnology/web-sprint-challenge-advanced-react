@@ -1,7 +1,7 @@
 // write your custom hook here to control your checkout form
 
 
-// Technically this very basic hook meets MVP for this assignment. There is no way to create a useful hook as the first and second useState's store wildly different information. All I can do is create a function that creates a useState in it. This is actually WAY less efficient. No matter how many times it is called. It is garenteed to be more inefficent.
+// Technically this very basic hook meets MVP for this assignment. However, no matter how many times it is called it is garenteed to be more inefficent. I think we can do better...
 
 import { useState, useEffect } from "react";
 

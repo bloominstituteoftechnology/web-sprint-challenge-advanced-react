@@ -59,7 +59,7 @@ function App() {
             />
           )}
         />
-        <Route path="/checkout" component={CheckoutForm} />
+        <Route path="/checkout" component={CheckoutForm}/>
       </Router>
     </div>
   );
