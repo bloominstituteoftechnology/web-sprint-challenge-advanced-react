@@ -1,14 +1,20 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component, useEffect } from "react";
+import Axios from "axios";
 
 export default class PlantList extends Component {
-  // add state with a property called "plants" - initialize as an empty array
+  Constructor() {
+    this.state = { plants: [] };
+  }
 
-  // when the component mounts:
-  //   - fetch data from the server endpoint - http://localhost:3333/plants
-  //   - set the returned plants array to this.state.plants
+  componentDidMount() {
+    Axios.get("http://localhost:3333/plants").then((res) => {
+      this.setState(this.state = {plants: res.data.plantsData})
+  });
+  }
+  componentDidUpdate() {
+    console.log(this.state);
+  }
 
-  /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
   render() {
     return (
       <main className="plant-list">
