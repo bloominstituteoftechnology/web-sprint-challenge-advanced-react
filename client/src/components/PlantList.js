@@ -6,14 +6,7 @@ export default class PlantList extends Component {
     plants: [],
   };
 
-  // fetchPlants = () => {
-  //   axios.get("http://localhost:3333/plants").then((res) => {
-  //     console.log(res, "see me?");
-  //     this.setState({ plants: res.data.plantsData }).catch((err) => {
-  //       console.log(err, "you got an error in the DidMount");
-  //     });
-  //   });
-  // };
+  ///didmount below////
 
   componentDidMount() {
     axios
