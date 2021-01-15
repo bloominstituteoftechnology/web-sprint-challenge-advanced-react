@@ -3,9 +3,35 @@ import axios from "axios";
 
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
+  state = {
+    plants: []
+  }
 
   // when the component mounts:
   //   - fetch data from the server endpoint - http://localhost:3333/plants
+  async componentDidMount(){
+    try{
+      const plantsFetch = await axios.get('http://localhost:3333/plants');
+      const plantsData = plantsFetch.data.plantsData
+
+      console.log(plantsData);
+      this.setState({
+        plants: plantsData
+          // name: plantsData.name,
+          // id: plantsData.id,
+          // img: plantsData.img,
+          // scientificName: plantsData.scientificName,
+          // description: plantsData.description,
+          // price: plantsData.price,
+          // light: plantsData.light,
+          // watering: plantsData.watering,
+      })
+      console.log(this.state.plants);
+    }
+    catch(error) {
+      console.log(error);
+    }
+  };
   //   - set the returned plants array to this.state.plants
 
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
@@ -34,6 +60,8 @@ export default class PlantList extends Component {
           </div>
         ))}
       </main>
-    );
+    
+     );
+    
   }
 }
