@@ -55,7 +55,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
   You would need to create a js file with a .test extention before the .js extention, then you would need to import react and if you want a few other items as well as well as items from the react testing library if you havent installed it as a dependency yet. After that in order to create your first test you want to use a function named test and for the first parameter create a string describing what the test will be. inside the function itself you want to use the Arange,Act,Assert methods to create a certain test you would like
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
-
+t
 ## Instructions
 
 ### Task 1: Project Set Up
