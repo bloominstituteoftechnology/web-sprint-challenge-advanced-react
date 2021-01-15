@@ -8,7 +8,7 @@ This is an individual assessment. All work must be your own. Your challenge scor
 
 You are not allowed to collaborate during the sprint challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your TL if you need direction.
 
-_You have **three hours** to complete this challenge. Plan your time accordingly._
+_You have \**three hours*to complete this challenge. Plan your time accordingly._
 
 ## Introduction
 
