@@ -21,7 +21,7 @@ const CheckoutForm = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <h2>Checkout Form</h2>
+        <h2 className ='Header'> Checkout Form </h2>
         <label>
           First Name:
           <input
