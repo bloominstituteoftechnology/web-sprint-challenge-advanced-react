@@ -54,9 +54,9 @@ _Please follow the setup instructions closely so that you can get everything up 
 
 **Basic set up**
 
-- [ ] Create a forked copy of this project
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] [OPTIONAL] Create a new branch: git checkout -b `<firstName-lastName>`. If you choose to do this, you will need to merge your working branch into the master branch and push your final code to master in order for the submission to work with CodeGrade.
+- [1] Create a forked copy of this project
+- [1] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [1] [OPTIONAL] Create a new branch: git checkout -b `<firstName-lastName>`. If you choose to do this, you will need to merge your working branch into the master branch and push your final code to master in order for the submission to work with CodeGrade.
 
 \_Note: Ignore the `mocks` directory. That is in place for the CodeGrade tests
 
@@ -66,25 +66,25 @@ Go [here](./CodeGrade-webhook.md) to setup the CodeGrade webhook before you begi
 
 **Starting the server**
 
-- [ ] Run `npm install` to download dependencies for the server.
-- [ ] Run the server using `npm start`.
-- [ ] Open a new browser tab and navigate to `http://localhost:3333/plants` - if you see a JSON object with plants data, then you know the server is running 👍
+- [1] Run `npm install` to download dependencies for the server.
+- [1] Run the server using `npm start`.
+- [1] Open a new browser tab and navigate to `http://localhost:3333/plants` - if you see a JSON object with plants data, then you know the server is running 👍
 
 **Starting the React app**
 
-- [ ] In a separate terminal cd into the `client` folder and run `npm install` to download dependencies.
-- [ ] Still inside the `client` folder run `npm run start` to run the client application.
-- [ ] Your browser should open up the project as normal
+- [1] In a separate terminal cd into the `client` folder and run `npm install` to download dependencies.
+- [1] Still inside the `client` folder run `npm run start` to run the client application.
+- [1] Your browser should open up the project as normal
 
 **Starting your test runner**
 
-- [ ] In the final terminal window, make sure you are in the `client` folder still
-- [ ] Start the test runner with `npm test` (I recommend doing this only when you're testing - any change in your app will make the tests run, and that could eat up your computer power)
+- [1] In the final terminal window, make sure you are in the `client` folder still
+- [1] Start the test runner with `npm test` (I recommend doing this only when you're testing - any change in your app will make the tests run, and that could eat up your computer power)
 
 **Commit and Push OFTEN!**
 
-- [ ] Implement the project on this Branch, **committing progress & changes often.**
-- [ ] Push commits: `git push origin master`, or, if working on your own branch: git push origin <firstName-lastName>`.
+- [1] Implement the project on this Branch, **committing progress & changes often.**
+- [1] Push commits: `git push origin master`, or, if working on your own branch: git push origin <firstName-lastName>`.
 
 ### Task 2: Project Requirements
 
@@ -94,9 +94,9 @@ Your finished project must include all of the following requirements:
 
 Display a list of the plants from the server. This should be done in the class component `PlantList`.
 
-- [ ] In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants`
-- [ ] Set the data to a state property called `this.state.plants`
-- [ ] The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart
+- [1] In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants`
+- [1] Set the data to a state property called `this.state.plants`
+- [1] The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart
 
 #### Shopping Cart
 
