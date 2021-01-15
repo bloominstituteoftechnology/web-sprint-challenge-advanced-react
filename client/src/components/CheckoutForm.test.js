@@ -32,4 +32,7 @@ test("form shows success message on submit with form details", async () => {
     const successMessage = await screen.findByTestId('successMessage')
     // check to see if form details are present
     expect(successMessage).toBeInTheDocument();
+    const formDetailsSuccessMessage = screen.findAllByTestId('formValuesDisplayed')
+    // expect(formDetailsSuccessMessage).toBeInTheDocument();
+    console.log(formDetailsSuccessMessage);
 });
