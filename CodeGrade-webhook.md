@@ -4,13 +4,13 @@
 
 <img width="800" src="https://tk-assets.lambdaschool.com/a92b8d52-6790-4fb3-8ab0-c432a71e6cd3_ScreenShot2020-10-30at8.25.42AM.png" />
 
-2. Next you will choose "GitHub" for the setup process
+2. Next you will choose "GitHub" for the setup proc
 
 <img width="800" src="https://tk-assets.lambdaschool.com/57e23d3b-e707-4aa7-878c-a4f54deaad76_ScreenShot2020-10-30at8.25.58AM.png" />
 
 3. Copy the SSH key from the bottom box
 
-<img width="800" src="https://tk-assets.lambdaschool.com/7241f7e8-0f5c-41d3-a03f-2ba60dc5bcc1_ScreenShot2020-10-30at8.26.05AM.png" />
+<img width="800" src="https://tk-assets.lambdaschool.com/7241f7e8-0f5c-41d3-a03f-2ba60dc5bcc1_ScreenShot2020-10-30at8.26.05AM. />
 
 4. Now go to your GitHub account and open the forked repository. Go to _settings_ and on the left go to _Deploy Keys_
 
