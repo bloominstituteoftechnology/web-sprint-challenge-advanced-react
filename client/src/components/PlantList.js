@@ -1,8 +1,35 @@
 import React, { Component } from "react";
 import axios from "axios";
-
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
+  state = {
+    plants: [],
+  };
+
+  // fetchPlants = () => {
+  //   axios.get("http://localhost:3333/plants").then((res) => {
+  //     console.log(res, "see me?");
+  //     this.setState({ plants: res.data.plantsData }).catch((err) => {
+  //       console.log(err, "you got an error in the DidMount");
+  //     });
+  //   });
+  // };
+
+  componentDidMount() {
+    axios
+      .get("http://localhost:3333/plants")
+      .then((res) => {
+        console.log(res, "see me?");
+        this.setState({ plants: res.data.plantsData });
+      })
+      .catch((err) => {
+        console.log(err, "you got an error in the DidMount");
+      });
+
+    // this.fetchPlants();
+    // this.setState(this.state.plants);
+    console.log(this.state.plants, "did it mount?");
+  }
 
   // when the component mounts:
   //   - fetch data from the server endpoint - http://localhost:3333/plants
