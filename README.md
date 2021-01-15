@@ -29,14 +29,30 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+  inorder to create a statefull class component you are going need to create a constructor function that will have a super() function as well as a this.state variable that will have a value of an object
 
 2. Describe the different phases of the component lifecycle.
+  intialization
+    this is where you setup the state
+  mounting
+    this is where we mount to the dom
+  Updating
+    this is where when state changes and re renders accures within the dom
+  unmounting
+    this is where the mounts gets unmounted from the dom
 
 3. Demonstrate an understanding of class component lifecycle methods.
+  A small demonstration would be for example a counter example.
+  Where you first initilize the state where you get the counter to equal to 0
+  then you mount the state to the dom
+  from there when you click on a button it will update the dom changing the zero to another variable
+  once that process is done it will unmount and start up all over again.
 
 4. Define stateful logic.
+  stateful logic are hooks that are being resused in a way like react state
 
 5. Describe how to test a React component with React Testing Library.
+  You would need to create a js file with a .test extention before the .js extention, then you would need to import react and if you want a few other items as well as well as items from the react testing library if you havent installed it as a dependency yet. After that in order to create your first test you want to use a function named test and for the first parameter create a string describing what the test will be. inside the function itself you want to use the Arange,Act,Assert methods to create a certain test you would like
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
