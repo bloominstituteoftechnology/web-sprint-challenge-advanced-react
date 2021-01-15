@@ -1,7 +1,5 @@
 // write your custom hook here to control your checkout form
-import React, {useState} from 'react'
-
-
+import {useState} from 'react'
 
 
 
