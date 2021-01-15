@@ -13,13 +13,13 @@ export default class PlantList extends Component {
       .then(res => {
         console.log(res.data);
         this.setState({
-          plants: res.data
+          plants: res.data.plantsData
         })
       })
       .catch((err) => {
       console.log("There is no information currently to display from Plants Data!")
       })
-    return this.state.plants;
+    // return this.state.plants;
   }
   //   - fetch data from the server endpoint - http://localhost:3333/plants
   //   - set the returned plants array to this.state.plants
