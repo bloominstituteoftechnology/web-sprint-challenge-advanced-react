@@ -41,7 +41,7 @@ export default function useForm(initialValue) {
     e.preventDefault();
     setShowSuccessMessage(true);
   };
-
+// do not use bc success message relies on current vals
     const clearForm = e => {
         e.preventDefault();
         setValues(initialValue);
