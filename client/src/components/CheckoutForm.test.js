@@ -35,21 +35,14 @@ test("form shows success message on submit with form details", async () => {
     const newOrderDetailsName = await screen.findByText("Andrew Sohrabi");
     expect(newOrderDetailsName).toBeInTheDocument();
 
-
     // additional checks
     // const newOrder = await screen.findByText("You have ordered some plants! Woo-hoo! 🎉");
     // expect(newOrder).toBeInTheDocument();
     // const newOrder2 = await screen.findByText("Your new green friends will be shipped to:");
     // expect(newOrder2).toBeInTheDocument();
 
-    
     // const newOrderDetailsAddress = await screen.findByText("123 Main Street");
     // expect(newOrderDetailsAddress).toBeInTheDocument();
     // const newOrderDetailsGeo = await screen.findByText("San Francisco, CA 12345");
     // expect(newOrderDetailsGeo).toBeInTheDocument();
-    
-
-
-
-
 });
