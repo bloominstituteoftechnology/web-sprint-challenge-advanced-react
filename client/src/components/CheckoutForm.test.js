@@ -15,14 +15,17 @@ test("form shows success message on submit with form details", () => {
  const firstNameInput = screen.getByLabelText("First Name:");
  const lastNameInput = screen.getByLabelText("Last Name:");
  const addressInput = screen.getByLabelText("Address:");
+ const submitButton = screen.getByRole("button");
 
  userEvent.type(firstNameInput, "Bipin");
  userEvent.type(lastNameInput, "Shrestha");
  userEvent.type(addressInput, "California");
+ userEvent.click(submitButton);
 
  expect(firstNameInput).toHaveValue("Bipin");
  expect(lastNameInput).toHaveValue("Shrestha");
  expect(addressInput).toHaveValue("California");
+ expect(screen.getByTestId("successMessage")).toBeInTheDocument();
 
 
 });
