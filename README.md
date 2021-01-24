@@ -31,11 +31,15 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 1. Explain how to build stateful class components.
 
 2. Describe the different phases of the component lifecycle.
-
+-  There are 3 phases of component lifecycle
+a. Mounting : When component is placed on the Dom container and the component renders the first time. 
+b. Updating : It happens after the Mounting process and the data of the component updates in response of the user events like typing, clicking and so on. 
+   This makes the component to re-render.
+c. Unmounting: In this phase the component gets unmounted from the Dom since this is the last phase of component lifecycle.              
 3. Demonstrate an understanding of class component lifecycle methods.
-
+- 
 4. Define stateful logic.
-
+-  Stateful logic uses 
 5. Describe how to test a React component with React Testing Library.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
