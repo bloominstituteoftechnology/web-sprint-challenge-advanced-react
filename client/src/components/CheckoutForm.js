@@ -8,7 +8,7 @@ import useForm from "../hooks/useForm";
 const CheckoutForm = (props) => {
   // Declare 2 states and change handler function
   //and submit function per userForm hooks return
-  // const [showSuccessMessage, values, handleChanges, handleSubmit] = useForm();
+  const [showSuccessMessage, values, handleChanges, handleSubmit] = useForm();
 
   return (
     <>
