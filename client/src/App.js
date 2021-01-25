@@ -27,6 +27,7 @@ function App() {
         <nav className="container">
           <h1>
             React Plants <span role="img">🌿</span>
+            Test
           </h1>
           <ul className="steps">
             <li>
