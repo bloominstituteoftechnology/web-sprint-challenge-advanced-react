@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import useForm from '../hooks/useForm';
+import useForm from "../hooks/useForm";
+
 
 
 
@@ -8,7 +9,6 @@ import useForm from '../hooks/useForm';
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
 const CheckoutForm = (props) => {
-  
   const [showSuccessMessage, values, handleChanges, handleSubmit] = useForm();
   
 
@@ -22,7 +22,6 @@ const CheckoutForm = (props) => {
             name="firstName"
             value={values.firstName}
             onChange={handleChanges}
-            data-testid="textInput"
           />
         </label>
         <label>
