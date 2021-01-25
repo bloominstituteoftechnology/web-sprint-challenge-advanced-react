@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import useForm from "../hooks/useForm";
 
-
-
-
 // This form should be handled by a "useForm" custom hook
 // Build out the logic needed for a form custom hook (see the useForm.js file)
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
 const CheckoutForm = (props) => {
+  // Declare 2 states and change handler function
+  //and submit function per userForm hooks return
   const [showSuccessMessage, values, handleChanges, handleSubmit] = useForm();
-  
 
   return (
     <>

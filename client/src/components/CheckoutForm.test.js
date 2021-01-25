@@ -4,12 +4,19 @@ import CheckoutForm from "./CheckoutForm";
 
 // Write up the two tests here and make sure they are testing what the title shows
 
+// Test case to find the DOM node by a text, which need to be in the document
 test("form header renders", () => {
   render(<CheckoutForm />);
   const formHeader = screen.getByText(/checkout form/i);
   //screen.debug(formHeader);
   expect(formHeader).toBeInTheDocument();
 });
+
+//Test case that get the button node
+// and changes all fields with sample test data
+// clicks the selected dom node (button)
+// and expects to have the ShowSuccessMessage div 
+// as well as sample zip data to be in that div
 
 test("form shows success message on submit with form details", () => {
   render(<CheckoutForm />);
