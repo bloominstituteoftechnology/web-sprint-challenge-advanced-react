@@ -55,9 +55,14 @@ _Please follow the setup instructions closely so that you can get everything up 
 **Basic set up**
 
 - [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
 - [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [ ] [OPTIONAL] Create a new branch: git checkout -b `<firstName-lastName>`. If you choose to do this, you will need to merge your working branch into the master branch and push your final code to master in order for the submission to work with CodeGrade.
+
+\_Note: Ignore the `mocks` directory. That is in place for the CodeGrade tests
+
+**Setting up the CodeGrade webhook**
+
+Go [here](./CodeGrade-webhook.md) to setup the CodeGrade webhook before you begin.
 
 **Starting the server**
 
@@ -79,7 +84,7 @@ _Please follow the setup instructions closely so that you can get everything up 
 **Commit and Push OFTEN!**
 
 - [ ] Implement the project on this Branch, **committing progress & changes often.**
-- [ ] Push commits: `git push origin <firstName-lastName>`.
+- [ ] Push commits: `git push origin master`, or, if working on your own branch: git push origin <firstName-lastName>`.
 
 ### Task 2: Project Requirements
 
@@ -133,8 +138,4 @@ test("displays plants in cart", () => {
 
 ## Submission format
 
-Follow these steps for completing your project.
-
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo). **Please don't merge your own pull request**
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete after receiving your pull-request
+To submit, simply push your latest commit to the master branch and the CodeGrade webhook you setup will run automatically.
