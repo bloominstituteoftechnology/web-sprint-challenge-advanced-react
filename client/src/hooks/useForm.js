@@ -1,19 +1,12 @@
 // write your custom hook here to control your checkout form
 import React, { useState } from "react";
 
-const initialValue = {
-  firstName: "",
-  lastName: "",
-  address: "",
-  city: "",
-  state: "",
-  zip: "",
-};
 
-const useForm = () => {
+
+const useForm = (initialFormValue, initialMessageValue) => {
   //declare 2 states required for Form states
-  const [formValue, setFormValue] = useState(initialValue);
-  const [message, setShowSuccessMessage] = useState(false);
+  const [formValue, setFormValue] = useState(initialFormValue);
+  const [message, setShowSuccessMessage] = useState(initialMessageValue);
 
   // handles changes when there is a change to any form input
   const handleChanges = (e) => {
