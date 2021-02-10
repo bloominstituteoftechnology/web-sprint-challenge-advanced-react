@@ -4,13 +4,13 @@
 
 This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored some advanced React topics ⚛️. During this sprint, you studied **class components**, **the component lifecycle** and **class component lifecycle methods,** **custom hooks**, and **React Testing Library 🐙.** 
 
-In your challenge this week, you will demonstrate your mastery of these skills by creating an app that will fetch data from a local server using a `class component`, displaying that data, using a `custom hook`, and `writing tests for your app.`
+In your challenge this week, you will demonstrate your mastery of these skills by creating an app that will fetch data from an internal server using a `class component`, displaying that data, using a `custom hook`, and `writing tests for your app.`
 
 This is an individual assessment. All work must be your own. All projects will be submitted to codegrade for automated review. You will also be given feedback by code reviewers the Monday after challenge submissions. For more information on the review process [click here.](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
 
 You are not allowed to collaborate during the sprint challenge. However, you are encouraged to follow the twenty-minute rule and seek support by dropping a :wave: in your help channel when needed.
 
-_You have **three hours** to complete this challenge. Plan your time accordingly._
+_Sprint challenges open at Midnight PST on Thursday and close at 5pm on Friday. There will be no retakes accepted after five. No feedback will be given on project submitted after 5pm PST._
 
 ## Introduction
 
@@ -28,29 +28,16 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 
 ### Task 1: Project Setup
 
-#### Project Cloning
+#### Repo Setup
 * [ ] Fork and clone this repository.
 * [ ] Create a new working branch: git checkout -b `<firstName-lastName>`.
 * [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 * [ ] Push commits: git push origin `<firstName-lastName>`.
-
-#### Server Code Setup
-* [ ] Run `npm install` to download dependencies for the server.
-* [ ] Run the server using `npm start`.
-*[ ] Open a new browser tab and navigate to `http://localhost:3333/plants` - if you see a JSON object with plants data, then you know the server is running 👍
-
-#### Client Code Setup
-- [ ] In a separate terminal cd into the `client` folder and run `npm install` to download dependencies.
-- [ ] Still inside the `client` folder run `npm run start` to run the client application.
-- [ ] Your browser should open up the project as normal
-
-#### Test Runner Setup
-- [ ] In the final terminal window, make sure you are in the `client` folder still
-- [ ] Start the test runner with `npm test` (I recommend doing this only when you're testing - any change in your app will make the tests run, and that could eat up your computer power)
-
+* [ ] **RUN** `npm install` to install your dependencies.
+* [ ] **RUN** `npm start` to start your application.
+- [ ] In another terminal window, **RUN** `npm test` to start your test runner. (It is recommended you do this only when actually building tests - any change in your app will make the tests run, and that could eat up your computer power)
 
 ### Task 2: CodeGrade Setup
-
 * [ ] Open the assignment in Canvas and following along with the attached document [here.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374).
 * [ ] Follow instructions to set up Codegrade's Webhook and Deploy Key, making sure your deployment is set to your `<firstName-lastName>`.
 * [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`
@@ -62,11 +49,11 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 
 #### Plant list
 
-  Display a list of the plants from the server. This should be done in the class component `PlantList`.
+  Display a list of the plants from the server. This should be done in the class component `PlantList`. **Unlike other projects, the local server used here can not be accessed through the browser. For this and the rest of your sprint challenges, test the functioning of the server directly through your axios calls.**
 
-* [ ] In the `PlantList` class component, on mount fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants`
-* [ ] Set the data to a state property called `this.state.plants`
-* [ ] The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart
+* [ ] In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants.`
+* [ ] Set the data to a state property called `this.state.plants.`
+* [ ] The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart.
 
 #### Shopping Cart
 
@@ -80,11 +67,13 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 * [ ] You built a useForm hook in the guided project this week. You will probably need to use that as a guide to complete this step. However, try and build it out first before you peek at the guided project. And *do not* copy/paste directly from the guided project!_
 
 #### Testing the Checkout Form
-* [ ] Build out the tests listed in `CheckoutForm.test.js`. You will need to make sure they are testing what the test title implies they are testing
+* [ ] Run the test runner and ensure that `src/components/CheckoutForm.test.js` is correctly called.
+* [ ] Fill out code necessary to test that that Checkout form renders without errors.
+* [ ] Fill out code necessary to test that when all form inputs are filled with valid data, a success message appears.
+* [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working.
 
-* [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working
-
-  **Notes:**
+**Notes:**
+* Again, unlike other projects, the local server used here can not be accessed through the browser. For this and the rest of your sprint challenges, test the functioning of the server directly through your axios calls.
 * You are welcome to create additional files but **do not move or rename existing files** or folders.
 * Do not alter your `package.json` file except to install extra libraries.
 * In your solution, it is essential that you follow best practices and produce clean and professional results.
@@ -100,7 +89,7 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
   After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
 
 * [ ] Add a filter input to the plant list page.
-* [ ] Build and implement another custom hook - a dark mode hook would be great for this project, though you'll have to style the light theme ☀️ 🌙
+* [ ] Build and implement another custom hook - a dark mode hook would be great for this project, though you'll have to style the light theme 🌙
 * [ ] Add a test file for the `ShoppingCart` component and test that it displays plants there (you'll need some mock plant data for the test, and then you can pass that data in as a prop when you call `render` and render the component - see the example below)
 
 ```js
@@ -139,7 +128,7 @@ test("displays plants in cart", () => {
 * [ ] Submit via Codegrade by commiting and pushing any new changes.
 * [ ] Submit a pull-request to merge <firstName-lastName> branch into main. **Please don't merge your own pull request and make sure you are on your own repo**
 * [ ] Check codegrade for automated feedback.
-* [ ] Check codegrade on Monday following the Sprint Challenge for reviewer feedback.
+* [ ] Check codegrade on Monday following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
 * [ ] Any changes pushed to your <firstName-lastName> branch will resubmited to codegrade if pushed before the sprint challenge deadline. Changes after the deadline will not be reviewed.
 
 ## Interview Questions
