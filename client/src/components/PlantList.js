@@ -19,8 +19,6 @@ export default class PlantList extends Component {
         console.log(err, "you got an error in the DidMount");
       });
 
-    // this.fetchPlants();
-    // this.setState(this.state.plants);
     console.log(this.state.plants, "did it mount?");
   }
 

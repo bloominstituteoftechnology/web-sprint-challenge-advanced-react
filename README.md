@@ -30,13 +30,68 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+Declare your class component by extending the React.Component parent class. Class FooComponent extends React.Component {}. Use the constructor function to set up some state. because we're calling extends, we also need to call super(); otherwise we won't have access the this
+
 2. Describe the different phases of the component lifecycle.
+
+1. Mounting: Birth phase
+
+- Constructor function is called and state data is initialized
+  - If you don’t initialize state you don’t bind methods, you don’t need to implement a constructor for your React component
+- We can receive props and place them on our component as state
+- Render is then invoked and our JSX elements are transformed into Dom elements
+- After render is called, componentDidMount will be invoked
+
+2. Updating: Growth phase
+
+- Any new props received from a parent, will trigger updates to the child
+- this.setState (not directly part of the lifecycle but influences it) any changes to our state need to go through setState
+- setState calls a render by default
+- componentDidUpdate()
+  - is invoked immediately after updating occurs. This method is not called for the initial render.
+
+4. Un-mounting: Death phase
+
+- componentWillUnmount()
+  - is called and can be used for any clean up you may need to do.
+  - Remove all manual eventListeners
+  - Remove or stop any timers/ intervals
+  - Warn users they are about to leave form
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+- componentDidUpdate()
+
+  - is invoked immediately after updating occurs. This method is not called for the initial render.
+
+- componentWillUnmount()
+  - is called and can be used for any clean up you may need to do.
+  - Remove all manual eventListeners
+  - Remove or stop any timers/ intervals
+  - Warn users they are about to leave form
+
 4. Define stateful logic.
 
+- Add state through the constructor() function followed by super()
+
+* ”super is used to extend from the component you’re extending”
+
+- Setting state looks like:
+-     this.state = {
+      Name:”dan”
+      }
+
+- “This” keyword: is used to access any class property you’ve made.
+- If it is an array you need to recreate it such as
+
 5. Describe how to test a React component with React Testing Library.
+   Integration testing:
+
+- 3 steps to running a test
+
+1. Arrange: render the App component.
+2. Act: query the DOOM for the header element.
+3. Assert: is the header found on the DOM.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
