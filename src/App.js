@@ -9,6 +9,13 @@ import CheckoutForm from "./components/CheckoutForm";
 import "./App.css";
 
 function App() {
+
+    axios.get ("http://localhost:3333/plants")
+      .then((res) => {
+        this.setState({ plants: res.data.plantsData })
+        console.log(res.data)
+      })
+
   // array of plants that have been added to the cart
   const [cart, setCart] = useState([]);
 

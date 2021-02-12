@@ -1,8 +1,13 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, within } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
 
 // Write up the two tests here and make sure they are testing what the title shows
+
+
+test("app renders",() => {
+    render(<CheckoutForm />)
+})
 
 test("form header renders", () => {
     render(<CheckoutForm />)
@@ -21,17 +26,22 @@ test("form header renders", () => {
     fireEvent.change(inputState,{target:{ value:"NY", name:"state"}})
     fireEvent.change(inputZip,{target:{ value:"10075", name:"zip"}})
 
-    expect(inputFirstName).toHaveValue('Ava')
-    expect(inputLastName).toHaveValue('Murad')
-    expect(inputAddress).toHaveValue('516 E 80th st')
-    expect(inputCity).toHaveValue('New York')
-    expect(inputState).toHaveValue('NY')
-    expect(inputZip).toHaveValue('10075')
+    expect(inputFirstName).toHaveValue("Ava")
+    expect(inputLastName).toHaveValue("murad")
+    expect(inputAddress).toHaveValue("516 e 80th st")
+    expect(inputCity).toHaveValue("new york")
+    expect(inputState).toHaveValue("NY")
+    expect(inputZip).toHaveValue("10075")
 
-    // const submit = screen.getByRole('button')
+    const submit = screen.getByRole("button")
 
-    // fireEvent.click(submit)
+    fireEvent.click(submit)
 
+    const successMessage = screen.getByTestId("successMessage")
+    expect(successMessage).toBeInTheDocument()
 
+    within(successMessage).getByText(/ava murad/i)
+    within(successMessage).getByText(/516 e 80th st/i)
+    within(successMessage).getByText(/new york, ny 10075/i)
 
 });

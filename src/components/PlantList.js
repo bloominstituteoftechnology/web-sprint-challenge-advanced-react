@@ -8,7 +8,6 @@ export default class PlantList extends Component {
     plants:[]
   }
 
-
   componentDidMount() {
     axios.get ("http://localhost:3333/plants")
       .then((res) => {
