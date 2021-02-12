@@ -1,4 +1,6 @@
+
 import React, { useState } from "react";
+import useForm from './../hooks/useForm';
 
 const initialValue = {
   firstName: "",
@@ -14,17 +16,10 @@ const initialValue = {
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
 const CheckoutForm = (props) => {
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [values, setValues] = useState(initialValue);
+ 
+  const [values, handleChanges, handleSubmit, showSuccessMessage] = useForm(initialValue);
 
-  const handleChanges = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setShowSuccessMessage(true);
-  };
+ 
 
   return (
     <>
@@ -33,7 +28,9 @@ const CheckoutForm = (props) => {
         <label>
           First Name:
           <input
+            id= "firstName"
             name="firstName"
+            type="text"
             value={values.firstName}
             onChange={handleChanges}
           />
@@ -41,7 +38,9 @@ const CheckoutForm = (props) => {
         <label>
           Last Name:
           <input
+            id="lastName"
             name="lastName"
+            type="text"
             value={values.lastName}
             onChange={handleChanges}
           />
@@ -49,24 +48,26 @@ const CheckoutForm = (props) => {
         <label>
           Address:
           <input
+            id="address"
             name="address"
+            type="text"
             value={values.address}
             onChange={handleChanges}
           />
         </label>
         <label>
           City:
-          <input name="city" value={values.city} onChange={handleChanges} />
+          <input id="city" name="city"  type="text" value={values.city} onChange={handleChanges} />
         </label>
         <label>
           State:
-          <input name="state" value={values.state} onChange={handleChanges} />
+          <input id="state" name="state"  type="text" value={values.state} onChange={handleChanges} />
         </label>
         <label>
           Zip:
-          <input name="zip" value={values.zip} onChange={handleChanges} />
+          <input id="zip" name="zip"  type="text" value={values.zip} onChange={handleChanges} />
         </label>
-        <button>Checkout</button>
+        <button type="submit">Checkout</button>
       </form>
 
       {showSuccessMessage && (
