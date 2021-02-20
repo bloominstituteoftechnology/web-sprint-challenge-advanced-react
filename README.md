@@ -29,12 +29,12 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 ### Task 1: Project Setup
 
 #### Repo Setup
-* [ ] Fork and clone this repository.
-* [ ] Create a new working branch: git checkout -b `<firstName-lastName>`.
-* [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-* [ ] Push commits: git push origin `<firstName-lastName>`.
-* [ ] **RUN** `npm install` to install your dependencies.
-* [ ] **RUN** `npm start` to start your application.
+* [x] Fork and clone this repository.
+* [x] Create a new working branch: git checkout -b `<firstName-lastName>`.
+* [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+* [x] Push commits: git push origin `<firstName-lastName>`.
+* [x] **RUN** `npm install` to install your dependencies.
+* [x] **RUN** `npm start` to start your application.
 - [ ] In another terminal window, **RUN** `npm test` to start your test runner. (It is recommended you do this only when actually building tests - any change in your app will make the tests run, and that could eat up your computer power)
 
 ### Task 2: CodeGrade Setup
