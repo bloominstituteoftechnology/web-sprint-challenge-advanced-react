@@ -22,7 +22,7 @@ const CheckoutForm = (props) => {
   //   setValues({ ...values, [e.target.name]: e.target.value });
   // };
 
-  const [values, handleChanges, clearForm] = useForm(initialValues);
+  const [values, handleChanges] = useForm(initialValues);
 
   const handleSubmit = (e) => {
     e.preventDefault();
