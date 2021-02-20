@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
 
@@ -21,15 +22,19 @@ export default class PlantList extends Component {
       .catch(err => console.log(err))
   }
 
+  
 
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
   render() {
     return (
-      <main className="plant-list">
+      <main className={this.props.darkMode ? "dark-mode plant-list" : "plant-list"}>
         {this.state?.plants?.map((plant) => (
-          <div className="plant-card" key={plant.id} data-testid="plant-card">
+          <div 
+          className={this.props.darkMode ? "dark-mode plant-card" : "plant-card"}
+            key={plant.id} data-testid="plant-card">
             <img className="plant-image" src={plant.img} alt={plant.name} />
-            <div className="plant-details">
+            <div className="plant-details"
+              className={this.props.darkMode ? "dark-mode plant-details" : "plant-details"}>
               <h2 className="plant-name">{plant.name}</h2>
               <p className="plant-scientific-name">{plant.scientificName}</p>
               <p>{plant.description}</p>

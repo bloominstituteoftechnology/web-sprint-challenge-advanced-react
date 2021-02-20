@@ -23,6 +23,7 @@ const CheckoutForm = (props) => {
   // };
 
   const [values, handleChanges] = useForm(initialValues);
+  const { darkMode } = props;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,7 +32,7 @@ const CheckoutForm = (props) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={darkMode ? "dark-mode form" : "form"}>
         <h2>Checkout Form</h2>
         <label>
           First Name:
