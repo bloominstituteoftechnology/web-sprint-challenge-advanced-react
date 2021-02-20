@@ -35,7 +35,7 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 * [x] Push commits: git push origin `<firstName-lastName>`.
 * [x] **RUN** `npm install` to install your dependencies.
 * [x] **RUN** `npm start` to start your application.
-- [ ] In another terminal window, **RUN** `npm test` to start your test runner. (It is recommended you do this only when actually building tests - any change in your app will make the tests run, and that could eat up your computer power)
+- [x] In another terminal window, **RUN** `npm test` to start your test runner. (It is recommended you do this only when actually building tests - any change in your app will make the tests run, and that could eat up your computer power)
 
 ### Task 2: CodeGrade Setup
 * [ ] Open the assignment in Canvas and following along with the attached document [here.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374).
