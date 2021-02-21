@@ -8,7 +8,7 @@ export default class PlantList extends Component {
   componentDidMount() {
     console.log("Log From componentDidMount");
     axios
-      .get(`http://localhost:3333/plants.`)
+      .get(`http://localhost:3333/plants`)
       .then((res) => {
         console.log("Initial Data Value From Axios Request", res.data);
         //always do this to prevent errors
