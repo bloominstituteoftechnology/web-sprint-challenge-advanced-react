@@ -125,11 +125,11 @@ test("displays plants in cart", () => {
 
 ## Submission format
 
-* [ ] Submit via Codegrade by commiting and pushing any new changes.
-* [ ] Submit a pull-request to merge <firstName-lastName> branch into main. **Please don't merge your own pull request and make sure you are on your own repo**
-* [ ] Check codegrade for automated feedback.
-* [ ] Check codegrade on Monday following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
-* [ ] Any changes pushed to your <firstName-lastName> branch will resubmited to codegrade if pushed before the sprint challenge deadline. Changes after the deadline will not be reviewed.
+* [x] Submit via Codegrade by commiting and pushing any new changes.
+* [x] Submit a pull-request to merge <firstName-lastName> branch into main. **Please don't merge your own pull request and make sure you are on your own repo**
+* [x] Check codegrade for automated feedback.
+* [x] Check codegrade on Monday following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
+* [x] Any changes pushed to your <firstName-lastName> branch will resubmited to codegrade if pushed before the sprint challenge deadline. Changes after the deadline will not be reviewed.
 
 ## Interview Questions
 
@@ -137,8 +137,20 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What are the main differences between a stateful and a functional component?
 
+A component with state contains data and has the ability to change based on user interactions with the App. A functional component is static and will always render the same information to the page.
+
 2. When does a componentWillMount function be called? What about a componentWillUpdate?
+
+The componentWillMount function is called before the page renders and it's only triggered once. We have generally used this function for API calls. The componentWillUpdate function is used every time the page re-renders and will not set state.
 
 3. Define stateful logic.
 
+Any component that contains state is using stateful logic, which is dynmamic data that is stored in the component. This stored data enables the component to keep track of any changes made by the user on the App.
+
 4. What are the three step of creating a successful test? What is done in each phase?
+
+Arrange: Renders elements onto the virtual dom and sets them up for testing 
+
+Act: The stage where we're able to perform simulations of actual events that a user will experience on the page, such as entering information on a form and clicking on specific elements.
+
+Assert: The final step in the test where we check to see that the App is behaving and rendering the correct information the virtual dom.
