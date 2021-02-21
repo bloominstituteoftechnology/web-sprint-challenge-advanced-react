@@ -39,6 +39,7 @@ test("form header renders", () => {
   expect(button).toBeVisible();
 });
 
+
 test("form shows success message on submit with form details", () => {
   render(<CheckoutForm />);
 

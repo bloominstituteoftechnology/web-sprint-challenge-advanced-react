@@ -3,12 +3,7 @@ import axios from "axios";
 
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
-  constructor() {
-    super();
-    this.state = {
-      plants: [],
-    };
-  }
+
 
   componentDidMount() {
     console.log("Log From componentDidMount");
@@ -36,7 +31,7 @@ export default class PlantList extends Component {
 
 
 
-  
+
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
   render() {
     return (
