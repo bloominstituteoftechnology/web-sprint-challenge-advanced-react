@@ -1,6 +1,8 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
+import App from '../App';
+import userEvent from "@testing-library/user-event";
 
 // Write up the two tests here and make sure they are testing what the title shows
 
@@ -15,19 +17,31 @@ test("form header renders", () => {
 test("form shows success message on submit with form details", () => {
     render(<CheckoutForm />);
 
-    const successMessage = screen.findByText(/you have ordered some plants/i);
-    const firstName = screen.findByLabelText(/First Name:/i);
-    const lastName = screen.findByLabelText(/Last Name:/i);
-    const address = screen.findByLabelText(/Address:/i);
-    const city = screen.findByLabelText(/City:/i);
-    const state = screen.findByLabelText(/State:/i);
-    const zip = screen.findByLabelText(/Zip:/i);
+    const firstName = screen.getByLabelText(/First Name:/i);
+    const lastName = screen.getByLabelText(/Last Name:/i);
+    const address = screen.getByLabelText(/Address:/i);
+    const city = screen.getByLabelText(/City:/i);
+    const state = screen.getByLabelText(/State:/i);
+    const zip = screen.getByLabelText(/Zip:/i);
+    const submit = screen.getByRole('button', { name: /submit/i });
 
-    expect(successMessage).toBeInTheDocument();
-    expect(firstName).toBeInTheDocument();
-    expect(lastName).toBeInTheDocument();
-    expect(address).toBeInTheDocument();
-    expect(city).toBeInTheDocument();
-    expect(state).toBeInTheDocument();
-    expect(zip).toBeInTheDocument();
+    userEvent.type(firstName, 'Kelsey');
+    userEvent.type(lastName, 'Nielsen');
+    userEvent.type(address, '123 Address St');
+    userEvent.type(city, 'Vernal');
+    userEvent.type(state, 'Utah');
+    userEvent.type(zip, '84078');
+    userEvent.click(submit);
+
+    const firstNameInput = screen.findByText(/Kelsey/i);
+    firstNameInput.then(element => {
+        expect(element).toBeInTheDocument();
+    });
+
+    const successMessage = screen.findByText(/you have ordered some plants/i);
+    successMessage.then(element => {
+        expect(element).toBeInTheDocument();
+    });
+
+    
 });
