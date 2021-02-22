@@ -10,8 +10,12 @@ test("form header renders", () => {
     render(<CheckoutForm/>) 
     const headerInput = screen.getLabelByText(/checkout form/i)
 
-    userEvent.type(firstInput)
+    userEvent.type(headerInput)
 
 });
+// finish
+test("form shows success message on submit with form details", () => {
+const submitBtn = screen.getLabelByText(/You have ordered some plants! Woo-hoo!/i)
 
-test("form shows success message on submit with form details", () => {});
+userEvent.type(submitBtn)
+});
