@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {useForm} from '../hooks/useForm'
 
 const initialValue = {
   firstName: "",
@@ -15,11 +16,9 @@ const initialValue = {
 
 const CheckoutForm = (props) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [values, setValues] = useState(initialValue);
+  const [values, changeHandler] = useForm(initialValue);
 
-  const handleChanges = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,7 +34,7 @@ const CheckoutForm = (props) => {
           <input
             name="firstName"
             value={values.firstName}
-            onChange={handleChanges}
+            onChange={changeHandler}
           />
         </label>
         <label>
@@ -43,7 +42,7 @@ const CheckoutForm = (props) => {
           <input
             name="lastName"
             value={values.lastName}
-            onChange={handleChanges}
+            onChange={changeHandler}
           />
         </label>
         <label>
@@ -51,22 +50,22 @@ const CheckoutForm = (props) => {
           <input
             name="address"
             value={values.address}
-            onChange={handleChanges}
+            onChange={changeHandler}
           />
         </label>
         <label>
           City:
-          <input name="city" value={values.city} onChange={handleChanges} />
+          <input name="city" value={values.city} onChange={changeHandler} />
         </label>
         <label>
           State:
-          <input name="state" value={values.state} onChange={handleChanges} />
+          <input name="state" value={values.state} onChange={changeHandler} />
         </label>
         <label>
           Zip:
-          <input name="zip" value={values.zip} onChange={handleChanges} />
+          <input name="zip" value={values.zip} onChange={changeHandler} />
         </label>
-        <button>Checkout</button>
+        <button data-testid='checkoutSubmit'>Checkout</button>
       </form>
 
       {showSuccessMessage && (
