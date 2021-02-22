@@ -4,8 +4,6 @@ import CheckoutForm from "./CheckoutForm";
 import App from '../App';
 import userEvent from "@testing-library/user-event";
 
-// Write up the two tests here and make sure they are testing what the title shows
-
 test("form header renders", () => {
     render(<App />);
 
@@ -14,7 +12,7 @@ test("form header renders", () => {
     expect(header).toBeInTheDocument();
 });
 
-test("form shows success message on submit with form details", () => {
+test("form shows success message on submit with form details", async () => {
     render(<CheckoutForm />);
 
     const firstName = screen.getByLabelText(/First Name:/i);
@@ -31,17 +29,29 @@ test("form shows success message on submit with form details", () => {
     userEvent.type(city, 'Vernal');
     userEvent.type(state, 'Utah');
     userEvent.type(zip, '84078');
-    userEvent.click(checkout);
+    await userEvent.click(checkout);
 
-    const firstNameInput = screen.findByText(/Kelsey/i);
-    firstNameInput.then(element => {
-        expect(element).toBeInTheDocument();
-    });
+    const firstNameInput = screen.getByText(/Kelsey/i);
+        expect(firstNameInput).toBeInTheDocument();
 
-    const successMessage = screen.findByText(/you have ordered some plants/i);
-    successMessage.then(element => {
-        expect(element).toBeInTheDocument();
-    });
+    const lastNameInput = screen.getByText(/Nielsen/i);
+        expect(lastNameInput).toBeInTheDocument();
 
+    const addressInput = screen.getByText(/123 Address St/i);
+        expect(addressInput).toBeInTheDocument();
+
+    const cityInput = screen.getByText(/Vernal/i);
+        expect(cityInput).toBeInTheDocument();
+
+    const stateInput = screen.getByText(/Utah/i);
+        expect(stateInput).toBeInTheDocument();
+
+    const zipInput = screen.getByText(/84078/i);
+        expect(zipInput).toBeInTheDocument();
+
+    const successMessage = screen.getByText(/you have ordered some plants/i);
+        expect(successMessage).toBeInTheDocument();
+
+    screen.debug();
     
 });
