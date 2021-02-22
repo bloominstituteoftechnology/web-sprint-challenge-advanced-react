@@ -23,7 +23,7 @@ test("form shows success message on submit with form details", () => {
     const city = screen.getByLabelText(/City:/i);
     const state = screen.getByLabelText(/State:/i);
     const zip = screen.getByLabelText(/Zip:/i);
-    const submit = screen.getByRole('button', { name: /submit/i });
+    const checkout = screen.getByRole('button', { name: /checkout/i });
 
     userEvent.type(firstName, 'Kelsey');
     userEvent.type(lastName, 'Nielsen');
@@ -31,7 +31,7 @@ test("form shows success message on submit with form details", () => {
     userEvent.type(city, 'Vernal');
     userEvent.type(state, 'Utah');
     userEvent.type(zip, '84078');
-    userEvent.click(submit);
+    userEvent.click(checkout);
 
     const firstNameInput = screen.findByText(/Kelsey/i);
     firstNameInput.then(element => {
