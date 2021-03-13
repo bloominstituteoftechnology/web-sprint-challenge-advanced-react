@@ -15,9 +15,9 @@ const initialValue = {
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
 const CheckoutForm = (props) => {
-  const [values, handleChanges] = useForm(initialValue);
+  const [values, handleChanges, clearForm] = useForm(initialValue);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setShowSuccessMessage(true);
@@ -67,7 +67,10 @@ const CheckoutForm = (props) => {
           Zip:
           <input name="zip" id='zip' value={values.zip} onChange={handleChanges} />
         </label>
-        <button type='submit'>Checkout</button>
+        <div class='button'>    
+        <button role='submit' type='submit'>Checkout</button>
+        <button onClick={clearForm}>Clear Form</button>
+        </div>
       </form>
 
       {showSuccessMessage && (

@@ -40,7 +40,7 @@ test("form shows success message on submit with form details", () => {
     
    
     //-find and click submit button
-    const buttonSubmit = screen.getByRole('button');
+    const buttonSubmit = screen.getByRole('submit');
     expect(buttonSubmit).not.toBeDisabled();
     userEvent.click(buttonSubmit);
    

@@ -9,8 +9,12 @@ const useForm = (initialValue) => {
        ...values, 
        [e.target.name]: e.target.value });
   };
- 
-  return [values, handleChanges]
+  const clearForm = e => {
+    e.preventDefault();
+    setValues(initialValue);
+  };
+
+  return [values, handleChanges, clearForm]
 }
 
 export default useForm;

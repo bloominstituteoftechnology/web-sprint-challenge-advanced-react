@@ -170,6 +170,10 @@ button:hover {
   background: #df2e6c;
 }
 
+.button {
+  display: flex;
+  justify-content: space-between;
+}
 button:active,
 input[type="button"]:active,
 input:active {
