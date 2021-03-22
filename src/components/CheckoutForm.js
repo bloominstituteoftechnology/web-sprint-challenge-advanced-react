@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useForm} from "../hooks/useForm"
+import { useForm } from '../hooks/useForm'
 
 const initialValue = {
   firstName: "",
@@ -67,7 +67,7 @@ const CheckoutForm = (props) => {
           Zip:
           <input name="zip" value={values.zip} onChange={handleChanges} />
         </label>
-        <button data-testid= 'button' onClick={clearForm}>Checkout</button>
+        <button data-testid='button' onCLick={clearForm}>Checkout</button>
       </form>
 
       {showSuccessMessage && (
