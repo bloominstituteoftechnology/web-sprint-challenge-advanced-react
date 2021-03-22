@@ -13,15 +13,15 @@ test("form header renders", async () => {
 });
 
 test("form shows success message on submit with form details", () => {
-    const {getByTestId} = render(<CheckoutForm/>)
+    const { getByTestId } = render(<CheckoutForm/>)
 
-    const button = getByTestId(/button/i);
+    const button = getByTestId(/button/i)
 
     expect(button).toBeInTheDocument();
 
     fireEvent.click(button);
 
-    const success = getByTestId(/successmessage/i);
+    const success = getByTestId(/successmessage/i)
 
     expect(success).toBeInTheDocument();
 });
