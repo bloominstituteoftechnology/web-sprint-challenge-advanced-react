@@ -37,6 +37,8 @@
   },
   "devDependencies": {
     "@sheerun/mutationobserver-shim": "^0.3.3",
-    "msw": "^0.21.3"
+    "jest-dom": "^4.0.0",
+    "msw": "^0.21.3",
+    "react-testing-library": "^8.0.1"
   }
 }
