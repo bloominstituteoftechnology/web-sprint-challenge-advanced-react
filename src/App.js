@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 
 import PlantList from "./components/PlantList";
 import ShoppingCart from "./components/ShoppingCart";
@@ -27,7 +27,10 @@ function App() {
       <Router>
         <nav className="container">
           <h1>
-            React Plants <span role="img">🌿</span>
+            React Plants{" "}
+            <span role="img" aria-label="idk">
+              🌿
+            </span>
           </h1>
           <ul className="steps">
             <li>
