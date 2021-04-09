@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
 import userEvent from "@testing-library/user-event";
 
@@ -16,17 +16,23 @@ test("form header renders", () => {
 test("form shows success message on submit with form details", async () => {
   render(<CheckoutForm />);
 
-  //   const name = screen.getByLabelText("First Name:");
-
-  //   userEvent.type(name, "ALDO");
-
+  const name = screen.getByLabelText("First Name:");
+  const address = screen.getByLabelText("Address:");
+  const city = screen.getByLabelText("City:");
+  const state = screen.getByLabelText("State:");
+  const zip = screen.getByLabelText("Zip:");
   const btn = screen.getByRole("button");
 
+  userEvent.type(name, "ALDO");
+  userEvent.type(address, "Main st.");
+  userEvent.type(city, "San Diego");
+  userEvent.type(state, "CA");
+  userEvent.type(zip, "92692");
   userEvent.click(btn);
 
-  const submittedSuccess1 = await screen.getByText(
+  const submittedSuccess = await screen.getByText(
     "You have ordered some plants! Woo-hoo!"
   );
 
-  expect(submittedSuccess1).toBeVisible();
+  expect(submittedSuccess).toBeVisible();
 });
