@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from '@testing-library/user-event'
+import MutationObserver from 'mutationobserver-shim';
 import CheckoutForm from "./CheckoutForm";
 
 // Write up the two tests here and make sure they are testing what the title shows
@@ -38,11 +39,14 @@ test("form shows success message on submit with form details", async () => {
     const submitButton = screen.getByRole('button');
     userEvent.click(submitButton);
 
-    // await waitFor(() => {
+    // Issue: MutationObserver
+      // Dependencies not updated (tried, did not seem to work)
 
-    //     const results = screen.getByTestId('successMessage');
-    //     expect(results).toBeInTheDocument();
-    // })
+    await waitFor(() => {
+
+        const results = screen.getByTestId('successMessage');
+        expect(results).toBeInTheDocument();
+    })
 
 
 });
