@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from '@testing-library/user-event'
 import CheckoutForm from "./CheckoutForm";
 
@@ -13,6 +13,36 @@ test("form header renders", () => {
     expect(header).toBeInTheDocument();
 });
 
-test("form shows success message on submit with form details", () => {
+test("form shows success message on submit with form details", async () => {
+    render(<CheckoutForm />);
+
+    const firstNameField = screen.getByLabelText(/first name/i);
+    userEvent.type(firstNameField, 'Maruchan');
+
+    const lastNameField = screen.getByLabelText(/last name/i);
+    userEvent.type(lastNameField, 'Noodles');
+
+    const addressField = screen.getByLabelText(/address/i);
+    userEvent.type(addressField, '123 Souper Meal Lane');
+
+    const city = screen.getByLabelText(/city/i);
+    userEvent.type(city, 'Bowl-der');
+
+    const state = screen.getByLabelText(/state/i);
+    userEvent.type(state, "Colorado");
+
+    const zip = screen.getByLabelText(/zip/i);
+    userEvent.type(zip, '40097');
+
+
+    const submitButton = screen.getByRole('button');
+    userEvent.click(submitButton);
+
+    // await waitFor(() => {
+
+    //     const results = screen.getByTestId('successMessage');
+    //     expect(results).toBeInTheDocument();
+    // })
+
 
 });
