@@ -39,14 +39,11 @@ test("form shows success message on submit with form details", async () => {
     const submitButton = screen.getByRole('button');
     userEvent.click(submitButton);
 
-    // Issue: MutationObserver
-      // Dependencies not updated (tried, did not seem to work)
-
     await waitFor(() => {
 
         const results = screen.getByTestId('successMessage');
         expect(results).toBeInTheDocument();
-    })
+    });
 
 
 });
