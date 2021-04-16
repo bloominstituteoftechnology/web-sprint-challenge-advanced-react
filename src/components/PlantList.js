@@ -16,7 +16,6 @@ export default class PlantList extends Component {
           ...this.state,
           plants: res.data // array of objs
         })
-     
       })
       .catch(err => console.log(err))
   }
@@ -29,7 +28,7 @@ export default class PlantList extends Component {
         console.log(res);
       });
   }
-  
+
   render() {
     return (
       <main className="plant-list">
