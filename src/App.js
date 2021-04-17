@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import axios from 'axios';
+
 
 import PlantList from "./components/PlantList";
 import ShoppingCart from "./components/ShoppingCart";
