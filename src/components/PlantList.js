@@ -2,19 +2,29 @@ import React, { Component } from "react";
 import axios from "axios";
 
 export default class PlantList extends Component {
-  // add state with a property called "plants" - initialize as an empty array
-
+  // add state with a property called "plants" - initialize as an empty array *COMPLETE
+      constructor () {
+        super();
+        this.state = {
+          plants: []
+        }
+      }
   // when the component mounts:
-  //   - fetch data from the server endpoint - http://localhost:3333/plants
-  //   - set the returned plants array to this.state.plants
+  //   - fetch data from the server endpoint - http://localhost:3333/plants *COMPLETE
+  //   - set the returned plants array to this.state.plants *COMPLETE, the data has yet to show up, but it is being returned upon pressing the plants button on the home page
 
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
   componentDidMount() {
     axios.get('http://localhost:3333/plants')
       .then(res => {
-        console.log(res);
-      });
+        // DB Previous:
+        // this.setState({...this.state, plants: res.plantsData});
+        this.setState({...this.state, plants: res.data});
+        console.log("The data array");
+      })
+      .catch(err => console.log(err));
   }
+
 
   render() {
     return (
@@ -28,8 +38,8 @@ export default class PlantList extends Component {
               <p>{plant.description}</p>
               <div className="plant-bottom-row">
                 <p>${plant.price}</p>
-                <p>☀️ {plant.light}</p>
-                <p>💦 {plant.watering}x/month</p>
+                <p><span role="img" aria-label="Light">☀️</span> {plant.light}</p>
+                <p><span role="img" aria-label="Watering">💦</span> {plant.watering}x/month</p>
               </div>
               <button
                 className="plant-button"
@@ -44,3 +54,8 @@ export default class PlantList extends Component {
     );
   }
 }
+
+
+
+
+

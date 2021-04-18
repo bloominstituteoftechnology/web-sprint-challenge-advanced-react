@@ -9,4 +9,4 @@ worker.start();
 ReactDOM.render(<App />, document.getElementById("root"));
 
 
-const name = 'my name is molly' //test for code grade
+//const name = 'my name is molly' //test for code grade
