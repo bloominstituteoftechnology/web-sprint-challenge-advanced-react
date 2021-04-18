@@ -24,7 +24,9 @@ constructor(){
     axios.get('http://localhost:3333/plants')
       .then(res => { this.setState({...this.state, plants:res.data})
         console.log(res);
-        });
+      
+        })
+        .catch(err => err, 'opps somethings not right');
       
   }
 
