@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from "axios";
 
-export default class PlantList extends Component {
+export default class PlantList extends React.Component {
   constructor() {
     super();
     this.state = {

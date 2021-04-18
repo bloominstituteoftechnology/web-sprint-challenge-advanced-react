@@ -70,7 +70,7 @@ const CheckoutForm = (props) => {
 
       {showSuccessMessage && (
         <div className="success-message" data-testid="successMessage">
-          <p><strong>Confirmation Number:</strong> {Math.floor(Math.random() * (10 * 12657))}</p>
+          <p><strong>Confirmation Number:</strong> {Math.floor(Math.random() * (10 * 126570))}</p>
           <p>
             You have ordered some plants! Woo-hoo! <span role="img">🎉</span>
           </p>
