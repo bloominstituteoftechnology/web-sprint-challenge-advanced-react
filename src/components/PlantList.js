@@ -19,8 +19,8 @@ export default class PlantList extends Component {
       .then(res => {
         // DB Previous:
         // this.setState({...this.state, plants: res.plantsData});
-        this.setState({...this.state, plants: res.data});
-        console.log("The data array");
+        this.setState({ plants: res.data});
+        console.log("The data array", res); //res.data is common response w/ axios, console log with res following to see actual data structure
       })
       .catch(err => console.log(err));
   }
