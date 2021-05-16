@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { useForm } from "../hooks/useForm";
 
-const initialValue = {
+const initialValues = {
   firstName: "",
   lastName: "",
   address: "",
@@ -15,11 +16,13 @@ const initialValue = {
 
 const CheckoutForm = (props) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [values, setValues] = useState(initialValue);
 
-  const handleChanges = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+
+ // const handleChanges = (e) => {
+//    setValues({ ...values, [e.target.name]: e.target.value });
+//  };
+
+const [values, handleChanges] = useForm(initialValues);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -72,7 +75,7 @@ const CheckoutForm = (props) => {
       {showSuccessMessage && (
         <div className="success-message" data-testid="successMessage">
           <p>
-            You have ordered some plants! Woo-hoo! <span role="img">🎉</span>
+            You have ordered some plants! Woo-hoo! <span role="img" aria-label="party">🎉</span>
           </p>
           <p>Your new green friends will be shipped to:</p>
           <br />
