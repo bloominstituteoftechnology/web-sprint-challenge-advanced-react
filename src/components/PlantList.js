@@ -1,8 +1,11 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
+  state = {
+    plants: [],
+  };
 
   // when the component mounts:
   //   - fetch data from the server endpoint - http://localhost:3333/plants
@@ -10,10 +13,9 @@ export default class PlantList extends Component {
 
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
   componentDidMount() {
-    axios.get('http://localhost:3333/plants')
-      .then(res => {
-        console.log(res);
-      });
+    axios.get('http://localhost:3333/plants').then((res) => {
+      this.setState({ plants: res.data });
+    });
   }
 
   render() {
@@ -33,8 +35,7 @@ export default class PlantList extends Component {
               </div>
               <button
                 className="plant-button"
-                onClick={() => this.props.addToCart(plant)}
-              >
+                onClick={() => this.props.addToCart(plant)}>
                 Add to cart
               </button>
             </div>
