@@ -5,9 +5,9 @@ import { useState } from 'react';
 const useForm = (initialValues) => {
     const [values, setValues] = useState(initialValues);
 
-    const handleChanges = evt => {
+    const handleChanges = e => {
         setValues({
-            ...values, [evt.target.name]:evt.target.value
+            ...values, [e.target.name]:e.target.value
         });
     };
 
