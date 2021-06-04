@@ -13,7 +13,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import CheckoutForm from "./CheckoutForm";
 
-test("form header renders", () => {
+test("if header renders on form page", () => {
   render(<CheckoutForm />);
 
   //Arrange
@@ -47,7 +47,7 @@ test("form header renders", () => {
   expect(button).toBeVisible();
 });
 
-test("form shows success message on submit with form details", () => {
+test("form displays acknowledgment of sucess on form submit", () => {
   render(<CheckoutForm />);
 
   //Arrange
