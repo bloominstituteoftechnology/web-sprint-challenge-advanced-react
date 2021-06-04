@@ -2,15 +2,19 @@
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
-This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored some advanced React topics ⚛️. During this sprint, you studied **class components**, **the component lifecycle** and **class component lifecycle methods,** **custom hooks**, and **React Testing Library 🐙.**
+This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored some advanced React topics ⚛️.
 
-In your challenge this week, you will demonstrate your mastery of these skills by creating an app that will fetch data from an internal server using a `class component`, displaying that data, using a `custom hook`, and `writing tests for your app.`
+During this sprint, you studied:
 
-This is an individual assessment. All work must be your own. All projects will be submitted to codegrade for automated review. You will also be given feedback by code reviewers the Monday after challenge submissions. For more information on the review process [click here.](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
+- **class components**
+- **the component lifecycle**
+- **class component lifecycle methods,**
+- **custom hooks**, and
+- **React Testing Library .**
 
-You are not allowed to collaborate during the sprint challenge. However, you are encouraged to follow the twenty-minute rule and seek support by dropping a :wave: in your help channel when needed.
+## Create an app that will fetch data from an internal server using a `class component`,
 
-_Sprint challenges open at Midnight PST on Thursday and close at 5pm PST on Friday. You will receive feedback on what you have finished and submitted by 5pm when the submissions will be closed. No retakes will be accepted._
+## Display that data, using a `custom hook`, and `write tests for your app.`
 
 ## Introduction
 
@@ -18,9 +22,9 @@ In this project, you will add class components to your a basic ecommerce site th
 
 In meeting the minimum viable product (MVP) specifications listed below, your project should look like the solution examples below:
 
-[Plant List Page](https://tk-assets.lambdaschool.com/88008802-846c-46bb-8cf8-11ace219e2bf_ScreenShot2020-04-30at12.39.22PM.png)
+![plants](./public/plants.png)
 
-[Successful Form Submission](https://tk-assets.lambdaschool.com/90ebefd4-ee0f-4b1c-884c-1336ce87441d_ScreenShot2020-04-30at12.40.56PM.png)
+![form](./public/form.png)
 
 You will also need to build the two tests in the `CheckoutForm.test.js` file and make sure they are testing what the test title says they are.
 
