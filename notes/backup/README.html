@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>README</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.18\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css"
+    />
+
+    <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: #333;
+        background: none;
+        font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.4;
+
+        -moz-tab-size: 8;
+        -o-tab-size: 8;
+        tab-size: 8;
+
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      /* Code blocks */
+      pre[class*="language-"] {
+        padding: 0.8em;
+        overflow: auto;
+        /* border: 1px solid #ddd; */
+        border-radius: 3px;
+        /* background: #fff; */
+        background: #f5f5f5;
+      }
+
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
+        padding: 0.1em;
+        border-radius: 0.3em;
+        white-space: normal;
+        background: #f5f5f5;
+      }
+
+      .token.comment,
+      .token.blockquote {
+        color: #969896;
+      }
+
+      .token.cdata {
+        color: #183691;
+      }
+
+      .token.doctype,
+      .token.punctuation,
+      .token.variable,
+      .token.macro.property {
+        color: #333;
+      }
+
+      .token.operator,
+      .token.important,
+      .token.keyword,
+      .token.rule,
+      .token.builtin {
+        color: #a71d5d;
+      }
+
+      .token.string,
+      .token.url,
+      .token.regex,
+      .token.attr-value {
+        color: #183691;
+      }
+
+      .token.property,
+      .token.number,
+      .token.boolean,
+      .token.entity,
+      .token.atrule,
+      .token.constant,
+      .token.symbol,
+      .token.command,
+      .token.code {
+        color: #0086b3;
+      }
+
+      .token.tag,
+      .token.selector,
+      .token.prolog {
+        color: #63a35c;
+      }
+
+      .token.function,
+      .token.namespace,
+      .token.pseudo-element,
+      .token.class,
+      .token.class-name,
+      .token.pseudo-class,
+      .token.id,
+      .token.url-reference .token.variable,
+      .token.attr-name {
+        color: #795da3;
+      }
+
+      .token.entity {
+        cursor: help;
+      }
+
+      .token.title,
+      .token.title .token.punctuation {
+        font-weight: bold;
+        color: #1d3e81;
+      }
+
+      .token.list {
+        color: #ed6a43;
+      }
+
+      .token.inserted {
+        background-color: #eaffea;
+        color: #55a532;
+      }
+
+      .token.deleted {
+        background-color: #ffecec;
+        color: #bd2c00;
+      }
+
+      .token.bold {
+        font-weight: bold;
+      }
+
+      .token.italic {
+        font-style: italic;
+      }
+
+      /* JSON */
+      .language-json .token.property {
+        color: #183691;
+      }
+
+      .language-markup .token.tag .token.punctuation {
+        color: #333;
+      }
+
+      /* CSS */
+      code.language-css,
+      .language-css .token.function {
+        color: #0086b3;
+      }
+
+      /* YAML */
+      .language-yaml .token.atrule {
+        color: #63a35c;
+      }
+
+      code.language-yaml {
+        color: #183691;
+      }
+
+      /* Ruby */
+      .language-ruby .token.function {
+        color: #333;
+      }
+
+      /* Markdown */
+      .language-markdown .token.url {
+        color: #795da3;
+      }
+
+      /* Makefile */
+      .language-makefile .token.symbol {
+        color: #795da3;
+      }
+
+      .language-makefile .token.variable {
+        color: #183691;
+      }
+
+      .language-makefile .token.builtin {
+        color: #0086b3;
+      }
+
+      /* Bash */
+      .language-bash .token.keyword {
+        color: #0086b3;
+      }
+
+      /* highlight */
+      pre[data-line] {
+        position: relative;
+        padding: 1em 0 1em 3em;
+      }
+      pre[data-line] .line-highlight-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        display: block;
+        width: 100%;
+      }
+
+      pre[data-line] .line-highlight {
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding: inherit 0;
+        margin-top: 1em;
+        background: hsla(24, 20%, 50%, 0.08);
+        background: linear-gradient(
+          to right,
+          hsla(24, 20%, 50%, 0.1) 70%,
+          hsla(24, 20%, 50%, 0)
+        );
+        pointer-events: none;
+        line-height: inherit;
+        white-space: pre;
+      }
+
+      pre[data-line] .line-highlight:before,
+      pre[data-line] .line-highlight[data-end]:after {
+        content: attr(data-start);
+        position: absolute;
+        top: 0.4em;
+        left: 0.6em;
+        min-width: 1em;
+        padding: 0 0.5em;
+        background-color: hsla(24, 20%, 50%, 0.4);
+        color: hsl(24, 20%, 95%);
+        font: bold 65%/1.5 sans-serif;
+        text-align: center;
+        vertical-align: 0.3em;
+        border-radius: 999px;
+        text-shadow: none;
+        box-shadow: 0 1px white;
+      }
+
+      pre[data-line] .line-highlight[data-end]:after {
+        content: attr(data-end);
+        top: auto;
+        bottom: 0.4em;
+      }
+      html body {
+        font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans,
+          sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+        background-color: #fff;
+        overflow: initial;
+        box-sizing: border-box;
+        word-wrap: break-word;
+      }
+      html body > :first-child {
+        margin-top: 0;
+      }
+      html body h1,
+      html body h2,
+      html body h3,
+      html body h4,
+      html body h5,
+      html body h6 {
+        line-height: 1.2;
+        margin-top: 1em;
+        margin-bottom: 16px;
+        color: #000;
+      }
+      html body h1 {
+        font-size: 2.25em;
+        font-weight: 300;
+        padding-bottom: 0.3em;
+      }
+      html body h2 {
+        font-size: 1.75em;
+        font-weight: 400;
+        padding-bottom: 0.3em;
+      }
+      html body h3 {
+        font-size: 1.5em;
+        font-weight: 500;
+      }
+      html body h4 {
+        font-size: 1.25em;
+        font-weight: 600;
+      }
+      html body h5 {
+        font-size: 1.1em;
+        font-weight: 600;
+      }
+      html body h6 {
+        font-size: 1em;
+        font-weight: 600;
+      }
+      html body h1,
+      html body h2,
+      html body h3,
+      html body h4,
+      html body h5 {
+        font-weight: 600;
+      }
+      html body h5 {
+        font-size: 1em;
+      }
+      html body h6 {
+        color: #5c5c5c;
+      }
+      html body strong {
+        color: #000;
+      }
+      html body del {
+        color: #5c5c5c;
+      }
+      html body a:not([href]) {
+        color: inherit;
+        text-decoration: none;
+      }
+      html body a {
+        color: #08c;
+        text-decoration: none;
+      }
+      html body a:hover {
+        color: #00a3f5;
+        text-decoration: none;
+      }
+      html body img {
+        max-width: 100%;
+      }
+      html body > p {
+        margin-top: 0;
+        margin-bottom: 16px;
+        word-wrap: break-word;
+      }
+      html body > ul,
+      html body > ol {
+        margin-bottom: 16px;
+      }
+      html body ul,
+      html body ol {
+        padding-left: 2em;
+      }
+      html body ul.no-list,
+      html body ol.no-list {
+        padding: 0;
+        list-style-type: none;
+      }
+      html body ul ul,
+      html body ul ol,
+      html body ol ol,
+      html body ol ul {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      html body li {
+        margin-bottom: 0;
+      }
+      html body li.task-list-item {
+        list-style: none;
+      }
+      html body li > p {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      html body .task-list-item-checkbox {
+        margin: 0 0.2em 0.25em -1.8em;
+        vertical-align: middle;
+      }
+      html body .task-list-item-checkbox:hover {
+        cursor: pointer;
+      }
+      html body blockquote {
+        margin: 16px 0;
+        font-size: inherit;
+        padding: 0 15px;
+        color: #5c5c5c;
+        background-color: #f0f0f0;
+        border-left: 4px solid #d6d6d6;
+      }
+      html body blockquote > :first-child {
+        margin-top: 0;
+      }
+      html body blockquote > :last-child {
+        margin-bottom: 0;
+      }
+      html body hr {
+        height: 4px;
+        margin: 32px 0;
+        background-color: #d6d6d6;
+        border: 0 none;
+      }
+      html body table {
+        margin: 10px 0 15px 0;
+        border-collapse: collapse;
+        border-spacing: 0;
+        display: block;
+        width: 100%;
+        overflow: auto;
+        word-break: normal;
+        word-break: keep-all;
+      }
+      html body table th {
+        font-weight: bold;
+        color: #000;
+      }
+      html body table td,
+      html body table th {
+        border: 1px solid #d6d6d6;
+        padding: 6px 13px;
+      }
+      html body dl {
+        padding: 0;
+      }
+      html body dl dt {
+        padding: 0;
+        margin-top: 16px;
+        font-size: 1em;
+        font-style: italic;
+        font-weight: bold;
+      }
+      html body dl dd {
+        padding: 0 16px;
+        margin-bottom: 16px;
+      }
+      html body code {
+        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+        font-size: 0.85em !important;
+        color: #000;
+        background-color: #f0f0f0;
+        border-radius: 3px;
+        padding: 0.2em 0;
+      }
+      html body code::before,
+      html body code::after {
+        letter-spacing: -0.2em;
+        content: "\00a0";
+      }
+      html body pre > code {
+        padding: 0;
+        margin: 0;
+        font-size: 0.85em !important;
+        word-break: normal;
+        white-space: pre;
+        background: transparent;
+        border: 0;
+      }
+      html body .highlight {
+        margin-bottom: 16px;
+      }
+      html body .highlight pre,
+      html body pre {
+        padding: 1em;
+        overflow: auto;
+        font-size: 0.85em !important;
+        line-height: 1.45;
+        border: #d6d6d6;
+        border-radius: 3px;
+      }
+      html body .highlight pre {
+        margin-bottom: 0;
+        word-break: normal;
+      }
+      html body pre code,
+      html body pre tt {
+        display: inline;
+        max-width: initial;
+        padding: 0;
+        margin: 0;
+        overflow: initial;
+        line-height: inherit;
+        word-wrap: normal;
+        background-color: transparent;
+        border: 0;
+      }
+      html body pre code:before,
+      html body pre tt:before,
+      html body pre code:after,
+      html body pre tt:after {
+        content: normal;
+      }
+      html body p,
+      html body blockquote,
+      html body ul,
+      html body ol,
+      html body dl,
+      html body pre {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+      html body kbd {
+        color: #000;
+        border: 1px solid #d6d6d6;
+        border-bottom: 2px solid #c7c7c7;
+        padding: 2px 4px;
+        background-color: #f0f0f0;
+        border-radius: 3px;
+      }
+      @media print {
+        html body {
+          background-color: #fff;
+        }
+        html body h1,
+        html body h2,
+        html body h3,
+        html body h4,
+        html body h5,
+        html body h6 {
+          color: #000;
+          page-break-after: avoid;
+        }
+        html body blockquote {
+          color: #5c5c5c;
+        }
+        html body pre {
+          page-break-inside: avoid;
+        }
+        html body table {
+          display: table;
+        }
+        html body img {
+          display: block;
+          max-width: 100%;
+          max-height: 100%;
+        }
+        html body pre,
+        html body code {
+          word-wrap: break-word;
+          white-space: pre;
+        }
+      }
+      .markdown-preview {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+      .markdown-preview .pagebreak,
+      .markdown-preview .newpage {
+        page-break-before: always;
+      }
+      .markdown-preview pre.line-numbers {
+        position: relative;
+        padding-left: 3.8em;
+        counter-reset: linenumber;
+      }
+      .markdown-preview pre.line-numbers > code {
+        position: relative;
+      }
+      .markdown-preview pre.line-numbers .line-numbers-rows {
+        position: absolute;
+        pointer-events: none;
+        top: 1em;
+        font-size: 100%;
+        left: 0;
+        width: 3em;
+        letter-spacing: -1px;
+        border-right: 1px solid #999;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .markdown-preview pre.line-numbers .line-numbers-rows > span {
+        pointer-events: none;
+        display: block;
+        counter-increment: linenumber;
+      }
+      .markdown-preview pre.line-numbers .line-numbers-rows > span:before {
+        content: counter(linenumber);
+        color: #999;
+        display: block;
+        padding-right: 0.8em;
+        text-align: right;
+      }
+      .markdown-preview .mathjax-exps .MathJax_Display {
+        text-align: center !important;
+      }
+      .markdown-preview:not([for="preview"]) .code-chunk .btn-group {
+        display: none;
+      }
+      .markdown-preview:not([for="preview"]) .code-chunk .status {
+        display: none;
+      }
+      .markdown-preview:not([for="preview"]) .code-chunk .output-div {
+        margin-bottom: 16px;
+      }
+      .scrollbar-style::-webkit-scrollbar {
+        width: 8px;
+      }
+      .scrollbar-style::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: transparent;
+      }
+      .scrollbar-style::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: rgba(150, 150, 150, 0.66);
+        border: 4px solid rgba(150, 150, 150, 0.66);
+        background-clip: content-box;
+      }
+      html body[for="html-export"]:not([data-presentation-mode]) {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])
+        .markdown-preview {
+        position: relative;
+        top: 0;
+      }
+      @media screen and (min-width: 914px) {
+        html
+          body[for="html-export"]:not([data-presentation-mode])
+          .markdown-preview {
+          padding: 2em calc(50% - 457px + 2em);
+        }
+      }
+      @media screen and (max-width: 914px) {
+        html
+          body[for="html-export"]:not([data-presentation-mode])
+          .markdown-preview {
+          padding: 2em;
+        }
+      }
+      @media screen and (max-width: 450px) {
+        html
+          body[for="html-export"]:not([data-presentation-mode])
+          .markdown-preview {
+          font-size: 14px !important;
+          padding: 1em;
+        }
+      }
+      @media print {
+        html
+          body[for="html-export"]:not([data-presentation-mode])
+          #sidebar-toc-btn {
+          display: none;
+        }
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])
+        #sidebar-toc-btn {
+        position: fixed;
+        bottom: 8px;
+        left: 8px;
+        font-size: 28px;
+        cursor: pointer;
+        color: inherit;
+        z-index: 99;
+        width: 32px;
+        text-align: center;
+        opacity: 0.4;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        #sidebar-toc-btn {
+        opacity: 1;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .md-sidebar-toc {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100%;
+        padding: 32px 0 48px 0;
+        font-size: 14px;
+        box-shadow: 0 0 4px rgba(150, 150, 150, 0.33);
+        box-sizing: border-box;
+        overflow: auto;
+        background-color: inherit;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .md-sidebar-toc::-webkit-scrollbar {
+        width: 8px;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .md-sidebar-toc::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: transparent;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .md-sidebar-toc::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: rgba(150, 150, 150, 0.66);
+        border: 4px solid rgba(150, 150, 150, 0.66);
+        background-clip: content-box;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .md-sidebar-toc
+        a {
+        text-decoration: none;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .md-sidebar-toc
+        ul {
+        padding: 0 1.6em;
+        margin-top: 0.8em;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .md-sidebar-toc
+        li {
+        margin-bottom: 0.8em;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .md-sidebar-toc
+        ul {
+        list-style-type: none;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .markdown-preview {
+        left: 300px;
+        width: calc(100% - 300px);
+        padding: 2em calc(50% - 457px - 150px);
+        margin: 0;
+        box-sizing: border-box;
+      }
+      @media screen and (max-width: 1274px) {
+        html
+          body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+          .markdown-preview {
+          padding: 2em;
+        }
+      }
+      @media screen and (max-width: 450px) {
+        html
+          body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+          .markdown-preview {
+          width: 100%;
+        }
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc])
+        .markdown-preview {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc])
+        .md-sidebar-toc {
+        display: none;
+      }
+      /* Please visit the URL below for more information: */
+      /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+    </style>
+  </head>
+  <body for="html-export">
+    <div class="mume markdown-preview">
+      <div>
+        <h1
+          class="mume-header"
+          id="sprint-challenge-advanced-react-react-plants"
+        >
+          Sprint Challenge: Advanced React - React Plants &#x1F33F;
+        </h1>
+
+        <p>
+          <strong
+            >Read these instructions carefully. Understand exactly what is
+            expected <em>before</em> starting this Sprint Challenge.</strong
+          >
+        </p>
+        <p>
+          This challenge allows you to practice the concepts and techniques
+          learned over the past sprint and apply them in a concrete project.
+          This sprint explored some advanced React topics &#x269B;&#xFE0F;.
+          During this sprint, you studied <strong>class components</strong>,
+          <strong>the component lifecycle</strong> and
+          <strong>class component lifecycle methods,</strong>
+          <strong>custom hooks</strong>, and
+          <strong>React Testing Library &#x1F419;.</strong>
+        </p>
+        <p>
+          In your challenge this week, you will demonstrate your mastery of
+          these skills by creating an app that will fetch data from an internal
+          server using a <code>class component</code>, displaying that data,
+          using a <code>custom hook</code>, and
+          <code>writing tests for your app.</code>
+        </p>
+        <p>
+          This is an individual assessment. All work must be your own. All
+          projects will be submitted to codegrade for automated review. You will
+          also be given feedback by code reviewers the Monday after challenge
+          submissions. For more information on the review process
+          <a
+            href="https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a"
+            >click here.</a
+          >
+        </p>
+        <p>
+          You are not allowed to collaborate during the sprint challenge.
+          However, you are encouraged to follow the twenty-minute rule and seek
+          support by dropping a &#x1F44B; in your help channel when needed.
+        </p>
+        <p>
+          <em
+            >Sprint challenges open at Midnight PST on Thursday and close at 5pm
+            PST on Friday. You will receive feedback on what you have finished
+            and submitted by 5pm when the submissions will be closed. No retakes
+            will be accepted.</em
+          >
+        </p>
+        <h2 class="mume-header" id="introduction">Introduction</h2>
+
+        <p>
+          In this project, you will add class components to your a basic
+          ecommerce site that allow you to request product data from a server
+          and render that data. You will also implement the ablitity to add
+          products to a shopping cart.
+        </p>
+        <p>
+          In meeting the minimum viable product (MVP) specifications listed
+          below, your project should look like the solution examples below:
+        </p>
+        <p>
+          <a
+            href="https://tk-assets.lambdaschool.com/88008802-846c-46bb-8cf8-11ace219e2bf_ScreenShot2020-04-30at12.39.22PM.png"
+            >Plant List Page</a
+          >
+        </p>
+        <p>
+          <a
+            href="https://tk-assets.lambdaschool.com/90ebefd4-ee0f-4b1c-884c-1336ce87441d_ScreenShot2020-04-30at12.40.56PM.png"
+            >Successful Form Submission</a
+          >
+        </p>
+        <p>
+          You will also need to build the two tests in the
+          <code>CheckoutForm.test.js</code> file and make sure they are testing
+          what the test title says they are.
+        </p>
+        <h2 class="mume-header" id="instructions">Instructions</h2>
+
+        <h3 class="mume-header" id="task-1-project-setup">
+          Task 1: Project Setup
+        </h3>
+
+        <h4 class="mume-header" id="repo-setup">Repo Setup</h4>
+
+        <ul>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Fork and
+            clone this repository.
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Create a
+            new working branch: git checkout -b
+            <code>&lt;firstName-lastName&gt;</code>.
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Implement
+            the project on your newly created
+            <code>&lt;firstName-lastName&gt;</code> branch, committing changes
+            regularly.
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Push
+            commits: git push origin <code>&lt;firstName-lastName&gt;</code>.
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" />
+            <strong>RUN</strong> <code>npm install</code> to install your
+            dependencies.
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" />
+            <strong>RUN</strong> <code>npm start</code> to start your
+            application.
+          </li>
+        </ul>
+        <ul>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> In another
+            terminal window, <strong>RUN</strong> <code>npm test</code> to start
+            your test runner. (It is recommended you do this only when actually
+            building tests - any change in your app will make the tests run, and
+            that could eat up your computer power)
+          </li>
+        </ul>
+        <h3 class="mume-header" id="task-2-codegrade-setup">
+          Task 2: CodeGrade Setup
+        </h3>
+
+        <ul>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Open the
+            assignment in Canvas and following along with the attached document
+            <a
+              href="https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374"
+              >here.</a
+            >.
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Follow
+            instructions to set up Codegrade&apos;s Webhook and Deploy Key,
+            making sure your deployment is set to your
+            <code>&lt;firstName-lastName&gt;</code>.
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Push your
+            first commit:
+            <code
+              >git commit --allow-empty -m &quot;first commit&quot; &amp;&amp;
+              git push</code
+            >
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Check to
+            see that Codegrade has accepted your git submission.
+          </li>
+        </ul>
+        <h3 class="mume-header" id="task-3-project-requirements">
+          Task 3: Project Requirements
+        </h3>
+
+        <p>
+          Your finished project must include all of the following requirements.
+        </p>
+        <h4 class="mume-header" id="plant-list">Plant list</h4>
+
+        <p>
+          Display a list of the plants from the server. This should be done in
+          the class component <code>PlantList</code>.
+          <strong
+            >Unlike other projects, the local server used here can not be
+            accessed through the browser. It is started automatically and
+            without the need for starting a server.js file. Feel free to ignore
+            any messages related to MSW or mock service workers. For this and
+            the rest of your sprint challenges, test the functioning of the
+            server directly through your axios calls.</strong
+          >
+        </p>
+        <ul>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> In the
+            <code>PlantList</code> class component, fetch data from the server
+            you now have running - the data can be fetched from
+            <code>http://localhost:3333/plants.</code>
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Set the
+            data to a state property called <code>this.state.plants.</code>
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> The render
+            function is already built and styled. Once the data is on the state,
+            you will see the list of plants, and you will have the functionality
+            to add a plant to the cart.
+          </li>
+        </ul>
+        <h4 class="mume-header" id="shopping-cart">Shopping Cart</h4>
+
+        <p>
+          Nothing needs to be done here. You <em>will</em> have to navigate to
+          the cart page in your app so you can go to the checkout form for the
+          next step.
+        </p>
+        <h4 class="mume-header" id="checkout-form">Checkout Form</h4>
+
+        <p>
+          The form is working, but it is currently controlled by local stateful
+          logic. We want to control this form with a custom hook.
+        </p>
+        <ul>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Build a
+            custom hook called <code>useForm</code>, and use it in your
+            CheckoutForm component to control the form&apos;s stateful logic.
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> You built
+            a useForm hook in the guided project this week. You will probably
+            need to use that as a guide to complete this step. However, try and
+            build it out first before you peek at the guided project. And
+            <em>do not</em> copy/paste directly from the guided project!_
+          </li>
+        </ul>
+        <h4 class="mume-header" id="testing-the-checkout-form">
+          Testing the Checkout Form
+        </h4>
+
+        <ul>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Run the
+            test runner and ensure that
+            <code>src/components/CheckoutForm.test.js</code> is correctly
+            called.
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Fill out
+            code necessary to test that that Checkout form renders without
+            errors.
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Fill out
+            code necessary to test that when all form inputs are filled with
+            valid data, a success message appears.
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Make sure
+            the tests are passing, and make sure you can cause the tests to fail
+            purposefully, so that you know the tests are truly working.
+          </li>
+        </ul>
+        <p><strong>Notes:</strong></p>
+        <ul>
+          <li>
+            Again, unlike other projects, the local server used here can not be
+            accessed through the browser. For this and the rest of your sprint
+            challenges, test the functioning of the server directly through your
+            axios calls.
+          </li>
+          <li>
+            You are welcome to create additional files but
+            <strong>do not move or rename existing files</strong> or folders.
+          </li>
+          <li>
+            Do not alter your <code>package.json</code> file except to install
+            extra libraries.
+          </li>
+          <li>
+            In your solution, it is essential that you follow best practices and
+            produce clean and professional results.
+          </li>
+          <li>
+            Schedule time to review, refine, and assess your work and perform
+            basic professional polishing including spell-checking and
+            grammar-checking on your work.
+          </li>
+          <li>
+            It is better to submit a challenge that meets MVP than one that
+            attempts too much and does not.
+          </li>
+        </ul>
+        <h3 class="mume-header" id="task-4-stretch-goals">
+          Task 4: Stretch Goals
+        </h3>
+
+        <p>
+          <strong>IMPORTANT:</strong> Only work on stretch goals after
+          completing your MVP!
+        </p>
+        <p>
+          When completing these goals, make sure to use a
+          <strong>new branch</strong> to ensure your MVP code is not
+          overwritten. You can branch off <code>main</code> by executing
+          <code>git checkout -b stretch</code>. When you are fully sure your
+          stretch code is ready for feedback, merge your stretch code with main
+          using <code>git checkout main</code> and
+          <code>git merge stretch.</code>
+        </p>
+        <p>
+          After finishing your required elements, you can push your work
+          further. These goals may or may not be things you have learned in this
+          module but they build on the material you just studied. Time allowing,
+          stretch your limits and see if you can deliver on the following
+          optional goals:
+        </p>
+        <ul>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Add a
+            filter input to the plant list page.
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Build and
+            implement another custom hook - a dark mode hook would be great for
+            this project, though you&apos;ll have to style the light theme
+            &#x1F319;
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Add a test
+            file for the <code>ShoppingCart</code> component and test that it
+            displays plants there (you&apos;ll need some mock plant data for the
+            test, and then you can pass that data in as a prop when you call
+            <code>render</code> and render the component - see the example
+            below)
+          </li>
+        </ul>
+        <pre
+          data-role="codeBlock"
+          data-info="js"
+          class="language-javascript"
+        ><span class="token keyword">const</span> plants <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token comment">// with each object being a mock plant</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">&quot;displays plants in cart&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> getByText <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span><span class="token maybe-class-name">ShoppingCart</span> cart<span class="token operator">=</span><span class="token punctuation">{</span>plants<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">)</span>
+
+  <span class="token spread operator">...</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</pre>
+        <h3 class="mume-header" id="reference-materials">
+          Reference Materials
+        </h3>
+
+        <h4 class="mume-header" id="api-documentation">API Documentation</h4>
+
+        <ul>
+          <li>
+            <strong>[GET]</strong> * to
+            <code>http://localhost:3333/plants</code>: returns an array of
+            objects of the following form
+          </li>
+        </ul>
+        <pre
+          data-role="codeBlock"
+          data-info="js"
+          class="language-javascript"
+        ><span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;Peperomia Rosso&quot;</span><span class="token punctuation">,</span>
+    id<span class="token operator">:</span> <span class="token number">143</span><span class="token punctuation">,</span>
+    scientificName<span class="token operator">:</span> <span class="token string">&quot;Peperomia caperata rosso&quot;</span><span class="token punctuation">,</span>
+    difficulty<span class="token operator">:</span> <span class="token string">&quot;easy&quot;</span><span class="token punctuation">,</span>
+    light<span class="token operator">:</span> <span class="token string">&quot;direct&quot;</span><span class="token punctuation">,</span>
+    img<span class="token operator">:</span>
+      <span class="token string">&quot;https://cdn.shopify.com/s/files/1/2781/9558/products/PEPEROMIA_ROSSO-1_800x.png?v=1587156590&quot;</span><span class="token punctuation">,</span>
+    sizes<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;small&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    watering<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    description<span class="token operator">:</span>
+      <span class="token string">&quot;Rosalia is a stunner with glossy green leaves accompanied by bright red undersides. Her oval shaped leaves are deeply grooved, adding depth to her figure. Flower spikes will appear with bright light, adding even more character to this absolute beaut.&quot;</span><span class="token punctuation">,</span>
+    price<span class="token operator">:</span> <span class="token number">21</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+</pre>
+        <h2 class="mume-header" id="submission-format">Submission format</h2>
+
+        <ul>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Submit via
+            Codegrade by commiting and pushing any new changes.
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Submit a
+            pull-request to merge
+            <firstname-lastname>
+              branch into main.
+              <strong
+                >Please don&apos;t merge your own pull request and make sure you
+                are on your own repo</strong
+              ></firstname-lastname
+            >
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Check
+            codegrade for automated feedback.
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Check
+            codegrade on Monday following the Sprint Challenge for reviewer
+            feedback. For more information on how to access and read your
+            feedback, check
+            <a
+              href="https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a"
+              >here</a
+            >
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Any
+            changes pushed to your
+            <firstname-lastname>
+              branch will resubmited to codegrade if pushed before the sprint
+              challenge deadline. Changes after the deadline will not be
+              reviewed.</firstname-lastname
+            >
+          </li>
+        </ul>
+        <h2 class="mume-header" id="interview-questions">
+          Interview Questions
+        </h2>
+
+        <p>
+          Be prepared to demonstrate your understanding of this week&apos;s
+          concepts by answering questions on the following topics. Add your
+          answers to the questions within
+          <code>interview_answers.md</code> file. These will not be counted as a
+          part of your sprint score but will be helpful for preparing you for
+          your endorsement interview, and enhancing overall understanding.
+        </p>
+        <ol>
+          <li>
+            <p>
+              What are the main differences between a stateful and a functional
+              component?
+            </p>
+          </li>
+          <li>
+            <p>
+              When does a componentWillMount function be called? What about a
+              componentWillUpdate?
+            </p>
+          </li>
+          <li>
+            <p>Define stateful logic.</p>
+          </li>
+          <li>
+            <p>
+              What are the three step of creating a successful test? What is
+              done in each phase?
+            </p>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="md-sidebar-toc">
+      <ul>
+        <li>
+          <a href="#sprint-challenge-advanced-react-react-plants"
+            >Sprint Challenge: Advanced React - React Plants &#x1F33F;</a
+          >
+          <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li>
+              <a href="#instructions">Instructions</a>
+              <ul>
+                <li>
+                  <a href="#task-1-project-setup">Task 1: Project Setup</a>
+                  <ul>
+                    <li><a href="#repo-setup">Repo Setup</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#task-2-codegrade-setup">Task 2: CodeGrade Setup</a>
+                </li>
+                <li>
+                  <a href="#task-3-project-requirements"
+                    >Task 3: Project Requirements</a
+                  >
+                  <ul>
+                    <li><a href="#plant-list">Plant list</a></li>
+                    <li><a href="#shopping-cart">Shopping Cart</a></li>
+                    <li><a href="#checkout-form">Checkout Form</a></li>
+                    <li>
+                      <a href="#testing-the-checkout-form"
+                        >Testing the Checkout Form</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#task-4-stretch-goals">Task 4: Stretch Goals</a>
+                </li>
+                <li>
+                  <a href="#reference-materials">Reference Materials</a>
+                  <ul>
+                    <li><a href="#api-documentation">API Documentation</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#submission-format">Submission format</a></li>
+            <li><a href="#interview-questions">Interview Questions</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <a id="sidebar-toc-btn">&#x2261;</a>
+
+    <script>
+      var sidebarTOCBtn = document.getElementById("sidebar-toc-btn");
+      sidebarTOCBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        if (document.body.hasAttribute("html-show-sidebar-toc")) {
+          document.body.removeAttribute("html-show-sidebar-toc");
+        } else {
+          document.body.setAttribute("html-show-sidebar-toc", true);
+        }
+      });
+    </script>
+  </body>
+</html>
