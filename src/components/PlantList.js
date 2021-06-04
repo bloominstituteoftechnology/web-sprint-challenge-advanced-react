@@ -14,31 +14,25 @@
 //     });
 //   }
 
+//-----------------------------------------------------------------------------------------------------------
 import React, { Component } from "react";
 import axios from "axios";
 
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
-  constructor() {
-    super();
-    this.state = {
-      plants: [],
-    };
-  }
 
-  // when the component mounts:
-  //   - fetch data from the server endpoint - http://localhost:3333/plants
-  //   - set the returned plants array to this.state.plants
   componentDidMount() {
+    //Callend upon component mounting...
+    //Setting state here will trigger re - rendering.
+    console.log("component did mount()");
     axios
       .get("http://localhost:3333/plants")
-      .then((res) => {
-        this.setState({
-          plants: res.data,
-        });
+      .then((response) => {
+        console.log("Initial Data Value From Axios Request", response.data);
+        this.setState((prevState) => ({ ...prevState, plants: response.data }));
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        console.log("API CAlL ERROR FROM COMPONENT DIO MOUNT", error);
       });
   }
 

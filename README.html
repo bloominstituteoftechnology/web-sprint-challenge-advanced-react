@@ -779,6 +779,7 @@
           Sprint Challenge: Advanced React - React Plants &#x1F33F;
         </h1>
 
+        <p><img src="./public/images/demo.gif" alt="demo" /></p>
         <p>
           <strong
             >Read these instructions carefully. Understand exactly what is
@@ -789,42 +790,31 @@
           This challenge allows you to practice the concepts and techniques
           learned over the past sprint and apply them in a concrete project.
           This sprint explored some advanced React topics &#x269B;&#xFE0F;.
-          During this sprint, you studied <strong>class components</strong>,
-          <strong>the component lifecycle</strong> and
-          <strong>class component lifecycle methods,</strong>
-          <strong>custom hooks</strong>, and
-          <strong>React Testing Library &#x1F419;.</strong>
         </p>
-        <p>
-          In your challenge this week, you will demonstrate your mastery of
-          these skills by creating an app that will fetch data from an internal
-          server using a <code>class component</code>, displaying that data,
-          using a <code>custom hook</code>, and
-          <code>writing tests for your app.</code>
-        </p>
-        <p>
-          This is an individual assessment. All work must be your own. All
-          projects will be submitted to codegrade for automated review. You will
-          also be given feedback by code reviewers the Monday after challenge
-          submissions. For more information on the review process
-          <a
-            href="https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a"
-            >click here.</a
-          >
-        </p>
-        <p>
-          You are not allowed to collaborate during the sprint challenge.
-          However, you are encouraged to follow the twenty-minute rule and seek
-          support by dropping a &#x1F44B; in your help channel when needed.
-        </p>
-        <p>
-          <em
-            >Sprint challenges open at Midnight PST on Thursday and close at 5pm
-            PST on Friday. You will receive feedback on what you have finished
-            and submitted by 5pm when the submissions will be closed. No retakes
-            will be accepted.</em
-          >
-        </p>
+        <p>During this sprint, you studied:</p>
+        <ul>
+          <li><strong>class components</strong></li>
+          <li><strong>the component lifecycle</strong></li>
+          <li><strong>class component lifecycle methods,</strong></li>
+          <li><strong>custom hooks</strong>, and</li>
+          <li><strong>React Testing Library .</strong></li>
+        </ul>
+        <h2
+          class="mume-header"
+          id="create-an-app-that-will-fetch-data-from-an-internal-server-using-a-class-component"
+        >
+          Create an app that will fetch data from an internal server using a
+          <code>class component</code>,
+        </h2>
+
+        <h2
+          class="mume-header"
+          id="display-that-data-using-a-custom-hook-and-write-tests-for-your-app"
+        >
+          Display that data, using a <code>custom hook</code>, and
+          <code>write tests for your app.</code>
+        </h2>
+
         <h2 class="mume-header" id="introduction">Introduction</h2>
 
         <p>
@@ -837,18 +827,8 @@
           In meeting the minimum viable product (MVP) specifications listed
           below, your project should look like the solution examples below:
         </p>
-        <p>
-          <a
-            href="https://tk-assets.lambdaschool.com/88008802-846c-46bb-8cf8-11ace219e2bf_ScreenShot2020-04-30at12.39.22PM.png"
-            >Plant List Page</a
-          >
-        </p>
-        <p>
-          <a
-            href="https://tk-assets.lambdaschool.com/90ebefd4-ee0f-4b1c-884c-1336ce87441d_ScreenShot2020-04-30at12.40.56PM.png"
-            >Successful Form Submission</a
-          >
-        </p>
+        <p><img src="./public/plants.png" alt="plants" /></p>
+        <p><img src="./public/form.png" alt="form" /></p>
         <p>
           You will also need to build the two tests in the
           <code>CheckoutForm.test.js</code> file and make sure they are testing
@@ -943,6 +923,43 @@
         </p>
         <h4 class="mume-header" id="plant-list">Plant list</h4>
 
+        <pre
+          data-role="codeBlock"
+          data-info="jsx"
+          class="language-jsx"
+        ><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">React</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Component</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token imports">axios</span> <span class="token keyword module">from</span> <span class="token string">&quot;axios&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token keyword">class</span> <span class="token class-name">PlantList</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token comment">// add state with a property called &quot;plants&quot; - initialize as an empty array</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+      plants<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// when the component mounts:</span>
+  <span class="token comment">//   - fetch data from the server endpoint - http://localhost:3333/plants</span>
+  <span class="token comment">//   - set the returned plants array to this.state.plants</span>
+  <span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    axios
+      <span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token string">&quot;http://localhost:3333/plants&quot;</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          plants<span class="token operator">:</span> res<span class="token punctuation">.</span><span class="token property-access">data</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token keyword control-flow">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+
+
+
+</pre>
+        <p><img src="./public/images/list-result.png" alt /></p>
         <p>
           Display a list of the plants from the server. This should be done in
           the class component <code>PlantList</code>.
@@ -957,20 +974,26 @@
         </p>
         <ul>
           <li class="task-list-item">
-            <input type="checkbox" class="task-list-item-checkbox" /> In the
-            <code>PlantList</code> class component, fetch data from the server
-            you now have running - the data can be fetched from
-            <code>http://localhost:3333/plants.</code>
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> In the
+              <code>PlantList</code> class component, fetch data from the server
+              you now have running - the data can be fetched from
+              <code>http://localhost:3333/plants.</code>
+            </p>
           </li>
           <li class="task-list-item">
-            <input type="checkbox" class="task-list-item-checkbox" /> Set the
-            data to a state property called <code>this.state.plants.</code>
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> Set the
+              data to a state property called <code>this.state.plants.</code>
+            </p>
           </li>
           <li class="task-list-item">
-            <input type="checkbox" class="task-list-item-checkbox" /> The render
-            function is already built and styled. Once the data is on the state,
-            you will see the list of plants, and you will have the functionality
-            to add a plant to the cart.
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> The
+              render function is already built and styled. Once the data is on
+              the state, you will see the list of plants, and you will have the
+              functionality to add a plant to the cart.
+            </p>
           </li>
         </ul>
         <h4 class="mume-header" id="shopping-cart">Shopping Cart</h4>
@@ -1149,12 +1172,12 @@
 
         <ul>
           <li class="task-list-item">
-            <input type="checkbox" class="task-list-item-checkbox" /> Submit via
-            Codegrade by commiting and pushing any new changes.
+            <input type="checkbox" class="task-list-item-checkbox" checked />
+            Submit via Codegrade by commiting and pushing any new changes.
           </li>
           <li class="task-list-item">
-            <input type="checkbox" class="task-list-item-checkbox" /> Submit a
-            pull-request to merge
+            <input type="checkbox" class="task-list-item-checkbox" checked />
+            Submit a pull-request to merge
             <firstname-lastname>
               branch into main.
               <strong
@@ -1164,27 +1187,8 @@
             >
           </li>
           <li class="task-list-item">
-            <input type="checkbox" class="task-list-item-checkbox" /> Check
-            codegrade for automated feedback.
-          </li>
-          <li class="task-list-item">
-            <input type="checkbox" class="task-list-item-checkbox" /> Check
-            codegrade on Monday following the Sprint Challenge for reviewer
-            feedback. For more information on how to access and read your
-            feedback, check
-            <a
-              href="https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a"
-              >here</a
-            >
-          </li>
-          <li class="task-list-item">
-            <input type="checkbox" class="task-list-item-checkbox" /> Any
-            changes pushed to your
-            <firstname-lastname>
-              branch will resubmited to codegrade if pushed before the sprint
-              challenge deadline. Changes after the deadline will not be
-              reviewed.</firstname-lastname
-            >
+            <input type="checkbox" class="task-list-item-checkbox" checked />
+            Check codegrade for automated feedback.
           </li>
         </ul>
         <h2 class="mume-header" id="interview-questions">
@@ -1199,29 +1203,85 @@
           part of your sprint score but will be helpful for preparing you for
           your endorsement interview, and enhancing overall understanding.
         </p>
-        <ol>
+        <h1 class="mume-header" id="interview-answers">Interview Answers</h1>
+
+        <h3
+          class="mume-header"
+          id="1-what-are-the-main-differences-between-a-stateful-and-a-functional-component"
+        >
+          1. What are the main differences between a stateful and a functional
+          component?
+        </h3>
+
+        <ul>
+          <li>
+            The difference between a stateful and nonState or functional
+            component is that a stateless (functional component) does not
+            maintain a remembered state value. It simple renders and is done. A
+            stateful component remembers the value of a component and adjusts it
+            to a new value as it&apos;s state is changed
+          </li>
+        </ul>
+        <h3
+          class="mume-header"
+          id="2-when-does-a-componentwillmount-function-be-called-what-about-a-componentwillupdate"
+        >
+          2. When does a componentWillMount function be called? What about a
+          componentWillUpdate?
+        </h3>
+
+        <ul>
           <li>
             <p>
-              What are the main differences between a stateful and a functional
-              component?
+              A componentWillMount is called after the constructor function call
+              including super and initial state value.
             </p>
           </li>
           <li>
             <p>
-              When does a componentWillMount function be called? What about a
-              componentWillUpdate?
+              componentDidMount is called after the component is mounted on the
+              screen
+            </p>
+          </li>
+        </ul>
+        <h3 class="mume-header" id="3-define-stateful-logic">
+          3. Define stateful logic.
+        </h3>
+
+        <ul>
+          <li>
+            Stateful Logic - is any code that used state to store and update the
+            current state of being with differing values or states.
+          </li>
+        </ul>
+        <h3
+          class="mume-header"
+          id="4-what-are-the-three-step-of-creating-a-successful-test-what-is-done-in-each-phase"
+        >
+          4. What are the three step of creating a successful test? What is done
+          in each phase?
+        </h3>
+
+        <ul>
+          <li>
+            <p>
+              Arrange - The stage where inputs and targets are set. Arrange sets
+              set up the test cases
             </p>
           </li>
           <li>
-            <p>Define stateful logic.</p>
+            <p>Act - Act on the behavior of the target</p>
           </li>
           <li>
             <p>
-              What are the three step of creating a successful test? What is
-              done in each phase?
+              Assert - What are your expected outcomes. this is even defined by
+              expect in the test code syntax.
             </p>
           </li>
-        </ol>
+        </ul>
+        <hr />
+        <hr />
+        <h2 class="mume-header" id="result">RESULT:</h2>
       </div>
     </div>
     <div class="md-sidebar-toc">
@@ -1231,6 +1291,20 @@
             >Sprint Challenge: Advanced React - React Plants &#x1F33F;</a
           >
           <ul>
+            <li>
+              <a
+                href="#create-an-app-that-will-fetch-data-from-an-internal-server-using-a-class-component"
+                >Create an app that will fetch data from an internal server
+                using a <code>class component</code>,</a
+              >
+            </li>
+            <li>
+              <a
+                href="#display-that-data-using-a-custom-hook-and-write-tests-for-your-app"
+                >Display that data, using a <code>custom hook</code>, and
+                <code>write tests for your app.</code></a
+              >
+            </li>
             <li><a href="#introduction">Introduction</a></li>
             <li>
               <a href="#instructions">Instructions</a>
@@ -1272,6 +1346,36 @@
             </li>
             <li><a href="#submission-format">Submission format</a></li>
             <li><a href="#interview-questions">Interview Questions</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#interview-answers">Interview Answers</a>
+          <ul>
+            <li>
+              <a
+                href="#1-what-are-the-main-differences-between-a-stateful-and-a-functional-component"
+                >1. What are the main differences between a stateful and a
+                functional component?</a
+              >
+            </li>
+            <li>
+              <a
+                href="#2-when-does-a-componentwillmount-function-be-called-what-about-a-componentwillupdate"
+                >2. When does a componentWillMount function be called? What
+                about a componentWillUpdate?</a
+              >
+            </li>
+            <li>
+              <a href="#3-define-stateful-logic">3. Define stateful logic.</a>
+            </li>
+            <li>
+              <a
+                href="#4-what-are-the-three-step-of-creating-a-successful-test-what-is-done-in-each-phase"
+                >4. What are the three step of creating a successful test? What
+                is done in each phase?</a
+              >
+            </li>
+            <li><a href="#result">RESULT:</a></li>
           </ul>
         </li>
       </ul>

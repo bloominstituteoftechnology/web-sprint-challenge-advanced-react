@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^10.1.0",
     "axios": "^0.19.2",
     "mutationobserver-shim": "^0.3.7",
+    "prettier": "^2.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^5.6.0",
@@ -18,7 +19,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "pretty": "prettier --write \"./**/*.{js,jsx,md,html,css}\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,5 +40,18 @@
   "devDependencies": {
     "@sheerun/mutationobserver-shim": "^0.3.3",
     "msw": "^0.21.3"
-  }
+  },
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bgoonz/web-sprint-challenge-advanced-react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bgoonz/web-sprint-challenge-advanced-react/issues"
+  },
+  "homepage": "https://github.com/bgoonz/web-sprint-challenge-advanced-react#readme"
 }

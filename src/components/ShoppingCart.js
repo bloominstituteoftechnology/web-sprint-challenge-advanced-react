@@ -1,5 +1,11 @@
 import React from "react";
 
+/*
+Shopping Cart
+Nothing needs to be done here.You will have to navigate to the cart page in your app so you can go to the checkout form
+for the next step.
+*/
+
 /********* DO NOT DO ANYTHING IN THIS COMPONENT *********/
 
 export default function ShoppingCart(props) {
