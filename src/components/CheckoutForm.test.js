@@ -18,7 +18,7 @@ test("form header renders", () => {
     expect(header).toHaveTextContent(/checkout form/i);
 });
 
-test("form shows success message on submit with form details", async () => {
+test("form shows success message on submit with form details", () => {
     // Arrange 
     render(<CheckoutForm />);
     const firstName = screen.getByLabelText(/First Name/i);
