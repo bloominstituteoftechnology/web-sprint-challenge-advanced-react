@@ -96,7 +96,7 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 const plants = {{}, {}, {}} // with each object being a mock plant
 test("displays plants in cart", () => {
   const { getByText } = render(<ShoppingCart cart={plants} />)
-
+ 
   ...
 
 })
