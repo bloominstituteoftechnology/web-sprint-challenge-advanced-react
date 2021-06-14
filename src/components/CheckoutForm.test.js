@@ -4,6 +4,13 @@ import CheckoutForm from "./CheckoutForm";
 
 // Write up the two tests here and make sure they are testing what the title shows
 
-test("form header renders", () => {});
+test("form header renders", () => {
+    const { getByText } = render(<CheckoutForm />);
+    getByText(/Checkout Form/i);
+});
 
-test("form shows success message on submit with form details", () => {});
+test("form shows success message on submit with form details", () => {
+    const { getByText, getByTestId } = render(<CheckoutForm />);
+    fireEvent.click(getByTestId('buttonCheckout'));
+    getByTestId("successMessage"); 
+});
