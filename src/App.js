@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import axios from 'axios';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
-import PlantList from "./components/PlantList";
-import ShoppingCart from "./components/ShoppingCart";
-import CheckoutForm from "./components/CheckoutForm";
+import PlantList from './components/PlantList';
+import ShoppingCart from './components/ShoppingCart';
+import CheckoutForm from './components/CheckoutForm';
 
-import "./App.css";
+import './App.css';
 
 function App() {
   // array of plants that have been added to the cart
