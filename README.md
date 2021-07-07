@@ -74,7 +74,7 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 
 **Notes:**
 * Again, unlike other projects, the local server used here can not be accessed through the browser. For this and the rest of your sprint challenges, test the functioning of the server directly through your axios calls.
-* Note that a test file `codegrade.test.js` is include with some simple, baseline tests for your projects. Please make sure they pass before considering your project complete.
+* Note that a test file `codegrade.test.js` is include with some simple, baseline tests for your submission. Please make sure they pass before considering your project complete.
 * You are welcome to create additional files but **do not move or rename existing files** or folders.
 * Do not alter your `package.json` file except to install extra libraries.
 * In your solution, it is essential that you follow best practices and produce clean and professional results.
