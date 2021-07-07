@@ -74,33 +74,12 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 
 **Notes:**
 * Again, unlike other projects, the local server used here can not be accessed through the browser. For this and the rest of your sprint challenges, test the functioning of the server directly through your axios calls.
+* Note that a test file is include with some simple, baseline tests for your projects. Please make sure they pass before considering your project complete.
 * You are welcome to create additional files but **do not move or rename existing files** or folders.
 * Do not alter your `package.json` file except to install extra libraries.
 * In your solution, it is essential that you follow best practices and produce clean and professional results.
 * Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work.
-* It is better to submit a challenge that meets MVP than one that attempts too much and does not.
-
-### Task 4: Stretch Goals
-
- **IMPORTANT:** Only work on stretch goals after completing your MVP!
-
- When completing these goals, make sure to use a **new branch** to ensure your MVP code is not overwritten. You can branch off `main` by executing `git checkout -b stretch`. When you are fully sure your stretch code is ready for feedback, merge your stretch code with main using `git checkout main` and `git merge stretch.`
-
-  After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
-
-* [ ] Add a filter input to the plant list page.
-* [ ] Build and implement another custom hook - a dark mode hook would be great for this project, though you'll have to style the light theme 🌙
-* [ ] Add a test file for the `ShoppingCart` component and test that it displays plants there (you'll need some mock plant data for the test, and then you can pass that data in as a prop when you call `render` and render the component - see the example below)
-
-```js
-const plants = {{}, {}, {}} // with each object being a mock plant
-test("displays plants in cart", () => {
-  const { getByText } = render(<ShoppingCart cart={plants} />)
-
-  ...
-
-})
-```
+* It is better to submit a challenge that meets MVP than one that attempts too much and does not.`
 
 ### Reference Materials
 
