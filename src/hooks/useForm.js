@@ -3,8 +3,7 @@ import { useState } from "react";
 // import the initial value from it's parent component
 import { initialValue } from "../components/CheckoutForm";
 
-
-export const useForm = (initialValue) => {
+export const useForm = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [values, setValues] = useState(initialValue);
 

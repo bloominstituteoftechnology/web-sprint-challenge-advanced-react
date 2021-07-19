@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "../hooks/useForm";
 
-const initialValue = {
+// This form should be handled by a "useForm" custom hook
+// Build out the logic needed for a form custom hook (see the useForm.js file)
+// and replace the necessary stateful logic from CheckoutForm with the hook
+
+// export initialValue to custom hook component
+export const initialValue = {
   firstName: "",
   lastName: "",
   address: "",
@@ -10,11 +15,12 @@ const initialValue = {
   zip: "",
 };
 
-// This form should be handled by a "useForm" custom hook
-// Build out the logic needed for a form custom hook (see the useForm.js file)
-// and replace the necessary stateful logic from CheckoutForm with the hook
-
-const CheckoutForm = (props) => {
+const CheckoutForm = () => {
+  /*
+  We're destructuring the returned values from our custom hook in the exact order.
+  destructured value names inside our CheckoutForm do not matter but will still have the same 
+  functionality as the order that they were given in our custom hook return.
+  */
   const [values, handleSubmit, handleChanges, showSuccessMessage] = useForm();
 
   return (
