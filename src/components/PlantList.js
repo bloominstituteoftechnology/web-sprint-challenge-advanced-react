@@ -8,9 +8,9 @@ export default class PlantList extends Component {
   //   - fetch data from the server endpoint - http://localhost:3333/plants
   //   - set the returned plants array to this.state.plants
 
-  cpmstructor() {
+  constructor() {
     super();
-    state = {
+    this.state = {
       plants: []
     }
   }
