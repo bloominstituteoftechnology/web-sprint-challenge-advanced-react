@@ -27,11 +27,12 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 ## Instructions
 
 ### Task 1: Transfer Repo
-* [ ] Open the assignment in Canvas and following along with the attached document [here.](https://www.notion.so/lambdaschool/Codegrade-Project-Distribution-A-Learner-Guide-459821516bfd474fa25590b3070eed3a).
-* [ ] Clone the newly created sprint challenge repo.
-* [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`
-* [ ] Check to see that Codegrade has accepted your git submission.
-
+* Clone this repository.
+* Implement the project on your newly created <firstName-lastName> branch, committing changes regularly.
+* Push commits: git push origin <firstName-lastName>.
+* RUN npm install to install your dependencies.
+* RUN npm start to start your application.
+ 
 ### Task 3: Project Requirements
  Your finished project must include all of the following requirements.
 
