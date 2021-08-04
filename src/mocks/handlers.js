@@ -8,7 +8,7 @@ const plantsData = [
     difficulty: "easy",
     light: "direct",
     img:
-      "https://cdn.shopify.com/s/files/1/2781/9558/products/PEPEROMIA_ROSSO-1_800x.png?v=1587156590",
+      "https://cdn.shopify.com/s/files/1/2781/9558/products/6__ZZ-1_800x.png?v=1587411408",
     sizes: ["small"],
     watering: 2,
     description:
@@ -106,7 +106,7 @@ const plantsData = [
     difficulty: "medium",
     light: "indirect",
     img:
-      "https://cdn.shopify.com/s/files/1/2781/9558/products/FERN_STAGHORN-11_800x.png?v=1587427931",
+      "https://cdn.shopify.com/s/files/1/2781/9558/products/SUCCULENT_JADE-1_800x.png?v=1587153094",
     sizes: ["small"],
     watering: 2,
     description:
