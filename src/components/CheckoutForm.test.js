@@ -59,7 +59,7 @@ test("1 form header renders", () => {
         expect(successMessage).toBeInTheDocument();
         expect(successMessage).toBeTruthy();
     
-        //in real world testing seems like we might test for other items returned
+        //Notes to self...in real world testing seems like we might test for other items returned
         const checkoutName = screen.queryByText(/William Mansfield/i);
         expect(checkoutName).toBeInTheDocument();
         const checkoutAddress = screen.queryByText(/PO Box 1434/i);
