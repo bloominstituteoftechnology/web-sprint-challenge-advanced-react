@@ -1,5 +1,20 @@
 # Sprint Challenge: Advanced React - React Plants 🌿
 
+- [Sprint Challenge: Advanced React - React Plants 🌿](#sprint-challenge-advanced-react---react-plants-)
+  - [Introduction](#introduction)
+  - [Instructions](#instructions)
+    - [Task 1: Transfer Repo](#task-1-transfer-repo)
+    - [Task 3: Project Requirements](#task-3-project-requirements)
+      - [Plant list](#plant-list)
+      - [Shopping Cart](#shopping-cart)
+      - [Checkout Form](#checkout-form)
+      - [Testing the Checkout Form](#testing-the-checkout-form)
+    - [Reference Materials](#reference-materials)
+      - [API Documentation](#api-documentation)
+  - [Submission format](#submission-format)
+  - [Interview Questions](#interview-questions)
+  - [Rick Mansfield's Pull Reqeust](#rick-mansfields-pull-reqeust)
+
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
 This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored some advanced React topics ⚛️. During this sprint, you studied **class components**, **the component lifecycle** and **class component lifecycle methods,** **custom hooks**, and **React Testing Library 🐙.** 
