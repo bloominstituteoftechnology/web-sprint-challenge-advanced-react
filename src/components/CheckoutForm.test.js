@@ -5,11 +5,14 @@ import userEvent from "@testing-library/user-event";
 
 // Write up the two tests here and make sure they are testing what the title shows
 
-test("form header renders", () => {});
+test("form header renders", () => {
     render(<CheckoutForm/>)
     const header= screen.queryByText(/Checkout form/i)
     expect(header).toBeInTheDocument()
-test("form shows success message on submit with form details", () => {});
+});
+    
+
+test("form shows success message on submit with form details", () => {
     render(<CheckoutForm/>)
 
     const firstName= screen.getByLabelText(/first name:/i)
@@ -26,5 +29,8 @@ test("form shows success message on submit with form details", () => {});
     userEvent.type(zip, "73107")
     const submitButton= screen.getByRole("button")
     userEvent.click(submitButton)
-    const successMess= screen.queryByText(/success-message/i)
+    
+    const successMess= screen.queryByTestId(/successMessage/)
     expect(successMess).toBeInTheDocument()
+});
+    

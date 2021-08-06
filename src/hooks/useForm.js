@@ -10,7 +10,7 @@ const initialValue = {
     zip: "",
   };
 
-export default function useForm() {
+export default function useForm(props) {
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
     const [values, setValues] = useState(initialValue);
   
