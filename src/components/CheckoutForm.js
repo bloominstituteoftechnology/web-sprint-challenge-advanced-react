@@ -35,7 +35,7 @@ const CheckoutForm = (props) => {  //notes for later I moved the following block
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <h2>Checkout Form</h2>
+        <h2 data-testid="testh2">Checkout Form</h2>
         <label>
           First Name:
           <input
