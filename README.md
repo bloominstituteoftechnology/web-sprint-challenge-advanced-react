@@ -126,3 +126,5 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
   - Act = Execute behavior (if there is one)
   - Assert = Extract response element & check (if necessary) that it is as "expected."
 
+## Rick Mansfield's Pull Reqeust
+- [Link for convenience](https://github.com/LambdaSchool/web-sprint-challenge-advanced-react/pull/214)
