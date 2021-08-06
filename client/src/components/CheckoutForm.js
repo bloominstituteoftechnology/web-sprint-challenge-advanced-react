@@ -73,7 +73,7 @@ const CheckoutForm = () => {
           />
         </label>
         <label>
-          Billing Addres:
+          Billing Address:
           <input 
           name="billing address"
           value={values.billingAddress}
