@@ -23,6 +23,7 @@ const CheckoutForm = () => {
       firstName: "",
       lastName: "",
       address: "",
+      billingAddress: "",
       city: "",
       state: "",
       zip: "",
@@ -69,6 +70,14 @@ const CheckoutForm = () => {
             name="address"
             value={values.address}
             onChange={handleChanges}
+          />
+        </label>
+        <label>
+          Billing Addres:
+          <input 
+          name="billing address"
+          value={values.billingAddress}
+          onChange={handleChanges}
           />
         </label>
         <label>
