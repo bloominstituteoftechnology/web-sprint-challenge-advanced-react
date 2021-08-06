@@ -23,4 +23,48 @@ test("1 form header renders", () => {
     });
     
 
-test("form shows success message on submit with form details", () => {});
+    test("2 form shows success message on submit with form details", () => {
+        render (<CheckoutForm/>);
+         //Arranged need good first, last, address, city, state, zip, scan for each field
+        const firstName = 'William';
+        const lastName = 'Mansfield';
+        const address = 'PO Box 1434';
+        const city = 'Grafton';
+        const state = 'Wisconsin';
+        const zip = '53024';
+    
+        const firstNameInput = screen.getByLabelText(/first name/i);
+        const lastNameInput = screen.getByLabelText(/last name/i);
+        const addressInput = screen.getByLabelText(/address/i);
+        const cityInput = screen.getByLabelText(/city/i);
+        const stateInput = screen.getByLabelText(/state/i);
+        const zipInput = screen.getByLabelText(/zip/i);
+    
+        //ACT I - user enters each as arranged above 
+        userEvent.type(firstNameInput, firstName);
+        userEvent.type(lastNameInput, lastName);
+        userEvent.type(addressInput, address);
+        userEvent.type(cityInput, city);
+        userEvent.type(stateInput, state);
+        userEvent.type(zipInput, zip);
+        //Assert "so far"
+        expect(screen.queryByTestId('successMessage')).toBeFalsy();
+        //ACT II user now uses submit button
+        const button = screen.getByRole('button');//must be clicked "before" testing the for the message
+        userEvent.click(button);
+    
+        //Assertions
+        //MVP 
+        const successMessage = screen.getByTestId('successMessage');
+        expect(successMessage).toBeInTheDocument();
+        expect(successMessage).toBeTruthy();
+    
+        //in real world testing seems like we might test for other items returned
+        const checkoutName = screen.queryByText(/William Mansfield/i);
+        expect(checkoutName).toBeInTheDocument();
+        const checkoutAddress = screen.queryByText(/PO Box 1434/i);
+        expect(checkoutAddress).toBeInTheDocument();
+        const checkoutCityStateZip = screen.queryByText(/Grafton, Wisconsin 53024/i);
+        expect(checkoutCityStateZip).toBeInTheDocument();
+    
+    });
