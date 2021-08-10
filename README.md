@@ -33,7 +33,7 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 * RUN npm install to install your dependencies.
 * RUN npm start to start your application.
  
-### Task 3: Project Requirements
+### Task 2: Project Requirements
  Your finished project must include all of the following requirements.
 
 #### Plant list
