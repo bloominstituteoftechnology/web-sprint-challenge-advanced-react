@@ -25,7 +25,7 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 You will also need to build the two tests in the `CheckoutForm.test.js` file and make sure they are testing what the test title says they are.
 
 ## Instructions
-
+Tamara Taylor
 ### Task 1: Transfer Repo
 * Clone this repository.
 * Implement the project on your newly created <firstName-lastName> branch, committing changes regularly.
