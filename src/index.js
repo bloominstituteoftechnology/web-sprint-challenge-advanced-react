@@ -6,4 +6,6 @@ import App from "./App";
 const { worker } = require('./mocks/browser');
 worker.start();
 
+const myName = "Alieze";
+
 ReactDOM.render(<App />, document.getElementById("root"));
