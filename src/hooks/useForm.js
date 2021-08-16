@@ -14,12 +14,12 @@ const useForm = (initialValue) => {
       };    
 
     // can't get clear working ???  
-    //   const clear = () => {
-    //       setValues(initialValue);
-    //   };
+      const clear = () => {
+          setValue(initialValue);
+      };
 
-    return [value, handleChanges];
-    //return [values, handleChanges, clear];
+    //return [value, handleChanges];
+    return [value, handleChanges, clear];
 
 };
 

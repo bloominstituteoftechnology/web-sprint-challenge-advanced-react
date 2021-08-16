@@ -11,13 +11,13 @@ const initialValue = {
   zip: "",
 };
 
-// This form should be handled by a "useForm" custom hook
-// Build out the logic needed for a form custom hook (see the useForm.js file)
-// and replace the necessary stateful logic from CheckoutForm with the hook
+// This form should be handled by a "useForm" custom hook - ok
+// Build out the logic needed for a form custom hook (see the useForm.js file) - ok
+// and replace the necessary stateful logic from CheckoutForm with the hook - ok
 
 const CheckoutForm = (props) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [values, handleChanges] = useForm(initialValue);
+  const [values, handleChanges, reset] = useForm(initialValue);
 
   // const handleChanges = (e) => {
   //   setValues({ ...values, [e.target.name]: e.target.value });
@@ -26,8 +26,7 @@ const CheckoutForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setShowSuccessMessage(true);
-    // ??? cant get my clear working ???
-    //reset();
+    reset();
   };
   // Form is working!! Yeeeeaaashhh Boooyyyeeee!!
   //console.log(values);
