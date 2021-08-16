@@ -31,5 +31,17 @@ test("shows success message on submit with form details", () => {
 	const zip = screen.getByLabelText(/Zip:/i)
 	const checkout = screen.queryByRole('button')
 
-	
+	userEvent.type(firstname, 'Steve')
+	userEvent.type(lastname, 'Rivera')
+	userEvent.type(address, '1111 test address')
+	userEvent.type(city, 'Dallas')
+	userEvent.type(state, 'Texas')
+	userEvent.type(zip, '75252')
+	userEvent.click(checkout)
+
+	const successMessage = screen.getAllByTestId("successMessage")
+
+	expect(checkoutForm).toBeInTheDocument()
+	expect(successMessage).toBeInTheDocument()
+	expect(successMessage).toHaveTextContent()
 });
