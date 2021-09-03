@@ -1,5 +1,20 @@
 # Sprint Challenge: Advanced React - React Plants 🌿
 
+- [Sprint Challenge: Advanced React - React Plants 🌿](#sprint-challenge-advanced-react---react-plants-)
+  - [Introduction](#introduction)
+  - [Instructions](#instructions)
+    - [Task 1: Transfer Repo](#task-1-transfer-repo)
+    - [Task 2: Project Requirements](#task-2-project-requirements)
+      - [Plant list](#plant-list)
+      - [Shopping Cart](#shopping-cart)
+      - [Checkout Form](#checkout-form)
+      - [Testing the Checkout Form](#testing-the-checkout-form)
+    - [Reference Materials](#reference-materials)
+      - [API Documentation](#api-documentation)
+  - [Submission format](#submission-format)
+  - [Interview Questions](#interview-questions)
+  - [Rick Mansfield's Pull Req link](#rick-mansfields-pull-req-link)
+
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
 This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored some advanced React topics ⚛️. During this sprint, you studied **class components**, **the component lifecycle** and **class component lifecycle methods,** **custom hooks**, and **React Testing Library 🐙.** 
@@ -109,3 +124,6 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 3. Define stateful logic.
 
 4. What are the three step of creating a successful test? What is done in each phase?
+
+## Rick Mansfield's Pull Req link
+[link]()
