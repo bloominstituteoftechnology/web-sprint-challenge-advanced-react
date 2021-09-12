@@ -17,7 +17,7 @@ const initialValue = {
 
 const CheckoutForm = (props) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [values, onChange] = useForm(initialValue);
+  const [values, setValue] = useForm(initialValue);
 
   
   const handleSubmit = (e) => {
@@ -34,7 +34,7 @@ const CheckoutForm = (props) => {
           <input
             name="firstName"
             value={values.firstName}
-            onChange={onChange}
+            onChange={useForm}
           />
         </label>
         <label>
@@ -42,7 +42,7 @@ const CheckoutForm = (props) => {
           <input
             name="lastName"
             value={values.lastName}
-            onChange={onChange}
+            onChange={useForm}
           />
         </label>
         <label>
@@ -50,20 +50,20 @@ const CheckoutForm = (props) => {
           <input
             name="address"
             value={values.address}
-            onChange={onChange}
+            onChange={useForm}
           />
         </label>
         <label>
           City:
-          <input name="city" value={values.city} onChange={onChange} />
+          <input name="city" value={values.city} onChange={useForm} />
         </label>
         <label>
           State:
-          <input name="state" value={values.state} onChange={onChange} />
+          <input name="state" value={values.state} onChange={useForm} />
         </label>
         <label>
           Zip:
-          <input name="zip" value={values.zip} onChange={onChange} />
+          <input name="zip" value={values.zip} onChange={useForm} />
         </label>
         <button>Checkout</button>
       </form>
