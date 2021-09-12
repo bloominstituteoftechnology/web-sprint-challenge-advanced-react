@@ -128,8 +128,8 @@ setState is a function that is used to update the state.
 
 
 4. What are the three steps of creating a successful test? What is done in each phase?
-a. Create a test file.
-b. Write a test.
-c. Run the test.
+arrange, this is where you set up the test environment.
+act, this is where you perform the action you want to test.
+assert, this is where you check the results of the action.
 
 
