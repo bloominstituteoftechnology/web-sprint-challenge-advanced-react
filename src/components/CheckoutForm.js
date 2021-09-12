@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const initialValue = {
+const initialState = {
   firstName: "",
   lastName: "",
   address: "",
@@ -15,7 +15,7 @@ const initialValue = {
 
 const CheckoutForm = (props) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [values, setValues] = useState(initialValue);
+  const [values, setValues] = useState(initialState);
 
   const handleChanges = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });

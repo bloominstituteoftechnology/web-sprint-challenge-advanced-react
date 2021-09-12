@@ -53,7 +53,7 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
   The form is working, but it is currently controlled by local stateful logic. We want to control this form with a custom hook.
 
 * [x ] Build a custom hook called `useForm`, and use it in your CheckoutForm component to control the form's stateful logic.
-* [ ] You built a useForm hook in the guided project this week. You will probably need to use that as a guide to complete this step. However, try and build it out first before you peek at the guided project. And *do not* copy/paste directly from the guided project!_
+* [x ] You built a useForm hook in the guided project this week. You will probably need to use that as a guide to complete this step. However, try and build it out first before you peek at the guided project. And *do not* copy/paste directly from the guided project!_
 
 #### Testing the Checkout Form
 * [ ] Run the test runner and ensure that `src/components/CheckoutForm.test.js` is correctly called.
@@ -102,10 +102,40 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file. These will not be counted as a part of your sprint score but will be helpful for preparing you for your endorsement interview, and enhancing overall understanding.
 
-1. What are the main differences between a stateful and a functional component?
+1. What are the main differences between a stateful and a functional component? A functional component has hooks built in, whereas a stateful component does not.
+a `useState` hook is used to manage state.
+b `useEffect` hook is used to manage side effects.
+c `useContext` hook is used to manage context.
+d `useReducer` hook is used to manage reducers.
+e `useRef` hook is used to manage refs.
+f `useMemo` hook is used to manage memoization.
+g `useCallback` hook is used to manage callbacks.
+h `useImperativeHandle` hook is used to manage imperative handles.
+i `useLayoutEffect` hook is used to manage layout effects.
+j `useDebugValue` hook is used to manage debug values.
+
 
 2. When does a componentWillMount function be called? What about a componentWillUpdate?
+a `componentWillMount` function is called when the component is first rendered.
+b `componentWillUpdate` function is called when the component is updated.
+c `componentWillUnmount` function is called when the component is unmounted.
+d `componentWillReceiveProps` function is called when the component receives new props.
+e `componentDidMount` function is called when the component is mounted.
+f `componentDidUpdate` function is called when the component is updated.
+g `componentDidCatch` function is called when the component catches an error.
+h `componentDidUpdate` function is called when the component is updated.
+i `componentDidUpdate` function is called when the component is updated.
+j `componentDidUpdate` function is called when the component is updated.
+
 
 3. Define stateful logic.
+state is a variable that is used to store data.
+setState is a function that is used to update the state.
 
-4. What are the three step of creating a successful test? What is done in each phase?
+
+
+4. What are the three steps of creating a successful test? What is done in each phase?
+1. Write a test that fails.
+2. Write a test that passes.
+3. Write a test that fails.
+
