@@ -104,8 +104,45 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What are the main differences between a stateful and a functional component?
 
+Functional components are some of the more common components that will come across while working in React. These are simply JavaScript functions. We can create a functional component to React by writing a JavaScript function. FC are also known as Stateless components, as they simply accept data and display them in some form, that they are mainly responsible for rendering UI. For functional components, we use hooks (useState) to manage state inside the existing function. Hooks can only be used in functional components, not in-class components. Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class. There is no render method used in functional components.
+
+
+A class component requires you to  have the render() method returning HTML. CC are also known as Stateful components because they implement logic and state. 
+By creating components as classes, you can set up a data object that your component is concerned with. This is done using state and setting up that object on our constructor method. Once we have some data that we can render out to the DOM, we need a vehicle that will allow us to render that data. This is achieved with the JSX method render() from within the life-cycle hook. 
+React lifecycle methods can be used inside class components (for example, componentDidMount).
+
+
 2. When does a componentWillMount function be called? What about a componentWillUpdate?
+
+React is, in essence, a combination of multiple components. A component can be as simple as a single piece of user interface that represents a small portion of our application. Conceptually, a component lifecycle happens in three phases. 
+
+1) Birth/Mounting: This is the phase when the component is being built. The initial data you want access to will be defined on the constructor of this phase. The render method is invoked and the componentDidMount gets called as well.
+
+2) Growth/Updating: In the Growth/Updating phase you're updating compnent data. setState can be used to change the component's state data, forcing a call to render. The shouldComponentUpdate method is used to stop a component from calling render if necessary.
+
+3) Death/Unmounting: The unmounting phase includes removing the component from the screen. The componentWillUnmount hook is called and can be used for any clean up.
+
+The componentWillMount() lifecycle hook is primarily used to implement server-side logic before the actual rendering happens, such as making an API call to the server. It triggers before the initial render, and the function will only trigger once in the lifespan of a component. It is used to update the state value before the DOM is rendered, creating a state variable. 
+
+Once we have determined that we do need to re-render in our Update phase, the componentWillUpdate() will be called. Just like componentWillMount(), this method is called before render(). The componentWillUpdate() is a chance for us to handle configuration changes and prepare for the next render. If we want to access the old props or state, we can call this.props or this.state. We can then compare them to the new values and make changes/calculations as required.
+Unlike componentWillMount(), we should not call this.setState() when using componentWillUpdate() . The reason we do not call this.setState() is that the method triggers another componentWillUpdate(). If we trigger a state change in componentWillUpdate() we will end up in an infinite loop . Some of the more common uses for componentWillUpdate() is to set a variable based on state changes (not using this.setState()), dispatching events or starting animations.
 
 3. Define stateful logic.
 
+Stateful logic is logic that is built into a component. It can be a function that handles a click event. Usually, this kind of logic deals with state in the component. Thus the moniker "stateful logic."
+Custom Hooks, are so-called because you are building the hook yourself (customizing it), to apply non-visual behavior and stateful logic throughout your components.This way, you can reuse the same hook over and over again. Custom hooks follow the same patterns of naming that you've already learned (i.e. prefacing the function name with use, as in useState). 
+
+
 4. What are the three step of creating a successful test? What is done in each phase?
+
+"Arrange, Act, Assert"  is a testing structure.
+
+- Arrange: This section of a unit test method initializes objects and sets the value of the data that is passed to the method under test.
+
+- Act: This section invokes the method under test with the arranged parameters. 
+
+- Assert: The Assert section verifies that the action of the method under test behaves as expected. This is where the actual testing occurs. 
+
+// https://medium.com/@baphemot/understanding-reactjs-component-life-cycle-823a640b3e8d
+
+// https://docs.microsoft.com/en-us/visualstudio/test/unit-test-basics?view=vs-2019
