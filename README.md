@@ -56,7 +56,7 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 * [x ] You built a useForm hook in the guided project this week. You will probably need to use that as a guide to complete this step. However, try and build it out first before you peek at the guided project. And *do not* copy/paste directly from the guided project!_
 
 #### Testing the Checkout Form
-* [ ] Run the test runner and ensure that `src/components/CheckoutForm.test.js` is correctly called.
+* [ x] Run the test runner and ensure that `src/components/CheckoutForm.test.js` is correctly called.
 * [ ] Fill out code necessary to test that that Checkout form renders without errors.
 * [ ] Fill out code necessary to test that when all form inputs are filled with valid data, a success message appears.
 * [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working.
@@ -105,14 +105,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 1. What are the main differences between a stateful and a functional component? A functional component has hooks built in, whereas a stateful component does not.
 a `useState` hook is used to manage state.
 b `useEffect` hook is used to manage side effects.
-c `useContext` hook is used to manage context.
-d `useReducer` hook is used to manage reducers.
-e `useRef` hook is used to manage refs.
-f `useMemo` hook is used to manage memoization.
-g `useCallback` hook is used to manage callbacks.
-h `useImperativeHandle` hook is used to manage imperative handles.
-i `useLayoutEffect` hook is used to manage layout effects.
-j `useDebugValue` hook is used to manage debug values.
+
 
 
 2. When does a componentWillMount function be called? What about a componentWillUpdate?
@@ -135,6 +128,8 @@ setState is a function that is used to update the state.
 
 
 4. What are the three steps of creating a successful test? What is done in each phase?
-1. Write a test that fails.
-2. Write a test that passes.
-3. Write a test that fails.
+a. Create a test file.
+b. Write a test.
+c. Run the test.
+
+
