@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useForm from "../hooks/useForm";
 
 const initialValue = {
   firstName: "",
@@ -14,7 +15,7 @@ const initialValue = {
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
 const CheckoutForm = (props) => {
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useForm(false);
   const [values, setValues] = useState(initialValue);
 
   const handleChanges = (e) => {
@@ -23,7 +24,7 @@ const CheckoutForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setShowSuccessMessage(true);
+    setShowSuccessMessage(!showSuccessMessage);
   };
 
   return (
@@ -72,7 +73,7 @@ const CheckoutForm = (props) => {
       {showSuccessMessage && (
         <div className="success-message" data-testid="successMessage">
           <p>
-            You have ordered some plants! Woo-hoo! <span role="img">🎉</span>
+            You have ordered some plants! Woo-hoo! <span aria-label="birthdayHat" role="img">🎉</span>
           </p>
           <p>Your new green friends will be shipped to:</p>
           <br />
