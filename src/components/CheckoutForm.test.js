@@ -10,14 +10,14 @@ test("renders without errors", () => {
     render(<CheckoutForm />);
 });
 
-// test("shows success message on submit with form details", () => {
-//     const { getByText } = render(<CheckoutForm />);
-//     const submitButton = getByText("Checkout");
-//     submitButton.click();
-//     expect(getByText("You have ordered some plants! Woo-hoo!")).toBeInTheDocument();
+test("shows success message on submit with form details", () => {
+    const { getByText } = render(<CheckoutForm />);
+    const submitButton = getByText("Checkout");
+    submitButton.click();
+    expect(getByText("You have ordered some plants! Woo-hoo!")).toBeInTheDocument();
 
 
-// });
+});
 
 test('form shows success message on submit with form details', () => {
     render(<CheckoutForm />);
@@ -37,6 +37,8 @@ test('form shows success message on submit with form details', () => {
     userEvent.click(checkout);
     const confirmation = screen.getByTestId('successMessage');
     expect(confirmation).toBeInTheDocument();
+    
+
   });
 
 
