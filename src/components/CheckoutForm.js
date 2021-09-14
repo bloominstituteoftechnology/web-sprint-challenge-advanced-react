@@ -34,7 +34,7 @@ const CheckoutForm = (props) => {
           <input
             name="firstName"
             value={values.firstName}
-            onChange={useForm}
+            onChange={setValue}
           />
         </label>
         <label>
@@ -42,7 +42,7 @@ const CheckoutForm = (props) => {
           <input
             name="lastName"
             value={values.lastName}
-            onChange={useForm}
+            onChange={setValue}
           />
         </label>
         <label>
@@ -50,20 +50,20 @@ const CheckoutForm = (props) => {
           <input
             name="address"
             value={values.address}
-            onChange={useForm}
+            onChange={setValue}
           />
         </label>
         <label>
           City:
-          <input name="city" value={values.city} onChange={useForm} />
+          <input name="city" value={values.city} onChange={setValue} />
         </label>
         <label>
           State:
-          <input name="state" value={values.state} onChange={useForm} />
+          <input name="state" value={values.state} onChange={setValue} />
         </label>
         <label>
           Zip:
-          <input name="zip" value={values.zip} onChange={useForm} />
+          <input name="zip" value={values.zip} onChange={setValue} />
         </label>
         <button>Checkout</button>
       </form>

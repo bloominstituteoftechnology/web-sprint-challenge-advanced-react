@@ -9,5 +9,5 @@ export const useForm = (param) => {
         setForm({ ...form, [e.target.name]: e.target.value });
       };
 
-    return([form, handleChanges])
+    return[form, handleChanges]
 }
