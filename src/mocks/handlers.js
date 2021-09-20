@@ -78,7 +78,7 @@ const plantsData = [
     difficulty: "medium",
     light: "indirect",
     img:
-      "https://cdn.shopify.com/s/files/1/2781/9558/products/FERN_RABBITSFOOT-1_800x.png?v=1587152433",
+      "https://cdn.shopify.com/s/files/1/2781/9558/products/6__ZZ-1_800x.png?v=1587411408",
     sizes: ["small"],
     watering: 4,
     description:
