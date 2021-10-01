@@ -1,10 +1,17 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component } from "react"
+import axios from "axios"
 
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
   state = {
-    plants:[]
+    plants: [],
+  }
+
+  componentDidMount() {
+    axios.get("http://localhost:3333/plants").then((res) => {
+      this.setState({ plants: res.data })
+      console.log(res)
+    })
   }
   // when the component mounts:
   //   - fetch data from the server endpoint - http://localhost:3333/plants
@@ -36,6 +43,6 @@ export default class PlantList extends Component {
           </div>
         ))}
       </main>
-    );
+    )
   }
 }
