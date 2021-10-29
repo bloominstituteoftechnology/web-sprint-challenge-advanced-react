@@ -9,9 +9,9 @@ This is an individual assessment. All work must be your own. All projects will b
 You are not allowed to collaborate during the sprint challenge.
 
 ## Project Setup
-* [ ] Run npm install to install your dependencies.
-* [ ] Run npm start to run your frontend and backend code automatically.
-* [ ] Note your backend code will run automatically when your run npm start. There is no need to seperately run a server.js file and no means to test the server through postman or the browser. Feel free to ignore any messages related to MSW or mock service workers.
+* [. ] Run npm install to install your dependencies.
+* [ .] Run npm start to run your frontend and backend code automatically.
+* [ .] Note your backend code will run automatically when your run npm start. There is no need to seperately run a server.js file and no means to test the server through postman or the browser. Feel free to ignore any messages related to MSW or mock service workers.
 
 ## Project Instructions
 
@@ -89,8 +89,21 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What are the main differences between a stateful and a functional component?
 
+A functional component is just a plain JavaScript function that accepts props as an argument and returns a React elemen they simply accept data and display them in some form, that they are mainly responsible for rendering UI.
+
+A stateful component requires you to extend from React. Component and create a render function which returns a React element. They implement logic and state. React lifecycle methods can be used inside class components (for example, componentDidMount).
+
 2. When does a componentWillMount function be called? What about a componentWillUpdate?
+componentWillMount() is invoked immediately before mounting occurs.
+componentWillUpdate() is called every time a re-render is required.
 
 3. Define stateful logic.
+Stateful component can contains the state object and event handling function, user actions. they can handle the code and remeber items within this.state.
 
-4. What are the three step of creating a successful test? What is done in each phase?
+4. What are the three step of creating a successful test? What is done in each phase?   AAA (Arrange, Act, Assert) 
+
+The Arrange section of test method initializes objects and sets the value of the data that is passed to the method under test.
+
+The Act section invokes the method under test with the arranged parameters.
+
+The Assert section verifies that the action of the method under test behaves as expected. 
