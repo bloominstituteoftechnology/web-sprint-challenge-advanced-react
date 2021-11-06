@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import {useForm} from "../hooks/useForm";
-
 
 const initialValue = {
   firstName: "",
@@ -17,9 +15,12 @@ const initialValue = {
 
 const CheckoutForm = (props) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [values, setValue] = useForm(initialValue);
+  const [values, setValues] = useState(initialValue);
 
-  
+  const handleChanges = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setShowSuccessMessage(true);
@@ -34,7 +35,7 @@ const CheckoutForm = (props) => {
           <input
             name="firstName"
             value={values.firstName}
-            onChange={setValue}
+            onChange={handleChanges}
           />
         </label>
         <label>
@@ -42,7 +43,7 @@ const CheckoutForm = (props) => {
           <input
             name="lastName"
             value={values.lastName}
-            onChange={setValue}
+            onChange={handleChanges}
           />
         </label>
         <label>
@@ -50,20 +51,20 @@ const CheckoutForm = (props) => {
           <input
             name="address"
             value={values.address}
-            onChange={setValue}
+            onChange={handleChanges}
           />
         </label>
         <label>
           City:
-          <input name="city" value={values.city} onChange={setValue} />
+          <input name="city" value={values.city} onChange={handleChanges} />
         </label>
         <label>
           State:
-          <input name="state" value={values.state} onChange={setValue} />
+          <input name="state" value={values.state} onChange={handleChanges} />
         </label>
         <label>
           Zip:
-          <input name="zip" value={values.zip} onChange={setValue} />
+          <input name="zip" value={values.zip} onChange={handleChanges} />
         </label>
         <button>Checkout</button>
       </form>
