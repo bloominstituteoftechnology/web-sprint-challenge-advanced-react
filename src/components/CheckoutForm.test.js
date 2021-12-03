@@ -3,6 +3,7 @@ import MutationObserver from 'mutationobserver-shim';
 import { render } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
 
+
 // Write up the two tests here and make sure they are testing what the title shows
 
 test("renders without errors", () => {
@@ -10,41 +11,27 @@ test("renders without errors", () => {
 
 });
 
-test("shows success message on submit with form details", async () => {render(<CheckoutForm />);    
-    const firstNameInput = screen.getByLabelText(/First Name/i);
-    const firstName = 'Becca';
-    userEvent.type(firstNameInput, firstName);
+test("shows success message on submit with form details", async () => {
+    render(<CheckoutForm />);
+  
+    const firstNameInput = screen.getByLabelText(/First Name:/i);
+    userEvent.type(firstNameInput, "first");
+    const lastNameInput = screen.getByLabelText(/Last Name:/i);
+    userEvent.type(lastNameInput, "last");
+    const addressInput = screen.getByLabelText(/Address:/i);
+    userEvent.type(addressInput, "address");
+    const cityInput = screen.getByLabelText(/City:/i);
+    userEvent.type(cityInput, "city");
+    const stateInput = screen.getByLabelText(/State:/i);
+    userEvent.type(stateInput, "state");
+    const zipInput = screen.getByLabelText(/Zip:/i);
+    userEvent.type(zipInput, "12345");
     
-    const lastNameInput = screen.getByLabelText(/last name/i);
-    const lastName = 'Ogden';
-    userEvent.type(lastNameInput, lastName);
-    
-    const addressInput = screen.getByLabelText(/address/i);
-    const address = '5520 W Monroe Concord Rd';
-    userEvent.type(addressInput, address);
-    
-    const cityInput = screen.getByLabelText(/city/i);
-    const city = 'West Milton';
-    userEvent.type(cityInput, city);
-    
-    const stateInput = screen.getByLabelText(/state/i);
-    const state = 'Ohio';
-    userEvent.type(stateInput, state);
-    
-    const zipInput = screen.getByLabelText(/zip/i);
-    const zip = '45383';
-    userEvent.type(zipInput, zip);
-
-    const button = screen.getByRole('button');
-    userEvent.click(button);
-
-    await waitFor(() =>
-        {
-            const successMessageRender = screen.queryByTestId("successMessage");
-            const firstNameRender = screen.queryByTestId("firstName");
-            const lastNameRender = screen.queryByTestId("lastName");
-            const addressRender = screen.queryByTestId("address");
-            const cityRender = screen.queryByTestId("city");
-            const zipRender = screen.queryByTestId("zip");
-        });
+    const submitButton = screen.getByRole("button");
+    userEvent.click(submitButton);
+  
+    await waitFor(() => {
+      const successMessage = screen.getByTestId(/successMessage/i);
+      expect(successMessage).toBeInTheDocument();
     });
+  });
