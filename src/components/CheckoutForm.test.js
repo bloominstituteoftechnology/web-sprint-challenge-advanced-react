@@ -22,7 +22,7 @@ test("shows success message on submit with form details", async () => {
         userEvent.type(city, 'Modesto')
     const state = screen.getByLabelText(/state:/i)
         userEvent.type(state, 'CA')
-    const zipCode = screen.getByLabelText(/zip code:/i)
+    const zipCode = screen.getByLabelText(/zip:/i)
         userEvent.type(zipCode, '95356')
     const submit = screen.getByRole('button')
         userEvent.click(submit)
