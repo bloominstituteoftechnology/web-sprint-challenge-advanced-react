@@ -20,7 +20,7 @@ export default class PlantList extends Component {
         })
       })
       .catch(error => {
-        console.log(error, 'Mount Failed');
+        console.log(error, 'Mount Unsuccessful');
       })
   }
 
