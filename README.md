@@ -46,7 +46,7 @@ Other configurations might work but haven't been tested.
 
 ## MVP
 
-### MVP 1, The Grid -- Long Explanation
+### MVP 1, The Grid - Long Explanation
 
 - Replicate the **functionality and DOM** shown in the prototype linked at the top of this README.
 - Keep your code inside `frontend/components/AppFunctional.js` and `frontend/components/AppClass.js`.
@@ -65,7 +65,7 @@ Other configurations might work but haven't been tested.
     (1, 3) (2, 3) (3, 3)
   ```
 
-### MVP 1, The Grid -- Short Explanation
+### MVP 1, The Grid - Short Explanation
 
 - Make **ALL** the tests pass!
 
