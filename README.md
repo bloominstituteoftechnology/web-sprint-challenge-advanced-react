@@ -30,9 +30,9 @@ Other configurations might work but haven't been tested.
 ## Project Setup
 
 - Fork, clone, and `npm install`. You don't need to add any extra libraries.
-- Launch the project on a dev server running `npm run dev`.
+- Launch the project on a dev server executing `npm run dev`.
 - See your widget visiting `http://localhost:3000` in Chrome.
-- Run tests locally executing `npm test`. The test file is `codegrade_mvp.test`.
+- Run tests locally executing `npm test`. The test file is `codegrade_mvp.test.js`.
 
 ## API
 
