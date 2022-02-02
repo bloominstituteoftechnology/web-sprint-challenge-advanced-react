@@ -1,7 +1,6 @@
 {
   "name": "web-sprint-challenge-advanced-react",
   "version": "0.0.1",
-  "description": "Template for Codegraded React Projects",
   "scripts": {
     "dev": "fkill :9000 :3000 -s && concurrently \"npm:backend\" \"npm:frontend\"",
     "test": "cross-env NODE_ENV=testing jest --silent --forceExit",
