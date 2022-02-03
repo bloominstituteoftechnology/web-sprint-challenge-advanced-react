@@ -5,10 +5,6 @@ import AppClass from './frontend/components/AppClass'
 import { render, fireEvent, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
-beforeAll(() => {
-  jest.setTimeout(5)
-})
-
 let up, down, left, right, reset, submit
 let squares, coordinates, steps, message, email
 
