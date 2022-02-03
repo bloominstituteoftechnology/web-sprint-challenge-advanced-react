@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "fkill :9000 :3000 -s && concurrently \"npm:backend\" \"npm:frontend\"",
-    "test": "cross-env NODE_ENV=testing jest --silent --forceExit",
+    "test": "cross-env NODE_ENV=testing jest --silent",
     "webpack": "cross-env NODE_ENV=production webpack",
     "heroku-postbuild": "npm run webpack",
     "frontend": "webpack serve --open",
@@ -11,12 +11,12 @@
     "start": "npm run backend"
   },
   "devDependencies": {
-    "@babel/core": "7.16.12",
+    "@babel/core": "7.17.0",
     "@babel/plugin-transform-react-jsx": "7.16.7",
-    "@babel/plugin-transform-runtime": "7.16.10",
+    "@babel/plugin-transform-runtime": "7.17.0",
     "@babel/preset-env": "7.16.11",
     "@babel/preset-react": "7.16.7",
-    "@testing-library/jest-dom": "5.16.1",
+    "@testing-library/jest-dom": "5.16.2",
     "@testing-library/react": "12.1.2",
     "@types/jest": "27.4.0",
     "babel-loader": "8.2.3",
