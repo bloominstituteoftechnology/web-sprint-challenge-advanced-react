@@ -68,7 +68,6 @@ test('AppClass is a class-based component', () => {
       document.body.innerHTML = ''
     })
 
-
     describe(`[A ${label}] Active Square`, () => {
       test(`[A1 ${label}] Actions: none (Initial State of <App />)
           Active Square should be index 4`, () => {
