@@ -36,7 +36,7 @@ Other configurations might work but haven't been tested.
 
 ## API
 
-- The application includes an endpoint reachable at `POST http://localhost:9000/result`.
+- The application includes an endpoint reachable at `POST http://localhost:9000/api/result`.
 - You can experiment with this endpoint using an HTTP client like Postman.
 - The endpoint expects a payload like `{ "x": 1, "y": 2, "steps": 3, "email": "lady@gaga.com" }`:
   - `x` is an integer between 1 and 3.
