@@ -87,5 +87,5 @@ Other configurations might work but haven't been tested.
 - Design the state of the app before opening your editor. You might need fewer pieces of state than you think!
 - Find the simplest data structure that describes effectively the state of the grid.
 - "Product" works hard designing the messages: we must reproduce them faithfully, down to the last comma.
-- If you start with Functional, don't switch to Class-Based until Functional is passing all its tests (and viceversa).
+- If you start with Functional, don't switch to Class-Based until Functional is passing all its tests (and vice versa).
 - If the direction of the `y` axis surprises you, know that elements in HTML also have their origin of coordinates on their top-left corner.
