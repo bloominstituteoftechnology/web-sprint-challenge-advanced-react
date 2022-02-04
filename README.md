@@ -4,14 +4,14 @@
 
 In this challenge, you will write the logic for [THIS WIDGET](https://advanced-react-grid.herokuapp.com/).
 
-Study its functionality and also inspect the Console, the Network tab and the Elements tab in Chrome Dev Tools:
+Study its functionality and also inspect the Console, the Network tab and the Elements tab **in Chrome Dev Tools**:
 
 - There are two versions of the widget, with identical functionality.
 - The input box at the bottom of the page expects a valid email address.
 - Email validation errors arrive from the server, as you can see in the Network tab, under "Preview".
 - The payload sent to the server on form submit can also be seen in the Network tab, under "Payload".
-- The origin of coordinates of the grid is at its top-left corner.
-- One valid email in particular, `foo@bar.baz`, **results in a server error.**
+- The origin of coordinates of the grid is on its top-left corner.
+- One valid email in particular, `foo@bar.baz`, **results in a server error**.
 
 ## Requirements
 
@@ -29,14 +29,14 @@ Other configurations might work but haven't been tested.
 
 ## Project Setup
 
-- Fork, clone, and `npm install`. You don't need to add any extra libraries.
-- Launch the project on a dev server executing `npm run dev`.
-- See your widget visiting `http://localhost:3000` in Chrome.
+- Fork, clone, and `npm install`. You won't need to add any extra libraries.
+- Launch the project on a development server executing `npm run dev`.
+- Visit your widget by navigating to `http://localhost:3000` with Chrome.
 - Run tests locally executing `npm test`. The test file is `codegrade_mvp.test.js`.
 
 ## API
 
-- The application includes an endpoint on `POST http://localhost:9000/result`.
+- The application includes an endpoint reachable at `POST http://localhost:9000/result`.
 - You can experiment with this endpoint using an HTTP client like Postman.
 - The endpoint expects a payload like `{ "x": 1, "y": 2, "steps": 3, "email": "lady@gaga.com" }`:
   - `x` is an integer between 1 and 3.
@@ -53,9 +53,9 @@ Other configurations might work but haven't been tested.
 - The component exposed by `AppFunctional.js` must be a stateful functional component.
 - The one in `AppClass.js` must be a stateful class-based component.
 - The DOM produced by your components must match exactly the DOM in the prototype:
-  - The HTML hierarchy, ids, class names etc must be the same.
+  - The hierarchy of HTML elements, their ids, class names etc must be the same.
   - The current square is marked with a capital B.
-  - Success and error messages must be those sent by the API (see Network tab -> "Preview").
+  - Success and error messages are those returned by the API (see Network tab, "Preview" area).
   - No frontend form validation code is required.
 - The coordinates of each square of the grid are as follows:
 
@@ -87,5 +87,5 @@ Other configurations might work but haven't been tested.
 - Design the state of the app before opening your editor. You might need fewer pieces of state than you think!
 - Find the simplest data structure that describes effectively the state of the grid.
 - "Product" works hard designing the messages: we must reproduce them faithfully, down to the last comma.
-- If you start with Functional, don't switch to Class-Based until Functional is passing all tests (and viceversa).
-- If the direction of the `y` axis surprises you, know that elements in HTML also have their origin of coordinates at their top-left corner.
+- If you start with Functional, don't switch to Class-Based until Functional is passing all its tests (and viceversa).
+- If the direction of the `y` axis surprises you, know that elements in HTML also have their origin of coordinates on their top-left corner.
