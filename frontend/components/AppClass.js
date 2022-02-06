@@ -14,7 +14,7 @@ export default class AppClass extends React.Component {
           <div className="square"></div>
           <div className="square"></div>
           <div className="square"></div>
-          <div className="square">B</div>
+          <div className="square active">B</div>
           <div className="square"></div>
           <div className="square"></div>
           <div className="square"></div>

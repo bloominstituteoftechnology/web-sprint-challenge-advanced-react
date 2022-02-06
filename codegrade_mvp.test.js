@@ -33,8 +33,10 @@ const testSquares = (squares, activeIdx) => {
   squares.forEach((square, idx) => {
     if (idx === activeIdx) {
       expect(square.textContent).toBe('B')
+      expect(square.className).toMatch(/active/)
     } else {
       expect(square.textContent).toBeFalsy()
+      expect(square.className).not.toMatch(/active/)
     }
   })
 }

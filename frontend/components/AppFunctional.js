@@ -12,7 +12,7 @@ export default function AppFunctional(props) {
         <div className="square"></div>
         <div className="square"></div>
         <div className="square"></div>
-        <div className="square">B</div>
+        <div className="square active">B</div>
         <div className="square"></div>
         <div className="square"></div>
         <div className="square"></div>

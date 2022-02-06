@@ -91,8 +91,16 @@ nav a.active:nth-last-of-type(2) {
   color: white;
 }
 
+#grid .square.active {
+  background-color: #00808c
+}
+
 .class-based #grid .square {
   background-color: #00808c
+}
+
+.class-based #grid .square.active {
+  background-color: #ff4b00;
 }
 
 #keypad {

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "fkill :9000 :3000 -s && concurrently \"npm:backend\" \"npm:frontend\"",
-    "test": "cross-env NODE_ENV=testing jest --silent",
+    "test": "cross-env NODE_ENV=testing jest",
     "webpack": "cross-env NODE_ENV=production webpack",
     "heroku-postbuild": "npm run webpack",
     "frontend": "webpack serve --open",
@@ -29,7 +29,7 @@
     "fkill-cli": "7.0.0",
     "html-loader": "3.1.0",
     "html-webpack-plugin": "5.5.0",
-    "jest": "27.4.7",
+    "jest": "27.5.0",
     "msw": "0.36.8",
     "nodemon": "2.0.15",
     "string-replace-loader": "3.1.0",
