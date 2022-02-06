@@ -11,7 +11,7 @@ Study its functionality and also inspect the Console, the Network tab and the El
 - Email validation errors arrive from the server, as you can see in the Network tab, under "Preview".
 - The payload sent to the server on form submit can also be seen in the Network tab, under "Payload".
 - The origin of coordinates of the grid is on its top-left corner.
-- One valid email in particular, `foo@bar.baz`, **results in a server error**.
+- One valid email in particular, `foo@bar.baz`, **results in a "Forbidden" server error**.
 
 ## Requirements
 
