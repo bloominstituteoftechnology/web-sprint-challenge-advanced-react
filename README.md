@@ -54,7 +54,7 @@ Other configurations might work but haven't been tested.
 - The one in `AppClass.js` must be a stateful class-based component.
 - The DOM produced by your components must match exactly the DOM in the prototype:
   - The hierarchy of HTML elements, their ids, class names etc must be the same.
-  - The current square is marked with a capital B.
+  - The current square is marked with a capital B and an "active" class name.
   - Submit success and error messages are those returned by the API (see Network tab, "Preview" area).
   - No frontend form validation code is required.
 - The coordinates of each square of the grid are as follows:
