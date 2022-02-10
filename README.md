@@ -29,7 +29,7 @@ Other browser/Node/NPM configurations might work but haven't been tested.
 - Fork, clone, and `npm install`. You won't need to add any extra libraries.
 - Launch the project on a development server executing `npm run dev`.
 - Visit your widget by navigating Chrome to `http://localhost:3000`.
-- Run tests locally executing `npm test`. The test file is `codegrade_mvp.test.js`.
+- Run tests locally executing `npm test`. The test files are `codegrade_mvp.test.js` and `App.test.js`.
 
 ## API
 
