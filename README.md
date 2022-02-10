@@ -6,12 +6,12 @@ In this challenge, you will write the logic for [THIS WIDGET](https://advanced-r
 
 Study its functionality and also inspect the Console, the Network tab and the Elements tab **in Chrome Dev Tools**:
 
-- There are two versions of the widget, with identical functionality.
+- There are two versions of the widget with identical functionality: class-based and functional.
 - The input box at the bottom of the page expects a valid email address.
 - Email validation errors arrive from the server, as you can see in the Network tab, under "Preview".
 - The payload sent to the server on form submit can also be seen in the Network tab, under "Payload".
+- One valid email in particular, `foo@bar.baz`, **results in a "Forbidden" server error**❗
 - The origin of coordinates of the grid is on its top-left corner.
-- One valid email in particular, `foo@bar.baz`, **results in a "Forbidden" server error**.
 
 ## Requirements
 
@@ -19,19 +19,16 @@ Study its functionality and also inspect the Console, the Network tab and the El
 
 - Node 16.x
 - NPM 8.x (update NPM executing `npm i -g npm`)
+- Postman (download [here](https://www.postman.com/downloads/))
 - Chrome >= 96.x
 
-Other configurations might work but haven't been tested.
-
-### Optional Tools
-
-- Postman (download [here](https://www.postman.com/downloads/))
+Other browser/Node/NPM configurations might work but haven't been tested.
 
 ## Project Setup
 
 - Fork, clone, and `npm install`. You won't need to add any extra libraries.
 - Launch the project on a development server executing `npm run dev`.
-- Visit your widget by navigating to `http://localhost:3000` with Chrome.
+- Visit your widget by navigating Chrome to `http://localhost:3000`.
 - Run tests locally executing `npm test`. The test file is `codegrade_mvp.test.js`.
 
 ## API
@@ -55,7 +52,7 @@ Other configurations might work but haven't been tested.
 - The DOM produced by your components must match exactly the DOM in the prototype:
   - The hierarchy of HTML elements, their ids, class names etc must be the same.
   - The current square is marked with a capital B and an "active" class name.
-  - Submit success and error messages are those returned by the API (see Network tab, "Preview" area).
+  - The submit success and error messages that display on the page come from the API (see Network tab).
   - No frontend form validation code is required.
 - The coordinates of each square of the grid are as follows:
 
@@ -71,21 +68,23 @@ Other configurations might work but haven't been tested.
 
 ### MVP 2, Testing
 
-- Using `codegrade_mvp.test.js` as inspiration, write a few tests inside `frontend/components/App.test.js`:
+- Using `codegrade_mvp.test.js` as inspiration, write 5 tests inside `frontend/components/App.test.js`:
   - From inside the test file, import a component of your choosing, either `AppClass.js` or `AppFunctional.js`.
-  - Test that emails over 100 characters long result in a particular server error on the screen.
-  - Inspect the API with Postman to see what this error actually is.
+  - Test that the visible texts in headings, buttons, links... render on the screen.
+  - Test that typing on the input results in its value changing to the entered text.
 
 ### Stretch Goals
 
 - Extract some of the stateful logic into a custom hook at the top of `AppFunctional.js`.
-- Build a stateless component responsible for rendering the markup in the stateful components, so it does not have to be repeated.
-- Do not break your MVP by pushing broken stretch goals. You must keep your tests passing at 100%.
+- Build a stateless component responsible for rendering the markup in the stateful components, so this markup does not have to appear twice.
+- Do not break your MVP by pushing broken stretch goals. You must keep your tests passing at 100%❗
 
 ### Important Notes
 
 - Design the state of the app before opening your editor. You might need fewer pieces of state than you think!
-- Find the simplest data structure that describes effectively the state of the grid.
+- Booleans can be represented as 1/0, true/false, "on"/"off". In similar way, many types of data structures could represent the grid.
+- Try to find the simplest data structure that describes effectively the state of the grid at any point in time.
+- If the state that drives the grid is simple, it will be easier to update it as the user moves around.
 - "Product" works hard designing the messages: we must reproduce them faithfully, down to the last comma.
 - If you start with Functional, don't switch to Class-Based until Functional is passing all its tests (and vice versa).
 - If the direction of the `y` axis surprises you, know that elements in HTML also have their origin of coordinates on their top-left corner.

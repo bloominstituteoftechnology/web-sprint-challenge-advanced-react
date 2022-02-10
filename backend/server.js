@@ -23,7 +23,7 @@ server.get('*', (req, res) => {
 
 server.use((req, res) => {
   res.status(404).json({
-    message: `Endpoint [${req.method}] ${req.path} does not exist`,
+    message: `Endpoint [${req.method}] ${req.originalUrl} does not exist`,
   })
 })
 
