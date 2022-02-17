@@ -11,7 +11,7 @@ const CSS_LOADER = 'css-loader'
 const BABEL_LOADER = 'babel-loader'
 const STRING_REPLACE_LOADER = 'string-replace-loader'
 
-const SERVER_URL = 'http://localhost:9000'
+const SERVER_URL = /http:\/\/localhost:9000/g
 const FRONTEND_PORT = 3000
 
 const INDEX_HTML_PATH = './frontend/index.html'
