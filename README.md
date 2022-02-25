@@ -92,12 +92,19 @@ Study its functionality and also inspect the Console, the Network tab and the El
   // A plain 1D array is a simpler structure that offers better performance for huge grids:
   [null, null, null, null, "B", null, null, null, null]
 
-  // a string also works, but strings in JS are immutable, which is inconvenient
+  // a string also works, but strings in JS are immutable, which is inconvenient:
   "xxxxBxxxx"
   ```
 
 - If the state that drives the grid is simple, it will be easier to update it as the user moves around.
-- Do not use a separate state to hold the coordinates. The coordinates should be derived from the state of the grid.
+- Do not use a separate state to hold the coordinates. The coordinates should be derived from the state of the grid:
+
+  ```js
+  // Using a "getCoordinates" helper function you could build:
+  const [x, y] = getCoordinates(grid)
+  console.log(`(${x}, ${y})`) // (1, 2)
+  ```
+
 - "Product" works hard designing the messages: we must reproduce them faithfully, down to the last comma.
 - If you start with Functional, don't switch to Class-Based until Functional is passing all its tests (and vice versa).
 - If the direction of the `y` axis surprises you, know that elements in HTML also have their origin of coordinates on their top-left corner.
