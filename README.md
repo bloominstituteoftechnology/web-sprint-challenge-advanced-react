@@ -96,8 +96,7 @@ Study its functionality and also inspect the Console, the Network tab and the El
   "xxxxBxxxx"
   ```
 
-- If the state that drives the grid is simple, it will be easier to update it as the user moves around.
-- Do not use a separate state to hold the coordinates. The coordinates should be derived from the state of the grid:
+- Do not use a separate state to hold the current coordinates. The coordinates should be derived from the state of the grid:
 
   ```js
   // Using a "getCoordinates" helper function you could build:
