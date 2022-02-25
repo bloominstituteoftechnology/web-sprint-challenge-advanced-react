@@ -19,10 +19,10 @@ Study its functionality and also inspect the Console, the Network tab and the El
 
 - Node 16.x
 - NPM 8.x (update NPM executing `npm i -g npm`)
-- Postman (download [here](https://www.postman.com/downloads/))
-- Chrome >= 96.x
+- Unix-like shell (Gitbash/bash/zsh)
+- Chrome >= 98.x
 
-Other browser/Node/NPM configurations might work but haven't been tested.
+❗ Other configurations might work but haven't been tested.
 
 ## Project Setup
 
@@ -56,7 +56,7 @@ Other browser/Node/NPM configurations might work but haven't been tested.
   - No frontend form validation code is required.
 - The coordinates of each square of the grid are as follows:
 
-  ```
+  ```js
     (1, 1) (2, 1) (3, 1)
     (1, 2) (2, 2) (3, 2)
     (1, 3) (2, 3) (3, 3)
@@ -64,7 +64,7 @@ Other browser/Node/NPM configurations might work but haven't been tested.
 
 ### MVP 1, The Grid - Short Explanation
 
-- Make **ALL** the tests pass!
+❗ ALL TESTS MUST PASS
 
 ### MVP 2, Testing
 
@@ -82,9 +82,22 @@ Other browser/Node/NPM configurations might work but haven't been tested.
 ### Important Notes
 
 - Design the state of the app before opening your editor. You might need fewer pieces of state than you think!
-- Booleans can be represented as 1/0, true/false, "on"/"off". In similar way, many types of data structures could represent the grid.
-- Try to find the simplest data structure that describes effectively the state of the grid at any point in time.
+- We need a slice of state that describes the the grid at any point in time, and from which you can derive each square's coordinates.
+- Booleans can be represented as 1/0, true/false, "on"/"off". In similar way, many types of data structures could represent the grid:
+
+  ```js
+  // 2D arrays or matrices are typical structures used to represent grids:
+  [[null, null, null], [null, "B", null], [null, null, null]]
+
+  // A plain 1D array is a simpler structure that offers better performance for huge grids:
+  [null, null, null, null, "B", null, null, null, null]
+
+  // a string also works, but strings in JS are immutable, which is inconvenient
+  "xxxxBxxxx"
+  ```
+
 - If the state that drives the grid is simple, it will be easier to update it as the user moves around.
+- Do not use a separate state to hold the coordinates. The coordinates should be derived from the state of the grid.
 - "Product" works hard designing the messages: we must reproduce them faithfully, down to the last comma.
 - If you start with Functional, don't switch to Class-Based until Functional is passing all its tests (and vice versa).
 - If the direction of the `y` axis surprises you, know that elements in HTML also have their origin of coordinates on their top-left corner.
