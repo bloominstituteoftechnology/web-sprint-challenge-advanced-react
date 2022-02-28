@@ -92,7 +92,7 @@ Study its functionality and also inspect the Console, the Network tab and the El
   // A plain 1D array is a simpler structure that offers better performance for huge grids:
   [null, null, null, null, "B", null, null, null, null]
 
-  // a string also works, but strings in JS are immutable, which can be inconvenient:
+  // A string also works, but strings in JS are immutable, which can be inconvenient:
   "xxxxBxxxx"
   ```
 
