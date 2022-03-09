@@ -36,10 +36,11 @@ Study its functionality and also inspect the Console, the Network tab and the El
 - The application includes an endpoint reachable at `POST http://localhost:9000/api/result`.
 - You can experiment with this endpoint using an HTTP client like Postman.
 - The endpoint expects a payload like `{ "x": 1, "y": 2, "steps": 3, "email": "lady@gaga.com" }`:
-  - `x` is an integer between 1 and 3.
-  - `y` is an integer between 1 and 3.
-  - `steps` is an integer larger than 0.
-  - `email` is a valid email address.
+  - `x` should be an integer between 1 and 3.
+  - `y` should be an integer between 1 and 3.
+  - `steps` should be an integer larger than 0.
+  - `email` should be a valid email address.
+- Expect an "Unprocessable Entity" server response if the payload has the wrong shape.
 
 ## MVP
 
@@ -96,7 +97,7 @@ Study its functionality and also inspect the Console, the Network tab and the El
   "xxxxBxxxx"
   ```
 
-- Do not use a separate state to hold the current coordinates. The coordinates should be derived from the state of the grid:
+- Try not to use a separate state to hold the current coordinates. The coordinates should be derived from the state of the grid:
 
   ```js
   // Using a "getCoordinates" helper function you could build:
