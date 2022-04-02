@@ -1,12 +1,15 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { BrowserRouter, NavLink, Routes, Route } from 'react-router-dom';
 import AppClass from './components/AppClass'
 import AppFunctional from './components/AppFunctional'
 import './styles/reset.css'
 import './styles/styles.css'
 
-render(
+const container = document.getElementById('root')
+const root = createRoot(container)
+
+root.render(
   <BrowserRouter>
     <React.StrictMode>
       <h1>Welcome to the GRID</h1>
@@ -20,5 +23,4 @@ render(
       </Routes>
     </React.StrictMode>
   </BrowserRouter>
-  , document.getElementById('root')
 )
