@@ -20,7 +20,7 @@ Study its functionality and also inspect the Console, the Network tab and the El
 - Node 16.x
 - NPM 8.x (update NPM executing `npm i -g npm`)
 - Unix-like shell (Gitbash/bash/zsh)
-- Chrome >= 98.x
+- Chrome >= 100.x
 
 ❗ Other configurations might work but haven't been tested.
 
@@ -44,7 +44,7 @@ Study its functionality and also inspect the Console, the Network tab and the El
 
 ## MVP
 
-### MVP 1, The Grid - Long Explanation
+### MVP 1, The Grid
 
 - Replicate the **functionality and DOM** shown in the prototype linked at the top of this README.
 - Keep your code inside `frontend/components/AppFunctional.js` and `frontend/components/AppClass.js`.
@@ -63,8 +63,6 @@ Study its functionality and also inspect the Console, the Network tab and the El
     (1, 3) (2, 3) (3, 3)
   ```
 
-### MVP 1, The Grid - Short Explanation
-
 ❗ ALL TESTS MUST PASS
 
 ### MVP 2, Testing
@@ -74,37 +72,25 @@ Study its functionality and also inspect the Console, the Network tab and the El
   - Test that the visible texts in headings, buttons, links... render on the screen.
   - Test that typing on the input results in its value changing to the entered text.
 
-### Stretch Goals
-
-- Extract some of the stateful logic into a custom hook at the top of `AppFunctional.js`.
-- Build a stateless component responsible for rendering the markup in the stateful components, so this markup does not have to appear twice.
-- Do not break your MVP by pushing broken stretch goals. You must keep your tests passing at 100%❗
-
 ### Important Notes
 
-- Design the state of the app before opening your editor. You might need fewer pieces of state than you think!
-- We need a slice of state that describes the the grid at any point in time, and from which you can derive each square's coordinates.
-- Booleans can be represented as 1/0, true/false, "on"/"off". In similar way, many types of data structures could represent the grid:
+- Inside `AppClass.js` and `AppFunctional` you will find some suggested states and helper functions. Feel free not to use them.
+- You don't need a complicated structure to track the state of the grid, because we aren't storing any information in the cells.
+- Imagine that the grid were simply as a one-dimension array broken --only visually-- into three rows.
+- The only component state you need in order to drive the grid is an integer from 0 to 8: **the index the "B" is at.**
+- Other pieces of information, like coordinates, can be derived from that index, and don't need a state of their own.
+- If you want to make life more complicated (or interesting) for yourself, other structures can be used to store the state of the grid:
 
   ```js
-  // 2D arrays or matrices are typical structures used to represent grids:
-  [[null, null, null], [null, "B", null], [null, null, null]]
-
-  // A plain 1D array is a simpler structure that offers better performance for huge grids:
+  // A plain array can be used to drive big grids efficiently:
   [null, null, null, null, "B", null, null, null, null]
+
+  // 2D arrays or matrices:
+  [[null, null, null], [null, "B", null], [null, null, null]]
 
   // A string also works, but strings in JS are immutable, which can be inconvenient:
   "xxxxBxxxx"
   ```
 
-- Try not to use a separate state to hold the current coordinates. The coordinates should be derived from the state of the grid:
-
-  ```js
-  // Using a "getCoordinates" helper function you could build:
-  const [x, y] = getCoordinates(grid)
-  console.log(`(${x}, ${y})`) // (1, 2)
-  ```
-
 - "Product" works hard designing the messages: we must reproduce them faithfully, down to the last comma.
 - If you start with Functional, don't switch to Class-Based until Functional is passing all its tests (and vice versa).
-- If the direction of the `y` axis surprises you, know that elements in HTML also have their origin of coordinates on their top-left corner.
