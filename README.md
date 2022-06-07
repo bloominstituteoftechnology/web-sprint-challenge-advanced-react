@@ -76,7 +76,7 @@ Study its functionality and also inspect the Console, the Network tab and the El
 
 - Inside `AppClass.js` and `AppFunctional` you will find some suggested states and helper functions. Feel free not to use them.
 - You don't need a complicated structure to track the state of the grid, because we aren't storing any information in the cells.
-- Imagine that the grid were simply as a one-dimension array broken --only visually-- into three rows.
+- Imagine that the grid were simply a one-dimension array broken --only visually-- into three rows.
 - The only component state you need in order to drive the grid is an integer from 0 to 8: **the index the "B" is at.**
 - Other pieces of information, like coordinates, can be derived from that index, and don't need a state of their own.
 - If you want to make life more complicated (or interesting) for yourself, other structures can be used to store the state of the grid:
