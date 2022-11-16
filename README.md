@@ -82,13 +82,14 @@ Study its functionality and also inspect the Console, the Network tab and the El
 - If you want to make life more complicated (or interesting) for yourself, other structures can be used to store the state of the grid:
 
   ```js
-  // A plain array can be used to drive the state of the grid:
+  // A plain array can be used to represent a grid.
+  // But our App component needn't track the whole array, only the index where the "B" is.
   [null, null, null, null, "B", null, null, null, null]
 
-  // 2D arrays or matrices (although this is not needed in this project):
+  // 2D arrays or matrices can be used to represent a grid, but this is not recommended in this project:
   [[null, null, null], [null, "B", null], [null, null, null]]
 
-  // A string also works, but strings in JS are immutable, so this approach is not recommended:
+  // A string also could work, but strings in JS are immutable making this approach inconvenient:
   "xxxxBxxxx"
   ```
 
