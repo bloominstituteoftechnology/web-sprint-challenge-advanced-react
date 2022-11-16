@@ -72,7 +72,7 @@ Study its functionality and also inspect the Console, the Network tab and the El
   - Test that the visible texts in headings, buttons, links... render on the screen.
   - Test that typing on the input results in its value changing to the entered text.
 
-### Important Notes
+### Regarding Grids and Other Notes
 
 - Inside `AppClass.js` and `AppFunctional` you will find some suggested states and helper functions. Feel free not to use them.
 - You don't need a complicated structure to track the state of the grid, because we aren't storing any information in the cells.
