@@ -20,7 +20,7 @@ export default function AppFunctional(props) {
 const [x, setX] = useState(initialX)
 const [y, setY] = useState(initialY)
 const [xy, setxy] = useState(initialIndex)
-const [move, setMoves] = useState(0)
+const [moves, setMoves] = useState(0)
 const [messages, setMessages] = useState(initialMessage)
 const [formValue, setFormValue] = useState('')
 
@@ -36,9 +36,31 @@ const [formValue, setFormValue] = useState('')
   }
 
   function getNextIndex(direction) {
-    // This helper takes a direction ("left", "up", etc) and calculates what the next index
-    // of the "B" would be. If the move is impossible because we are at the edge of the grid,
-    // this helper should return the current index unchanged.
+    if(direction === 'left'){
+      if(x -1 === 0){
+        setMessages('You cannot go left')
+        return xy
+      }
+      setX(x-1); setxy( xy-1); setMoves(moves + 1); setMessages(initialMessage);
+    }
+    if(direction === 'down'){
+      if(y + 1 === 4){
+        setMessages('You cannot go down'); return xy
+      }
+      setY(y+1); setxy(xy + 3); setMoves( moves + 1); setMessages(initialMessage)
+    }
+    if(direction === ' right'){
+      if(x + 1 === 4){
+        setMessages('You cannot go right'); return xy;
+      }
+      setX(x + 1); setxy(xy + 1); setMoves(moves + 1); setMessages(initialMessage);
+    }
+    if(direction === 'up'){
+      if(y-1 ===0){
+        setMessages('You cannot go up'); return xy;
+      }
+      setY(y-1); setxy( xy - 3); setMoves(moves + 1); setMessages(initialMessage)
+    }
   }
 
   function move(evt) {
