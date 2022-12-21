@@ -1,28 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
+import * as yup from 'yup'
+import { useSearchParams } from 'react-router-dom'
+
+const formSchema = yup.object().shape({
+  formValue: yup.string()
+  .email('Error: email must be a valid email').required('Error:Email is required').notOneOf(['foo@bar.baz','foo@bar.baz failure #71'])
+})
 
 // Suggested initial states
 const initialMessage = ''
 const initialEmail = ''
 const initialSteps = 0
 const initialIndex = 4 // the index the "B" is at
+const initialX = 2
+const initialY = 2
 
 export default function AppFunctional(props) {
-  // THE FOLLOWING HELPERS ARE JUST RECOMMENDATIONS.
-  // You can delete them and build your own logic from scratch.
+const [x, setX] = useState(initialX)
+const [y, setY] = useState(initialY)
+const [xy, setxy] = useState(initialIndex)
+const [move, setMoves] = useState(0)
+const [messages, setMessages] = useState(initialMessage)
+const [formValue, setFormValue] = useState('')
 
   function getXY() {
-    // It it not necessary to have a state to track the coordinates.
-    // It's enough to know what index the "B" is at, to be able to calculate them.
+    return (`(${x},${y})`)
   }
 
   function getXYMessage() {
-    // It it not necessary to have a state to track the "Coordinates (2, 2)" message for the user.
-    // You can use the `getXY` helper above to obtain the coordinates, and then `getXYMessage`
-    // returns the fully constructed string.
+
   }
 
-  function reset() {
-    // Use this helper to reset all states to their initial values.
+  function reset() { setMoves(0); setxy(initialIndex); setX(initialX); setY(initialY); setMessages(initialMessage);setFormValue('');
   }
 
   function getNextIndex(direction) {
