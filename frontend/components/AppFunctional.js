@@ -63,17 +63,21 @@ const [formValue, setFormValue] = useState('')
     }
   }
 
-  function move(evt) {
-    // This event handler can use the helper above to obtain a new index for the "B",
-    // and change any states accordingly.
-  }
+  function move(evt) {getNextIndex(evt)}
 
-  function onChange(evt) {
-    // You will need this to update the value of the input.
-  }
+  function onChange(evt) {setFormValue(evt.target.value)}
 
+  const validate = (name, value) => {yup.reach(formSchema, name).validate(value).then(()=> post()).catch(err => setMessages(err.errors[0]))}
+  
   function onSubmit(evt) {
-    // Use a POST request to send a payload to the server.
+    evt.preventDefault();
+    validate('formValue',formValue)
+  }
+
+  function post() {
+    const toSend = {"x": x, "y": y, "steps": moves, "email": formValue}
+    axios.post('http://localhost:9000/api/result', toSend)
+    .then(({data})=>{setMessages(data.message)}).finally(setFormValue(''))
   }
 
   return (
