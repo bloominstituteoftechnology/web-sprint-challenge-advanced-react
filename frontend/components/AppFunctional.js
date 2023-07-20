@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // Suggested initial states
 const initialMessage = ''
@@ -44,6 +44,15 @@ export default function AppFunctional(props) {
     // Use a POST request to send a payload to the server.
   }
 
+  const [gameState, setGameState] = useState({
+    message: initialMessage,
+    email: initialEmail,
+    index: initialIndex,
+    steps: initialSteps,
+    xCoord: 2,
+    yCoord: 2
+  })
+
   return (
     <div id="wrapper" className={props.className}>
       <div className="info">
@@ -63,11 +72,11 @@ export default function AppFunctional(props) {
         <h3 id="message"></h3>
       </div>
       <div id="keypad">
-        <button id="left">LEFT</button>
-        <button id="up">UP</button>
-        <button id="right">RIGHT</button>
-        <button id="down">DOWN</button>
-        <button id="reset">reset</button>
+        <button id="left" value="left">LEFT</button>
+        <button id="up" value="up">UP</button>
+        <button id="right" value="right">RIGHT</button>
+        <button id="down" value="down">DOWN</button>
+        <button id="reset" value="reset">reset</button>
       </div>
       <form>
         <input id="email" type="email" placeholder="type email"></input>
