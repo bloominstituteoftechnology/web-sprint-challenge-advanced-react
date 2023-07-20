@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from "react"
 
 // Suggested initial states
 const initialMessage = ''
@@ -21,22 +20,83 @@ export default class AppClass extends React.Component {
     super();
 
     this.state = {
-      gameState: {...initialState,
+      gameState: {
+        ...initialState,
       xCoord: 2,
       yCoord: 2
       }
     }
   }
 
-  getXY = () => {
+  getXY = (coordinate, x, y) => {
     // It it not necessary to have a state to track the coordinates.
     // It's enough to know what index the "B" is at, to be able to calculate them.
+    if (coordinate === "11"){
+      this.move(0, x, y)
+    }
+    else if (coordinate === "21"){
+      this.move(1, x, y)
+    }
+    else if (coordinate === "31"){
+      this.move(2, x, y)
+    }
+    else if (coordinate === "12"){
+      this.move(3, x, y)
+    }
+    else if (coordinate === "22"){
+      this.move(4, x, y)
+    }
+    else if (coordinate === "32"){
+      this.move(5, x, y)
+    }
+    else if (coordinate === "13"){
+      this.move(6, x, y)
+    }
+    else if (coordinate === "23"){
+      this.move(7, x, y)
+    }
+    else if (coordinate === "33"){
+      this.move(8, x, y)
+    }
   }
 
-  getXYMessage = () => {
+  getXYMessage = (direction) => {
     // It it not necessary to have a state to track the "Coordinates (2, 2)" message for the user.
     // You can use the `getXY` helper above to obtain the coordinates, and then `getXYMessage`
     // returns the fully constructed string.
+
+    if (direction === "left"){
+      this.setState({
+        ...this.state, gameState: {
+          ...this.state.gameState,
+          message: "You can't go left"
+        }
+      })
+    }
+    else if (direction === "right"){
+      this.setState({
+        ...this.state, gameState: {
+          ...this.state.gameState,
+          message: "You can't go right"
+        }
+      })
+    }
+    else if (direction === "up"){
+      this.setState({
+        ...this.state, gameState: {
+          ...this.state.gameState,
+          message: "You can't go up"
+        }
+      })
+    }
+    else if (direction === "down"){
+      this.setState({
+        ...this.state, gameState: {
+          ...this.state.gameState,
+          message: "You can't go down"
+        }
+      })
+    }
   }
 
   reset = () => {
@@ -58,18 +118,77 @@ export default class AppClass extends React.Component {
     // This helper takes a direction ("left", "up", etc) and calculates what the next index
     // of the "B" would be. If the move is impossible because we are at the edge of the grid,
     // this helper should return the current index unchanged.
-    this.setState({
-      ...this.state, gameState: {
-        ...this.state.gameState,
-        index: 5
-      }
-    })
     
+    if (direction === "left" && this.state.gameState.xCoord !== 1){
+      const newXCoord = this.state.gameState.xCoord - 1;
+      const newYCoord = this.state.gameState.yCoord;
+      this.getXY(("" + newXCoord + newYCoord), newXCoord, newYCoord);
+    }
+    else if (direction === "right" && this.state.gameState.xCoord !== 3){
+      const newXCoord = this.state.gameState.xCoord + 1;
+      const newYCoord = this.state.gameState.yCoord;
+      this.getXY(("" + newXCoord + newYCoord), newXCoord, newYCoord);
+    }
+    else if (direction === "up" && this.state.gameState.yCoord !== 1){
+      const newXCoord = this.state.gameState.xCoord;
+      const newYCoord = this.state.gameState.yCoord - 1;
+      this.getXY(("" + newXCoord + newYCoord), newXCoord, newYCoord);
+    }
+    else if (direction === "down" && this.state.gameState.yCoord !== 3){
+      const newXCoord = this.state.gameState.xCoord;
+      const newYCoord = this.state.gameState.yCoord + 1;
+      this.getXY(("" + newXCoord + newYCoord), newXCoord, newYCoord);
+    }
+    else {
+      this.getXYMessage(direction);
+    }
+
+
+
+
+
+
+
+
+    // if (direction === "left"){
+    //   this.setState({
+    //     ...this.state, gameState: {
+    //       ...this.state.gameState,
+    //       xCoord: this.state.gameState.xCoord - 1
+    //     }
+    //   })
+    // }
+    // else if (direction === "right"){
+    //   this.setState({
+    //     ...this.state, gameState: {
+    //       ...this.state.gameState,
+    //       xCoord: this.state.gameState.xCoord + 1
+    //     }
+    //   })
+    // }
+
+
+
+
+
+
+
+
   }
 
-  move = (evt) => {
+  move = (newIndex, x, y) => {
     // This event handler can use the helper above to obtain a new index for the "B",
     // and change any states accordingly.
+    this.setState({
+      ...this.state,
+      gameState: {
+        ...this.state.gameState,
+        index: newIndex,
+        xCoord: x,
+        yCoord: y,
+        steps: this.state.gameState.steps + 1
+      }
+    })
   }
 
   onChange = (evt) => {
@@ -86,9 +205,8 @@ export default class AppClass extends React.Component {
     return (
       <div id="wrapper" className={className}>
         <div className="info">
-          <h3 id="coordinates">Coordinates (2, 2)</h3>
-          <h3 id="steps">You moved {initialSteps} times</h3>
-          {console.log(this.state.gameState.message)}
+          <h3 id="coordinates">Coordinates ({this.state.gameState.xCoord}, {this.state.gameState.yCoord})</h3>
+          <h3 id="steps">You moved {this.state.gameState.steps} times</h3>
         </div>
         <div id="grid">
           {
@@ -100,7 +218,7 @@ export default class AppClass extends React.Component {
           }
         </div>
         <div className="info">
-          <h3 id="message"></h3>
+          <h3 id="message">{this.state.gameState.message}</h3>
         </div>
         <div id="keypad">
           <button id="left" onClick={() => this.getNextIndex("left")}>LEFT</button>
