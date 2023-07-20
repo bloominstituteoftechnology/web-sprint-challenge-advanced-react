@@ -143,7 +143,8 @@ export default function AppFunctional(props) {
     .then(res => {
       setGameState({
         ...gameState,
-        message: res.data.message
+        message: res.data.message,
+        email: ""
       })
     })
     .catch(err => {
@@ -167,7 +168,7 @@ export default function AppFunctional(props) {
     <div id="wrapper" className={props.className}>
       <div className="info">
         <h3 id="coordinates">Coordinates ({gameState.xCoord}, {gameState.yCoord})</h3>
-        <h3 id="steps">You moved {gameState.steps} times</h3>
+        <h3 id="steps">You moved {gameState.steps} {gameState.steps === 1 ? "time" : "times"}</h3>
       </div>
       <div id="grid">
         {
@@ -189,7 +190,7 @@ export default function AppFunctional(props) {
         <button id="reset" onClick={reset}>reset</button>
       </div>
       <form onSubmit={onSubmit}>
-        <input id="email" type="email" placeholder="type email" onChange={onChange}></input>
+        <input id="email" type="email" placeholder="type email" value={gameState.email} onChange={onChange}></input>
         <input id="submit" type="submit"></input>
       </form>
     </div>

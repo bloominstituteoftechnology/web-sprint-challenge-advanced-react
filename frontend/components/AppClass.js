@@ -174,13 +174,14 @@ export default class AppClass extends React.Component {
   onSubmit = (evt) => { 
     evt.preventDefault();
     const URL = "http://localhost:9000/api/result" 
-    axios.post(URL, {"x": this.state.gameState.xCoord, "y": this.state.gameState.yCoord, "steps": this.state.gameState.steps, "email": ""})
+    axios.post(URL, {"x": this.state.gameState.xCoord, "y": this.state.gameState.yCoord, "steps": this.state.gameState.steps, "email": this.state.gameState.email})
     .then(res => {
       this.setState({
         ...this.state, 
         gameState: {
           ...this.state.gameState,
-          message: res.data.message
+          message: res.data.message,
+          email: ""
         }
       })
     })
@@ -202,7 +203,7 @@ export default class AppClass extends React.Component {
       <div id="wrapper" className={className}>
         <div className="info">
           <h3 id="coordinates">Coordinates ({this.state.gameState.xCoord}, {this.state.gameState.yCoord})</h3>
-          <h3 id="steps">You moved {this.state.gameState.steps} times</h3>
+          <h3 id="steps">You moved {this.state.gameState.steps} {this.state.gameState.steps === 1 ? "time" : "times"}</h3>
         </div>
         <div id="grid">
           {
@@ -224,7 +225,7 @@ export default class AppClass extends React.Component {
           <button id="reset" onClick={this.reset}>reset</button>
         </div>
         <form onSubmit={this.onSubmit}>
-          <input id="email" type="email" placeholder="type email" onChange={this.onChange}></input>
+          <input id="email" type="email" placeholder="type email" value={this.state.gameState.email} onChange={this.onChange}></input>
           <input id="submit" type="submit"></input>
         </form>
       </div>
