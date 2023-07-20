@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from "axios"
 
 // Suggested initial states
 const initialMessage = ''
@@ -142,38 +143,6 @@ export default class AppClass extends React.Component {
     else {
       this.getXYMessage(direction);
     }
-
-
-
-
-
-
-
-
-    // if (direction === "left"){
-    //   this.setState({
-    //     ...this.state, gameState: {
-    //       ...this.state.gameState,
-    //       xCoord: this.state.gameState.xCoord - 1
-    //     }
-    //   })
-    // }
-    // else if (direction === "right"){
-    //   this.setState({
-    //     ...this.state, gameState: {
-    //       ...this.state.gameState,
-    //       xCoord: this.state.gameState.xCoord + 1
-    //     }
-    //   })
-    // }
-
-
-
-
-
-
-
-
   }
 
   move = (newIndex, x, y) => {
@@ -186,17 +155,44 @@ export default class AppClass extends React.Component {
         index: newIndex,
         xCoord: x,
         yCoord: y,
-        steps: this.state.gameState.steps + 1
+        steps: this.state.gameState.steps + 1,
+        message: ""
       }
     })
   }
 
   onChange = (evt) => {
-    // You will need this to update the value of the input.
+    const emailInput = evt.target.value;
+    this.setState({
+      ...this.state, gameState: {
+        ...this.state.gameState,
+        email: emailInput
+      }
+    })
   }
 
   onSubmit = (evt) => { 
-    // Use a POST request to send a payload to the server.
+    evt.preventDefault();
+    const URL = "http://localhost:9000/api/result" 
+    axios.post(URL, {"x": this.state.gameState.xCoord, "y": this.state.gameState.yCoord, "steps": this.state.gameState.steps, "email": ""})
+    .then(res => {
+      this.setState({
+        ...this.state, 
+        gameState: {
+          ...this.state.gameState,
+          message: res.data.message
+        }
+      })
+    })
+    .catch(err => {
+      this.setState({
+        ...this.state,
+        gameState: {
+          ...this.state.gameState,
+          message: err.response.data.message
+        }
+      })
+    });
   }
 
   render() {
@@ -227,8 +223,8 @@ export default class AppClass extends React.Component {
           <button id="down" onClick={() => this.getNextIndex("down")}>DOWN</button>
           <button id="reset" onClick={this.reset}>reset</button>
         </div>
-        <form>
-          <input id="email" type="email" placeholder="type email"></input>
+        <form onSubmit={this.onSubmit}>
+          <input id="email" type="email" placeholder="type email" onChange={this.onChange}></input>
           <input id="submit" type="submit"></input>
         </form>
       </div>
