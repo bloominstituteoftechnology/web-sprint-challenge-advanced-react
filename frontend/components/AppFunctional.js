@@ -23,7 +23,7 @@ export default function AppFunctional(props) {
   x: 2,
   y: 2
  })
- const inputValue = useRef('')
+
   
  //Create a way when at the end of the grid to not be able to go right, left,up and down
 
@@ -71,6 +71,7 @@ evt.preventDefault()
     setIntialIndex(4)
     setIntialMessage('')
     setHeaderMessage('You moved 0 times')
+    setIntiaEmail('')
   }
 
   
@@ -122,7 +123,7 @@ setIntiaEmail('')
   return (
     <div id="wrapper" className={props.className}>
       <div className="info">
-        <h3 id="coordinates">Coordinates {data.x}, {data.y}</h3>
+        <h3 id="coordinates">Coordinates {`(${data.x}, ${data.y})`}</h3>
         <h3 id="steps">{headerMessage}</h3>
       </div>
       <div id="grid">
@@ -172,7 +173,7 @@ setIntiaEmail('')
           setIntialMessage('')
           setIntialSteps(initialSteps + 1)
         }}}>DOWN</button>
-        <button id="reset"  onClick={reset}>reset</button>
+        <button id="reset" onClick={reset}>reset</button>
       </div>
       <form onSubmit={onSubmit}>
         <input value={initialEmail} onChange={onChange}id="email" type="email" placeholder="type email"></input>

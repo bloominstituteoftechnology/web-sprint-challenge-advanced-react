@@ -64,8 +64,9 @@ getXYMessage = () => {
     this.setState({
       index: 4,
       steps: 0,
-      header: `You moved 0 times`,
-      email: ''
+      header:`You moved 0 times`,
+      email: '',
+      message: ''
     })
   }
 
@@ -80,7 +81,7 @@ getXYMessage = () => {
  checkErrorsLeft = () => {
  
     this.setState({
-      message: "You can't go left"
+      message:("You can't go left")
     })
     return this.state.index && this.state.steps
   }
@@ -183,8 +184,8 @@ getXYMessage = () => {
     return (
       <div id="wrapper" className={className}>
         <div className="info">
-          <h3 id="coordinates"> Coordinates ({this.state.x}, {this.state.y})</h3>
-          <h3 id="steps"> {this.state.steps === 1 ? ` You moved 1 time `: ` You moved ${this.state.steps} times `}  </h3>
+          <h3 id="coordinates">Coordinates ({this.state.x}, {this.state.y})</h3>
+          <h3 id="steps"> {this.state.steps === 1 ? `You moved 1 time`: `You moved ${this.state.steps} times`} </h3>
         </div>
         <div id="grid">
           {
@@ -196,7 +197,7 @@ getXYMessage = () => {
           }
         </div>
         <div className="info">
-          <h3 id="message"> {this.state.message}</h3>
+          <h3 id="message">{this.state.message}</h3>
         </div>
         <div id="keypad">
           <button id="left" onClick={() => { 
