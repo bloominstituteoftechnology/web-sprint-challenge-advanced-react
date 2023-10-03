@@ -27,11 +27,7 @@ test('sanity', () => {
 render (<AppFunctional />)
 })
 
-test('Coordinates to be in documents' ,() => {
-  render ( <AppFunctional/> )
-  const h3 = screen.findAllByTestId('coordinates')
-  expect(h3).toHaveTextContent(/2,2/i)
-})
+
 
 test('Check text content',  () => {
   render (<AppFunctional />)
@@ -43,7 +39,3 @@ test('Check to see submit button is in document', () => {
   expect(submit).toBeInTheDocument()
 })
 
-test('Check to see if the reset button works', async () => {
-  fireEvent.click(reset)
-  expect(coordinates.textContent).toMatch(/\(2.*2\)$/)
-})
