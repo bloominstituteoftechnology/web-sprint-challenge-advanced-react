@@ -20,11 +20,10 @@ export default function AppFunctional(props) {
  const [formData, setFormData] = useState({
   email: '',
   steps: 0,
-  x: 2,
-  y: 2
+  x: '',
+  y: ''
  })
 
-  
  //Create a way when at the end of the grid to not be able to go right, left,up and down
 
  // create a function that when called update the intitalmesssage to "You can go left,right and etc"
@@ -59,14 +58,11 @@ useEffect( () => {
   function getXYMessage() {
     // It it not necessary to have a state to track the "Coordinates (2, 2)" message for the user.
     // You can use the `getXY` helper above to obtain the coordinates, and then `getXYMessage`
-    // returns the fully constructed string.
-   
-   
+    // returns the fully constructed string. 
   }
 
-  function reset(evt) {
+  function reset() {
     // Use this helper to reset all states to their initial values.
-evt.preventDefault()
     setIntialSteps(0)
     setIntialIndex(4)
     setIntialMessage('')
@@ -120,10 +116,13 @@ setIntiaEmail('')
 
 // The index state should correspond with 
 
+
   return (
     <div id="wrapper" className={props.className}>
       <div className="info">
-        <h3 id="coordinates">Coordinates {`(${data.x}, ${data.y})`}</h3>
+        <h3 id="coordinates"> 
+                    Coordinates ({data.x}, {data.y})
+       </h3>
         <h3 id="steps">{headerMessage}</h3>
       </div>
       <div id="grid">
@@ -133,6 +132,7 @@ setIntiaEmail('')
               {idx === initialIndex ? 'B' : null}
             </div>
           ))
+
         }
       </div>
       <div className="info">
@@ -173,7 +173,7 @@ setIntiaEmail('')
           setIntialMessage('')
           setIntialSteps(initialSteps + 1)
         }}}>DOWN</button>
-        <button id="reset" onClick={reset}>reset</button>
+        <button id="reset" onClick={reset}> reset</button>
       </div>
       <form onSubmit={onSubmit}>
         <input value={initialEmail} onChange={onChange}id="email" type="email" placeholder="type email"></input>

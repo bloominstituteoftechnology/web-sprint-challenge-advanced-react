@@ -10,7 +10,7 @@ export default class AppClass extends React.Component {
   // THE FOLLOWING HELPERS ARE JUST RECOMMENDATIONS.
   // You can delete them and build your own logic from scratch.
   constructor(){
- 
+   
 super()
   this.state = {
     message: '',
@@ -25,15 +25,6 @@ super()
     
   }
 }
-  getXYMessage = () => {
-    if(this.state.steps === 1) {
-      this.setState({
-       header: `You moved ${this.state.steps} time`
-     })
-   } else this.setState({
-     header:`You moved ${this.state.steps} times`
-   })
-  }
 
   
 
@@ -114,7 +105,6 @@ super()
  
 
  moveLeft = () => { 
-  this.getXYMessage()
   this.setState({
   index: this.state.index - 1,
   message: '',
@@ -186,7 +176,7 @@ super()
       <div id="wrapper" className={className}>
         <div className="info">
           <h3 id="coordinates">Coordinates ({this.state.x}, {this.state.y})</h3>
-          <h3 id="steps"> {this.state.steps === 1 ? `You moved 1 time`: `You moved ${this.state.steps} times`} </h3>
+          <h3 id="steps">{this.state.steps === 1 ? `You moved 1 time` : `You moved ${this.state.steps} times`}</h3>
         </div>
         <div id="grid">
           {
