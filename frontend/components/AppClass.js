@@ -24,18 +24,19 @@ super()
       
     
   }
- 
 }
-
-getXYMessage = () => {
-  if(this.state.steps === 1) {
-    this.setState({
-     header: `You moved ${this.state.steps} time`
+  getXYMessage = () => {
+    if(this.state.steps === 1) {
+      this.setState({
+       header: `You moved ${this.state.steps} time`
+     })
+   } else this.setState({
+     header:`You moved ${this.state.steps} times`
    })
- } else this.setState({
-   header:`You moved ${this.state.steps} times`
- })
-}
+  }
+
+  
+
 
   getXY = (number) => {
     // It it not necessary to have a state to track the coordinates.
