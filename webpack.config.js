@@ -40,6 +40,7 @@ const config = {
     historyApiFallback: true,
     compress: true,
     port: FRONTEND_PORT,
+    client: { logging: 'none' },
   },
   module: {
     rules: [

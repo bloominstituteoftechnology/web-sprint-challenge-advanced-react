@@ -17,8 +17,8 @@ Study its functionality and also inspect the Console, the Network tab and the El
 
 ### Tools
 
-- Node 16.x
-- NPM 8.x (update NPM executing `npm i -g npm`)
+- Node >= 18.x
+- NPM >= 9.x (update NPM executing `npm i -g npm`)
 - Unix-like shell (Gitbash/bash/zsh)
 - Chrome >= 100.x
 
@@ -47,10 +47,10 @@ Study its functionality and also inspect the Console, the Network tab and the El
 ### MVP 1, The Grid
 
 - Replicate the **functionality and DOM** shown in the prototype linked at the top of this README.
-- Keep your code inside `frontend/components/AppFunctional.js` and `frontend/components/AppClass.js`.
+- Keep your code inside `frontend/components/AppFunctional.js`.
 - The component exposed by `AppFunctional.js` must be a stateful functional component.
-- The one in `AppClass.js` must be a stateful class-based component.
-- The DOM produced by your components must match exactly the DOM in the prototype:
+- The component in `AppClass.js` **is optional** but can be tackled if desired. It's not required to pass the sprint.
+- The DOM produced by `AppFunctional` must match exactly the DOM in the prototype:
   - The hierarchy of HTML elements, their ids, class names etc must be the same.
   - The current square is marked with a capital B and an "active" class name.
   - The submit success and error messages that display on the page come from the API (see Network tab).
@@ -68,7 +68,7 @@ Study its functionality and also inspect the Console, the Network tab and the El
 ### MVP 2, Testing
 
 - Using `codegrade_mvp.test.js` as inspiration, write 5 tests inside `frontend/components/App.test.js`:
-  - From inside the test file, import a component of your choosing, either `AppClass.js` or `AppFunctional.js`.
+  - From inside the test file, import `AppFunctional.js`.
   - Test that the visible texts in headings, buttons, links... render on the screen.
   - Test that typing on the input results in its value changing to the entered text.
 
@@ -94,4 +94,4 @@ Study its functionality and also inspect the Console, the Network tab and the El
   ```
 
 - "Product" works hard designing the messages: we must reproduce them faithfully, down to the last comma.
-- If you start with Functional, don't switch to Class-Based until Functional is passing all its tests (and vice versa).
+- ❗ Remember only the functional version is required; the class-based one is recommended but optional.
