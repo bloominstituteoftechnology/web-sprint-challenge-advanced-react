@@ -9,9 +9,9 @@ This is an individual assessment. All work must be your own. All projects will b
 You are not allowed to collaborate during the sprint challenge.
 
 ## Project Setup
-* [ ] Run npm install to install your dependencies.
-* [ ] Run npm start to run your frontend and backend code automatically.
-* [ ] Note your backend code will run automatically when your run npm start. There is no need to seperately run a server.js file and no means to test the server through postman or the browser. Feel free to ignore any messages related to MSW or mock service workers.
+* [x] Run npm install to install your dependencies.
+* [x] Run npm start to run your frontend and backend code automatically.
+* [x] Note your backend code will run automatically when your run npm start. There is no need to separately run a server.js file and no means to test the server through postman or the browser. Feel free to ignore any messages related to MSW or mock service workers.
 
 ## Project Instructions
 
