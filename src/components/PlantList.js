@@ -13,6 +13,7 @@ export default class PlantList extends Component {
 		try {
 			const response = await axios.get('http://localhost:3333/plants');
 			this.setState({ plants: response.data });
+			console.log('Plants fetched successfully:', response.data);
 		} catch (error) {
 			console.error('Error fetching plants:', error);
 		}
