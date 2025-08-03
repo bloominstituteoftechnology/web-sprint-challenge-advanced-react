@@ -92,7 +92,12 @@ const CheckoutForm = (props) => {
 				>
 					<p>
 						You have ordered some plants! Woo-hoo!{' '}
-						<span role="img">🎉</span>
+						<span
+							role="img"
+							aria-label="celebration"
+						>
+							🎉
+						</span>
 					</p>
 					<p>Your new green friends will be shipped to:</p>
 					<br />
