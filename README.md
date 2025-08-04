@@ -46,7 +46,7 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 * [x] Run the test runner and ensure that `src/components/CheckoutForm.test.js` is correctly called.
 * [x] Fill out code necessary to test that that Checkout form renders without errors.
 * [x] Fill out code necessary to test that when all form inputs are filled with valid data, a success message appears.
-* [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working.
+* [x] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working.
 
 ## Important Notes
 * Again, unlike other projects, the local server used here can not be accessed through the browser. For this and the rest of your sprint challenges, test the functioning of the server directly through your axios calls.
@@ -94,5 +94,6 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
   <!-- ComponentWillMount is called -->
 
 3. Define stateful logic.
+  State is how component
 
 4. What are the three step of creating a successful test? What is done in each phase?

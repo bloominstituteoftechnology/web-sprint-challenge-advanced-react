@@ -22,12 +22,20 @@ const CheckoutForm = (props) => {
 	// 	setValues({ ...values, [e.target.name]: e.target.value });
 	// };
 
-	const { values, handleChanges, resetForm } = useForm(initialValue);
+	const { values, handleChanges, resetForm, formSubmit } =
+		useForm(initialValue);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		setShowSuccessMessage(true);
-		resetForm();
+		formSubmit(
+			'http://localhost:3333/orders',
+			() => {
+				resetForm();
+				setShowSuccessMessage(true);
+			},
+			(error) =>
+				console.error('Review form data and submit again.', error)
+		);
 	};
 
 	return (
