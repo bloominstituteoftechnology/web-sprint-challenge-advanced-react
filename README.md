@@ -2,7 +2,7 @@
 
 ## Intro
 
-In this challenge, you will write the logic for [THIS WIDGET](https://advanced-react-grid.herokuapp.com/).
+In this challenge, you will write the logic for [THIS WIDGET](https://adv-react-sc9.netlify.app/).
 
 Study its functionality and also inspect the Console, the Network tab and the Elements tab **in Chrome Dev Tools**:
 
