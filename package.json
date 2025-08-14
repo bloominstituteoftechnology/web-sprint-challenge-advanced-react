@@ -1,5 +1,45 @@
 {
   "name": "web-sprint-challenge-advanced-react",
+<<<<<<< HEAD
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/react": "^10.0.3",
+    "@testing-library/user-event": "^10.1.0",
+    "axios": "^0.19.2",
+    "mutationobserver-shim": "^0.3.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hook-form": "^5.6.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@sheerun/mutationobserver-shim": "^0.3.3",
+    "msw": "^0.21.3"
+=======
   "version": "0.0.1",
   "scripts": {
     "dev": "fkill :9000 :3000 -s && concurrently \"npm:backend\" \"npm:frontend\"",
@@ -56,5 +96,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bloominstituteoftechnology/web-sprint-challenge-advanced-react.git"
+>>>>>>> cb6f870a544d396e8b33c4c7c248fe268aa9426f
   }
 }

@@ -1,3 +1,28 @@
+<<<<<<< HEAD
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+=======
 # Logs
 logs
 *.log
@@ -131,3 +156,4 @@ dist
 
 .vscode
 .DS_Store
+>>>>>>> cb6f870a544d396e8b33c4c7c248fe268aa9426f
