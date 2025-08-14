@@ -11,6 +11,7 @@ export const useForm = (initialValue) => {
 		setValues({ ...values, [name]: value });
 	};
 
+	// reset after submit
 	const resetForm = () => {
 		setValues(initialValue);
 	};
