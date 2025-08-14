@@ -1,5 +1,6 @@
 {
   "name": "web-sprint-challenge-advanced-react",
+<<<<<<< HEAD
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -38,5 +39,63 @@
   "devDependencies": {
     "@sheerun/mutationobserver-shim": "^0.3.3",
     "msw": "^0.21.3"
+=======
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "fkill :9000 :3000 -s && concurrently \"npm:backend\" \"npm:frontend\"",
+    "test": "cross-env NODE_ENV=testing jest",
+    "webpack": "cross-env NODE_ENV=production webpack",
+    "heroku-postbuild": "npm run webpack",
+    "frontend": "webpack serve --open",
+    "backend": "node index.js",
+    "start": "npm run backend"
+  },
+  "devDependencies": {
+    "@babel/core": "7.18.2",
+    "@babel/plugin-transform-react-jsx": "7.17.12",
+    "@babel/plugin-transform-runtime": "7.18.2",
+    "@babel/preset-env": "7.18.2",
+    "@babel/preset-react": "7.17.12",
+    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/react": "13.3.0",
+    "@types/jest": "28.1.1",
+    "babel-loader": "8.2.5",
+    "babel-plugin-styled-components": "2.0.7",
+    "concurrently": "7.2.1",
+    "cross-env": "7.0.3",
+    "css-loader": "6.7.1",
+    "eslint": "8.17.0",
+    "eslint-plugin-react": "7.30.0",
+    "fkill-cli": "7.1.0",
+    "html-loader": "3.1.0",
+    "html-webpack-plugin": "5.5.0",
+    "jest": "28.1.1",
+    "jest-environment-jsdom": "28.1.1",
+    "msw": "0.42.0",
+    "nodemon": "2.0.16",
+    "string-replace-loader": "3.1.0",
+    "style-loader": "3.3.1",
+    "webpack": "5.73.0",
+    "webpack-cli": "4.9.2",
+    "webpack-dev-server": "4.9.2"
+  },
+  "dependencies": {
+    "axios": "0.27.2",
+    "cors": "2.8.5",
+    "express": "4.18.1",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-router-dom": "6.3.0",
+    "styled-components": "5.3.5",
+    "yup": "0.32.11"
+  },
+  "engines": {
+    "node": ">=18.x",
+    "npm": ">=9.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bloominstituteoftechnology/web-sprint-challenge-advanced-react.git"
+>>>>>>> cb6f870a544d396e8b33c4c7c248fe268aa9426f
   }
 }

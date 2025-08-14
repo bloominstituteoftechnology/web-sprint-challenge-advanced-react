@@ -1,0 +1,181 @@
+@font-face {
+  font-family: 'Titillium Web';
+  src: url('../fonts/TitilliumWeb-SemiBold.ttf');
+}
+
+html, body {
+  min-height:100vh;
+}
+
+body::after {
+  content: "";
+  background: url('../images/Light-Gradient.jpeg');
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+body, input, button {
+  font-family: 'Titillium Web', sans-serif;
+  color: #484848;
+}
+
+#root, #wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.8rem;
+  line-height: 4rem;
+  color: #93005a;
+}
+
+nav a {
+  line-height: 3.2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: #484848;
+}
+
+nav a.active:nth-last-of-type(1) {
+  color: #00808c;
+}
+
+nav a.active:nth-last-of-type(2) {
+  color: #ff4b00;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 3.8rem;
+  background-color: rgb(252, 252, 252);
+  border: 1px solid rgb(238, 238, 238);
+  margin: 1rem 0 1rem 0;
+}
+
+#coordinates, #steps {
+  font-size: 1.2rem;
+}
+
+#message {
+  font-size: 1.2rem;
+  color: #00808c;
+  font-style: italic;
+}
+
+.class-based #message {
+  color: #ff4b00;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+}
+
+#grid .square {
+  border: 4px solid black;
+  margin: -2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: white;
+}
+
+.class-based #grid .square, .functional #grid .square.active {
+  background-color: #00808c
+}
+
+.class-based #grid .square.active, .functional #grid .square {
+  background-color: #ff4b00;
+}
+
+#keypad {
+  background-color: rgb(252, 252, 252);
+  border-radius: 50%;
+  border: 1px solid rgb(238, 238, 238);
+  padding: 0.55rem;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 55px 55px 55px;
+  grid-template-rows: 55px 55px 55px;
+  grid-template-areas:
+    ". up ."
+    "left reset right"
+    ". down .";
+}
+
+#keypad button {
+  border: 1px solid #DDDDDD;
+  border-radius: 28%;
+  align-self: center;
+  justify-self: center;
+  width: 55px;
+  height: 55px;
+}
+
+#keypad button:active {
+  box-shadow: 0 0 5px #93005a;
+  border: 1px solid #93005a;
+  background-color: white;
+}
+
+button#reset {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  grid-area: reset;
+}
+
+button#left {
+  grid-area: left;
+}
+
+button#up {
+  grid-area: up;
+}
+
+button#right {
+  grid-area: right;
+}
+
+button#down {
+  grid-area: down;
+}
+
+input {
+  height: 1.9rem;
+  border-radius: 0;
+  margin: -1px;
+  border: 1px solid #DDDDDD;
+  background-color: white;
+  outline: none;
+}
+
+input[type=email] {
+  width: 230px;
+  margin-right: 1rem;
+}
+
+input:active {
+  box-shadow: 0 0 5px #93005a;
+  border: 1px solid #93005a;
+}
+
+footer {
+  margin-top: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  color: #93005a;
+}
