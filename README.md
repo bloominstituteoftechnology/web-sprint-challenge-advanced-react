@@ -78,22 +78,25 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 
 ## Submission format
 
-* [ ] Submit via Codegrade by commiting and pushing any new changes to **your main branch.**
-* [ ] Check Codegrade before the deadline to compare its results against your local tests.
-* [ ] Check Codegrade on the days following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
-* [ ] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
+* [x] Submit via Codegrade by committing and pushing any new changes to **your main branch.**
+* [x] Check Codegrade before the deadline to compare its results against your local tests.
+* [x] Check Codegrade on the days following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
+* [x] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file. These will not be counted as a part of your sprint score but will be helpful for preparing you for your endorsement interview, and enhancing overall understanding.
 
 1. What are the main differences between a stateful and a functional component?
-  Stateful components are mutable and update content without a page refresh, whereas functional components require reassignment.
+  Stateful components are mutable and update content without a page refresh; whereas functional components require state hooks to manage state.
 
 2. When does a componentWillMount function be called? What about a componentWillUpdate?
-  <!-- ComponentWillMount is called -->
+  ComponentWillMount is called during the birth/mounting phase. ComponentWillUpdate is run during the growth/updating phase.
 
 3. Define stateful logic.
-  State is how component
+  Stateful logic allows changes of state to flow into other components through props drilling and a parent/child relationship to allow for shared, persistent data.
 
 4. What are the three step of creating a successful test? What is done in each phase?
+  · Create project - project is created with all files and dependencies necessary
+  · Create test file - Test file is created and tests implemented
+  · Run tests - tests are run to see which are passing or failing
