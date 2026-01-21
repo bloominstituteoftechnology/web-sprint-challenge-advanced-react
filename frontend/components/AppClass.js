@@ -2,6 +2,7 @@
 // ❗ OPTIONAL, not required to pass the sprint
 // ❗ OPTIONAL, not required to pass the sprint
 import React from 'react'
+import axios from "axios"
 
 // Suggested initial states
 const initialMessage = ''
@@ -19,71 +20,216 @@ const initialState = {
 export default class AppClass extends React.Component {
   // THE FOLLOWING HELPERS ARE JUST RECOMMENDATIONS.
   // You can delete them and build your own logic from scratch.
+  constructor(){
+    super();
 
-  getXY = () => {
-    // It it not necessary to have a state to track the coordinates.
-    // It's enough to know what index the "B" is at, to be able to calculate them.
+    this.state = {
+      gameState: {
+        ...initialState,
+      xCoord: 2,
+      yCoord: 2
+      }
+    }
   }
 
-  getXYMessage = () => {
+  getXY = (coordinate, x, y) => {
+    // It it not necessary to have a state to track the coordinates.
+    // It's enough to know what index the "B" is at, to be able to calculate them.
+    if (coordinate === "11"){
+      this.move(0, x, y)
+    }
+    else if (coordinate === "21"){
+      this.move(1, x, y)
+    }
+    else if (coordinate === "31"){
+      this.move(2, x, y)
+    }
+    else if (coordinate === "12"){
+      this.move(3, x, y)
+    }
+    else if (coordinate === "22"){
+      this.move(4, x, y)
+    }
+    else if (coordinate === "32"){
+      this.move(5, x, y)
+    }
+    else if (coordinate === "13"){
+      this.move(6, x, y)
+    }
+    else if (coordinate === "23"){
+      this.move(7, x, y)
+    }
+    else if (coordinate === "33"){
+      this.move(8, x, y)
+    }
+  }
+
+  getXYMessage = (direction) => {
     // It it not necessary to have a state to track the "Coordinates (2, 2)" message for the user.
     // You can use the `getXY` helper above to obtain the coordinates, and then `getXYMessage`
     // returns the fully constructed string.
+
+    if (direction === "left"){
+      this.setState({
+        ...this.state, gameState: {
+          ...this.state.gameState,
+          message: "You can't go left"
+        }
+      })
+    }
+    else if (direction === "right"){
+      this.setState({
+        ...this.state, gameState: {
+          ...this.state.gameState,
+          message: "You can't go right"
+        }
+      })
+    }
+    else if (direction === "up"){
+      this.setState({
+        ...this.state, gameState: {
+          ...this.state.gameState,
+          message: "You can't go up"
+        }
+      })
+    }
+    else if (direction === "down"){
+      this.setState({
+        ...this.state, gameState: {
+          ...this.state.gameState,
+          message: "You can't go down"
+        }
+      })
+    }
   }
 
   reset = () => {
     // Use this helper to reset all states to their initial values.
+    this.setState({
+      ...this.state,
+      gameState: {
+        message: initialState.message,
+        email: initialState.email,
+        index: initialState.index, 
+        steps: initialState.steps,
+        xCoord: 2,
+        yCoord: 2
+      }
+    })
   }
 
   getNextIndex = (direction) => {
     // This helper takes a direction ("left", "up", etc) and calculates what the next index
     // of the "B" would be. If the move is impossible because we are at the edge of the grid,
     // this helper should return the current index unchanged.
+    
+    if (direction === "left" && this.state.gameState.xCoord !== 1){
+      const newXCoord = this.state.gameState.xCoord - 1;
+      const newYCoord = this.state.gameState.yCoord;
+      this.getXY(("" + newXCoord + newYCoord), newXCoord, newYCoord);
+    }
+    else if (direction === "right" && this.state.gameState.xCoord !== 3){
+      const newXCoord = this.state.gameState.xCoord + 1;
+      const newYCoord = this.state.gameState.yCoord;
+      this.getXY(("" + newXCoord + newYCoord), newXCoord, newYCoord);
+    }
+    else if (direction === "up" && this.state.gameState.yCoord !== 1){
+      const newXCoord = this.state.gameState.xCoord;
+      const newYCoord = this.state.gameState.yCoord - 1;
+      this.getXY(("" + newXCoord + newYCoord), newXCoord, newYCoord);
+    }
+    else if (direction === "down" && this.state.gameState.yCoord !== 3){
+      const newXCoord = this.state.gameState.xCoord;
+      const newYCoord = this.state.gameState.yCoord + 1;
+      this.getXY(("" + newXCoord + newYCoord), newXCoord, newYCoord);
+    }
+    else {
+      this.getXYMessage(direction);
+    }
   }
 
-  move = (evt) => {
+  move = (newIndex, x, y) => {
     // This event handler can use the helper above to obtain a new index for the "B",
     // and change any states accordingly.
+    this.setState({
+      ...this.state,
+      gameState: {
+        ...this.state.gameState,
+        index: newIndex,
+        xCoord: x,
+        yCoord: y,
+        steps: this.state.gameState.steps + 1,
+        message: ""
+      }
+    })
   }
 
   onChange = (evt) => {
-    // You will need this to update the value of the input.
+    const emailInput = evt.target.value;
+    this.setState({
+      ...this.state, gameState: {
+        ...this.state.gameState,
+        email: emailInput
+      }
+    })
   }
 
-  onSubmit = (evt) => {
-    // Use a POST request to send a payload to the server.
+  onSubmit = (evt) => { 
+    evt.preventDefault();
+    const URL = "http://localhost:9000/api/result" 
+    axios.post(URL, {"x": this.state.gameState.xCoord, "y": this.state.gameState.yCoord, "steps": this.state.gameState.steps, "email": this.state.gameState.email})
+    .then(res => {
+      this.setState({
+        ...this.state, 
+        gameState: {
+          ...this.state.gameState,
+          message: res.data.message,
+          email: ""
+        }
+      })
+    })
+    .catch(err => {
+      this.setState({
+        ...this.state,
+        gameState: {
+          ...this.state.gameState,
+          message: err.response.data.message
+        }
+      })
+    });
   }
 
   render() {
+
     const { className } = this.props
     return (
       <div id="wrapper" className={className}>
         <p>(This component is not required to pass the sprint)</p>
         <div className="info">
-          <h3 id="coordinates">Coordinates (2, 2)</h3>
-          <h3 id="steps">You moved 0 times</h3>
+          <h3 id="coordinates">Coordinates ({this.state.gameState.xCoord}, {this.state.gameState.yCoord})</h3>
+          <h3 id="steps">You moved {this.state.gameState.steps} {this.state.gameState.steps === 1 ? "time" : "times"}</h3>
         </div>
         <div id="grid">
           {
             [0, 1, 2, 3, 4, 5, 6, 7, 8].map(idx => (
-              <div key={idx} className={`square${idx === 4 ? ' active' : ''}`}>
-                {idx === 4 ? 'B' : null}
+              <div key={idx} className={`square${idx === this.state.gameState.index ? ' active' : ''}`}>
+                {idx === this.state.gameState.index ? 'B' : null}
               </div>
             ))
           }
         </div>
         <div className="info">
-          <h3 id="message"></h3>
+          <h3 id="message">{this.state.gameState.message}</h3>
         </div>
         <div id="keypad">
-          <button id="left">LEFT</button>
-          <button id="up">UP</button>
-          <button id="right">RIGHT</button>
-          <button id="down">DOWN</button>
-          <button id="reset">reset</button>
+          <button id="left" onClick={() => this.getNextIndex("left")}>LEFT</button>
+          <button id="up" onClick={() => this.getNextIndex("up")}>UP</button>
+          <button id="right" onClick={() => this.getNextIndex("right")}>RIGHT</button>
+          <button id="down" onClick={() => this.getNextIndex("down")}>DOWN</button>
+          <button id="reset" onClick={this.reset}>reset</button>
         </div>
-        <form>
-          <input id="email" type="email" placeholder="type email"></input>
+        <form onSubmit={this.onSubmit}>
+          <input id="email" type="email" placeholder="type email" value={this.state.gameState.email} onChange={this.onChange}></input>
           <input id="submit" type="submit"></input>
         </form>
       </div>
